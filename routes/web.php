@@ -15,8 +15,8 @@ Route::name('client.')->group(function () {
         });
 
         Route::controller(WishlistController::class)->as('wishlist.')->group(function () {
-           Route::post('/add-to-wishlist/{product}', 'store')->name('store');
-           Route::post('/delete-wishlist', 'destroy')->name('destroy'); 
+            Route::post('/add-to-wishlist/{product}', 'store')->name('store');
+            Route::post('/delete-wishlist', 'destroy')->name('destroy');
         });
 
         Route::controller(AuthController::class)->as('auth.')->group(function () {
@@ -25,6 +25,8 @@ Route::name('client.')->group(function () {
 
         Route::controller(UserController::class)->as('auth.')->group(function () {
             Route::put('/doi-mat-khau', 'changePassword')->name('changePassword');
+            Route::put('/doi-lien-he', 'changeContact')->name('changeContact');
+            Route::put('/doi-thong-tin', 'changeInfo')->name('changeInfo');
         });
     });
 
@@ -50,5 +52,12 @@ Route::name('client.')->group(function () {
         Route::post('/update-quantity/{key}', 'updateQuantity')->name('updateQuantity');
         Route::get('/gio-hang', 'showCart')->name('showCart');
         Route::delete('/clear-cart', 'clearCart')->name('clearCart');
+    });
+});
+
+Route::middleware('customAuth:web')->group(function () {
+    Route::controller(AuthController::class)->group(function () {
+        Route::get('/email/verify', 'verifyEmail')->name('verification.notice');
+        Route::get('/email/verify/{id}/{hash}', 'handleVerifyEmail')->name('verification.verify');
     });
 });

@@ -38,7 +38,7 @@
             </nav>
             <h6 class="pt-4 ps-2 ms-1">Manage account</h6>
             <nav class="list-group list-group-borderless">
-                <a class="list-group-item list-group-item-action d-flex align-items-center {{ Route::is('client.home.profile') ? 'active' : '' }}"
+                <a class="list-group-item list-group-item-action d-flex align-items-center {{ Route::is('client.home.profile') || Route::is('verification.notice') ? 'active' : '' }}"
                     href="{{ route('client.home.profile') }}">
                     <i class="ci-user fs-base opacity-75 me-2"></i>
                     Personal info
