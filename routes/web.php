@@ -3,6 +3,7 @@
 use App\Http\Controllers\Client\AuthController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\ClientController;
+use App\Http\Controllers\Client\ShippingAddressController;
 use App\Http\Controllers\Client\UserController;
 use App\Http\Controllers\Client\WishlistController;
 use Illuminate\Support\Facades\Route;
@@ -12,6 +13,8 @@ Route::name('client.')->group(function () {
         Route::controller(ClientController::class)->as('home.')->group(function () {
             Route::get('/san-pham-yeu-thich', 'wishlist')->name('wishlist');
             Route::get('/thong-tin-ca-nhan', 'profile')->name('profile');
+            Route::get('/dia-chi-nhan-hang', 'addresses')->name('addresses');
+            Route::get('/thong-bao', 'notification')->name('notification');
         });
 
         Route::controller(WishlistController::class)->as('wishlist.')->group(function () {
@@ -27,6 +30,12 @@ Route::name('client.')->group(function () {
             Route::put('/doi-mat-khau', 'changePassword')->name('changePassword');
             Route::put('/doi-lien-he', 'changeContact')->name('changeContact');
             Route::put('/doi-thong-tin', 'changeInfo')->name('changeInfo');
+        });
+
+        Route::controller(ShippingAddressController::class)->as('shippingAddress.')->group(function () {
+            Route::post('/them-dia-chi', 'store')->name('store');
+            Route::put('/cap-nhat-dia-chi/{shippingAddress}', 'update')->name('update');
+            Route::delete('/xoa-dia-chi/{shippingAddress}', 'destroy')->name('destroy');
         });
     });
 

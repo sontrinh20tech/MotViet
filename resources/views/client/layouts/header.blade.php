@@ -62,7 +62,7 @@
 
             @auth
                 <a class="btn btn-icon btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex"
-                    href="account-signin.html">
+                    href="{{ route('client.home.profile') }}">
                     <i class="ci-user animate-target"></i>
                     <span class="visually-hidden">Tài khoản</span>
                 </a>
@@ -468,7 +468,7 @@
                         </a>
                     @endguest
                     @auth
-                        <a class="nav-link border-end" href="account-signin.html">
+                        <a class="nav-link border-end" href="{{ route('client.home.profile') }}">
                             <i class="ci-user fs-lg opacity-60 me-2"></i>
                             Tài khoản
                         </a>
