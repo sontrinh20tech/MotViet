@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Client\User;
+namespace App\Http\Requests\Client\ShippingAddress;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ChangeContactRequest extends FormRequest
+class UpdateShippingAddressRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,11 @@ class ChangeContactRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required|email:rfc,dns|max:250|unique:users,email,' . request()->user()->id,
-            'phone_number' => 'nullable|string|max:11|regex:/^\d{10,11}$/',
+            'address' => 'required|string|max:1000',
+            'name' => 'required|string|max:250',
+            'fullname' => 'required|string|max:250',
+            'phone_number' => 'required|string|max:11|regex:/^\d{10,11}$/',
+            'is_default' => 'nullable|boolean',
         ];
     }
 }

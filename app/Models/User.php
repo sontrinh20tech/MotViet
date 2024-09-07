@@ -80,4 +80,24 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->email_verified_at != null;
     }
+
+    public function getPrefixName()
+    {
+        $fullname = stripVN($this->fullname);
+        $parts = explode(' ', $fullname);
+        $first = $parts[0][0];
+        $last = '';
+        
+        if (count ($parts) > 1) {
+            $last = array_pop($parts)[0];
+        }
+        $fullname = $first . $last;
+
+        return strtoupper($fullname);
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany(ShippingAddress::class);
+    }
 }

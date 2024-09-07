@@ -94,4 +94,34 @@ class ClientController extends Controller
         
         return view('client.home.personal_info', compact('user'));
     }
+
+    public function addresses()
+    {
+        $user = Auth::user();
+        $user->load('addresses');
+        
+        return view('client.home.addresses', compact('user'));
+    }
+
+    public function notification()
+    {
+        $user = Auth::user();
+
+        $notis = [
+            [
+                'id' => 1,
+                'attr' => 'has_send_email_order',
+                'label' => 'Xử lý đơn hàng',
+                'des' => 'Thông báo qua email sau khi đặt hàng, xử lý đơn hàng.',
+            ],
+            [
+                'id' => 1,
+                'attr' => 'has_send_email_shipping',
+                'label' => 'Vận chuyển đơn hàng',
+                'des' => 'Thông báo qua email sau khi đặt hàng, xử lý đơn hàng',
+            ],
+        ];
+
+        return view('client.home.notification', compact('user', 'notis'));
+    }
 }
