@@ -31,7 +31,10 @@ class ShippingAddressController extends Controller
     public function destroy(ShippingAddress $shippingAddress)
     {
         if ($shippingAddress->isDefault()) {
-            ShippingAddress::where('user_id', $shippingAddress->user_id)->limit(1)->update(['is_default' => 1]);
+            ShippingAddress::where('user_id', $shippingAddress->user_id)
+                ->where('id', '!=', $shippingAddress->id)
+                ->limit(1)
+                ->update(['is_default' => 1]);
         }
 
         $shippingAddress->delete();

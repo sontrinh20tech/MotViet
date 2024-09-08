@@ -106,7 +106,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-check mb-0">
-                                            <input type="checkbox" class="form-check-input" name="is_default"
+                                            <input type="checkbox" class="form-check-input" name="is_default" value="1"
                                                 id="set-primary-1_{{ $item->id }}"
                                                 @if ($item->isDefault()) checked @endif>
                                             <label for="set-primary-1_{{ $item->id }}" class="form-check-label">

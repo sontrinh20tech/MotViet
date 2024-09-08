@@ -22,7 +22,7 @@
                     Orders
                     <span class="badge bg-primary rounded-pill ms-auto">1</span>
                 </a>
-                <a class="list-group-item list-group-item-action d-flex align-items-center pe-none {{ Route::is('client.home.wishlist') ? 'active' : '' }}"
+                <a class="list-group-item list-group-item-action d-flex align-items-center {{ Route::is('client.home.wishlist') ? 'active' : '' }}"
                     href="{{ route('client.home.wishlist') }}">
                     <i class="ci-heart fs-base opacity-75 me-2"></i>
                     Yêu thích
