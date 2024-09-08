@@ -2,7 +2,7 @@ FROM php:8.3.10-fpm
 WORKDIR /app
 COPY . .
 # install packages
-RUN apt update && apt install -y \
+RUN apt-get update && apt-get install -y \
     unzip \
     curl \
     vim \
