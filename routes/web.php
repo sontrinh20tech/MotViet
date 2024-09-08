@@ -19,6 +19,7 @@ Route::name('client.')->group(function () {
             Route::get('/thong-bao', 'notification')->name('notification');
             Route::get('/thanh-toan', 'checkout')->name('checkout');
             Route::get('/dat-hang-thanh-cong', 'orderSuccess')->name('orderSuccess');
+            Route::get('/don-hang-da-dat', 'orderHistory')->name('orderHistory');
         });
 
         Route::controller(WishlistController::class)->as('wishlist.')->group(function () {

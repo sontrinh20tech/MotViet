@@ -44,6 +44,24 @@ class Order extends Model
         }
     }
 
+    public function getStatusColor()
+    {
+        switch ($this->status) {
+            case OrderStatus::CANCEL->value:
+                return '#f03d3d';
+            case OrderStatus::PENDING->value:
+                return '#fc9231';
+            case OrderStatus::SHIPPING->value:
+                return '#2358ae';
+            case OrderStatus::SHIPPED->value:
+                return '#33b36b';
+            case OrderStatus::COMPLETED->value:
+                return '#33b36b';
+            case OrderStatus::PROCESSING->value:
+                return '#2f6ed5';
+        }
+    }
+
     public function getPaymentMethodLabel()
     {
         switch ($this->payment_method) {

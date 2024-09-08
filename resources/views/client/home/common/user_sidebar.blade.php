@@ -17,17 +17,17 @@
         <!-- Body (Navigation) -->
         <div class="offcanvas-body d-block pt-2 pt-lg-4 pb-lg-0">
             <nav class="list-group list-group-borderless">
-                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-orders.html">
+                <a class="list-group-item list-group-item-action d-flex align-items-center {{ Route::is('client.home.orderHistory') ? 'active' : '' }}"
+                    href="{{ route('client.home.orderHistory') }}">
                     <i class="ci-shopping-bag fs-base opacity-75 me-2"></i>
-                    Orders
-                    <span class="badge bg-primary rounded-pill ms-auto">1</span>
+                    Lịch sử đơn hàng
                 </a>
                 <a class="list-group-item list-group-item-action d-flex align-items-center {{ Route::is('client.home.wishlist') ? 'active' : '' }}"
                     href="{{ route('client.home.wishlist') }}">
                     <i class="ci-heart fs-base opacity-75 me-2"></i>
                     Yêu thích
                 </a>
-                <a class="list-group-item list-group-item-action d-flex align-items-center" href="account-reviews.html">
+                <a class="d-none list-group-item list-group-item-action d-flex align-items-center" href="account-reviews.html">
                     <i class="ci-star fs-base opacity-75 me-2"></i>
                     My reviews
                 </a>

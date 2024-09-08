@@ -202,4 +202,15 @@ class ClientController extends Controller
 
         return view('client.home.order_success', compact('order'));
     }
+
+    public function orderHistory()
+    {
+        $orders = Order::query()
+            ->where('user_id', Auth::id())
+            ->with(['orderDetails', 'orderDetails.product', 'orderDetails.product.images'])
+            ->orderBy('id', 'desc')
+            ->paginate(5);
+        
+        return view('client.home.order_history', compact('orders'));
+    }
 }
