@@ -14,7 +14,7 @@
                             <div class="d-sm-flex align-items-center">
                                 <h1 class="h4 mb-0 me-3">Cảm ơn bạn đã đặt hàng!</h1>
                                 <div class="nav mt-2 mt-sm-0 ms-auto">
-                                    <a class="nav-link text-decoration-underline p-0" href="#!">Xem đơn hàng</a>
+                                    <a class="nav-link text-decoration-underline p-0" href="{{ route('client.home.orderHistory') }}">Xem đơn hàng</a>
                                 </div>
                             </div>
                         </div>
