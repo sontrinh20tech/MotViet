@@ -1,12 +1,16 @@
 FROM php:8.2.23-fpm
 WORKDIR /app
 COPY . .
+COPY ./php.ini /usr/local/etc/php/php.ini
+COPY ./php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
+COPY ./supervisord.conf /etc/supervisord.conf
 # install packages
 RUN apt-get update && apt-get install -y \
     unzip \
     curl \
     vim \
-    net-tools
+    net-tools \
+    supervisor
 # install php extensions
 ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
@@ -23,6 +27,8 @@ RUN chmod -R 777 storage
 RUN chmod 777 -R bootstrap/cache
 RUN rm -rf public/storage
 RUN php artisan storage:link
+RUN php artisan optimize
+RUN crond && /usr/bin/supervisord -n -c /etc/supervisord.conf
 
 CMD ["php-fpm"]
 EXPOSE 9000
