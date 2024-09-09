@@ -20,6 +20,9 @@ class ClientController extends Controller
 {
     public function index(Request $request)
     {
+        $limit = 8;
+        $page = $request->input('page', 1);
+
         $products = Product::query()
             ->active()
             ->with([
@@ -29,7 +32,8 @@ class ClientController extends Controller
                 'sizes.size',
                 'images',
             ])
-            // ->limit(4)
+            ->limit($limit)
+            ->offset(($page - 1) * $limit)
             ->get();
 
         if ($request->ajax()) {
@@ -47,6 +51,7 @@ class ClientController extends Controller
             'categories' => $categories,
             'banners' => $banners,
             'products' => $products,
+            'canViewMore' => $products->count() > $limit,
         ]);
     }
 
