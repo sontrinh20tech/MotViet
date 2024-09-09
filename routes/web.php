@@ -68,6 +68,8 @@ Route::name('client.')->group(function () {
     Route::controller(ClientController::class)->as('home.')->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/chi-tiet-san-pham/{product}', 'productDetail')->name('productDetail');
+        Route::get('/tim-kiem-san-pham', 'productSearch')->name('productSearch');
+        Route::get('/loc-san-pham', 'shop')->name('shop');
     });
 
     Route::controller(CartController::class)->as('cart.')->group(function () {

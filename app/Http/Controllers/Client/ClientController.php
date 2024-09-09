@@ -215,11 +215,48 @@ class ClientController extends Controller
             ->with(['orderDetails', 'orderDetails.product', 'orderDetails.product.images'])
             ->orderBy('id', 'desc')
             ->paginate(5);
-        
+
         if (request()->ajax()) {
             return response()->view('client.home.common.table_list_order', compact('orders'));
         }
-        
+
         return view('client.home.order_history', compact('orders'));
+    }
+
+    public function productSearch(Request $request)
+    {
+        $keyword = $request->input('keyword');
+
+        if (empty($keyword)) {
+            return response()->json([
+                'html' => '',
+                'count' => 0,
+            ]);
+        }
+
+        $products = Product::search($keyword)
+            ->active()
+            ->with([
+                'images',
+                'sizes',
+                'sizes.size',
+                'colors',
+                'colors.color',
+            ])
+            ->get();
+
+        $html = "";
+        foreach ($products as $item) {
+            $html .= Blade::render('<x-client.product_search :product="$product" />', ['product' => $item]);
+        }
+        return response()->json([
+            'html' => $html,
+            'count' => $products->count(),
+        ]);
+    }
+
+    public function shop()
+    {
+        return view('client.home.shop');
     }
 }
