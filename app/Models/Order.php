@@ -91,4 +91,19 @@ class Order extends Model
     {
         return $this->hasMany(OrderDetail::class);
     }
+
+    public function isPaid()
+    {
+        return $this->is_paid ? true : false;
+    }
+
+    public function canCancel()
+    {
+        return $this->status == OrderStatus::PENDING->value && !$this->isPaid();
+    }
+
+    public function getPaidLabel()
+    {
+        return $this->isPaid() ? 'Đã thanh toán' : 'Chưa thanh toán';
+    }
 }

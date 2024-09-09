@@ -85,4 +85,33 @@ class OrderController extends Controller
             return abort(500);
         }
     }
+
+    public function show(Order $order)
+    {
+        $order->load(['orderDetails', 'orderDetails.product', 'orderDetails.product.images', 'orderDetails.color', 'orderDetails.size']);
+
+        return response()->json([
+            'header' => view('client.modal.common.order_detail_header', compact('order'))->render(),
+            'body' => view('client.modal.common.order_detail_body', compact('order'))->render(),
+            'footer' => view('client.modal.common.order_detail_footer', compact('order'))->render(),
+        ]);
+    }
+
+    public function cancel(Order $order)
+    {
+        if (!$order->canCancel()) {
+            return response()->json([
+                'message' => 'Không thể hủy đơn hàng',
+            ], 400); 
+        }
+
+        $order->status = OrderStatus::CANCEL->value;
+        $order->save();
+
+        return response()->json([
+            'message' => 'Hủy đơn hàng thành công',
+            'header' => view('client.modal.common.order_detail_header', compact('order'))->render(),
+            'footer' => view('client.modal.common.order_detail_footer', compact('order'))->render(),
+        ]);
+    }
 }

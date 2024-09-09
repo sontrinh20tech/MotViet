@@ -49,6 +49,8 @@ Route::name('client.')->group(function () {
 
         Route::controller(OrderController::class)->as('order.')->group(function () {
             Route::post('/dat-hang', 'store')->name('store');
+            Route::get('/show-order-detail/{order}', 'show')->name('show');
+            Route::put('/huy-don-hang/{order}', 'cancel')->name('cancel');
         });
     });
 

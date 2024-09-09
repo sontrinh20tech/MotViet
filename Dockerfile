@@ -1,10 +1,10 @@
 FROM php:8.2.23-fpm
+WORKDIR /app
+
 COPY . .
 COPY ./php.ini /usr/local/etc/php/php.ini
 COPY ./php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
 COPY ./supervisord.conf /etc/supervisord.conf
-
-WORKDIR /app
 
 # install packages
 RUN apt-get update && apt-get install -y \

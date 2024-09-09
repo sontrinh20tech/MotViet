@@ -211,6 +211,10 @@ class ClientController extends Controller
             ->orderBy('id', 'desc')
             ->paginate(5);
         
+        if (request()->ajax()) {
+            return response()->view('client.home.common.table_list_order', compact('orders'));
+        }
+        
         return view('client.home.order_history', compact('orders'));
     }
 }
