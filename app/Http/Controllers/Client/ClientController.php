@@ -6,9 +6,12 @@ use App\Enums\PaymentMethod;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Category;
+use App\Models\Color;
+use App\Models\Kind;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\ShippingAddress;
+use App\Models\Size;
 use App\Models\Wishlist;
 use App\Services\PayOS;
 use Illuminate\Http\Request;
@@ -255,8 +258,34 @@ class ClientController extends Controller
         ]);
     }
 
-    public function shop()
+    public function shop(Request $request)
     {
-        return view('client.home.shop');
+        $keyword = $request->input('keyword');
+
+        $products = Product::search($keyword)
+            ->active()
+            ->with([
+                'images',
+                'sizes',
+                'sizes.size',
+                'colors',
+                'colors.color',
+            ])
+            ->paginate();
+
+        $kinds = Kind::query()
+            ->with([
+                'products'
+            ])
+            ->get();
+
+        $sizes = Size::query()
+            ->get();
+
+        $colors = Color::query()
+            ->get();
+        // dd($request->all());
+
+        return view('client.home.shop', compact('products', 'kinds', 'sizes', 'colors'));
     }
 }

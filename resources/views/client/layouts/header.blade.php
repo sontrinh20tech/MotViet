@@ -74,7 +74,7 @@
     <div class="collapse navbar-stuck-hide" id="stuckNav">
         <nav class="offcanvas offcanvas-start" id="navbarNav" tabindex="-1" aria-labelledby="navbarNavLabel">
             <div class="offcanvas-header py-3">
-                <h5 class="offcanvas-title" id="navbarNavLabel">Browse Cartzilla</h5>
+                <h5 class="offcanvas-title" id="navbarNavLabel">{{ config('app.name') }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
 
@@ -90,6 +90,10 @@
                                     href="{{ route('client.home.index') }}" role="button">Trang Chủ</a>
                             </li>
                             <li class="nav-item dropdown pb-lg-2 me-lg-n1 me-xl-0">
+                                <a class="nav-link {{ Route::is('client.home.shop') ? 'active' : '' }}" aria-current="page"
+                                    href="{{ route('client.home.shop') }}" role="button">Cửa hàng</a>
+                            </li>
+                            <li class="nav-item dropdown pb-lg-2 me-lg-n1 me-xl-0">
                                 <a class="nav-link {{ Route::is('client.cart.showCart') ? 'active' : '' }}" aria-current="page"
                                     href="{{ route('client.cart.showCart') }}" role="button">Giỏ hàng</a>
                             </li>
@@ -101,7 +105,7 @@
                             style="max-width: 240px" data-bs-toggle="offcanvas" data-bs-target="#searchBox"
                             aria-controls="searchBox">
                             <i class="ci-search fs-base ms-n1 me-2"></i>
-                            <span class="text-body-tertiary fw-normal">Search</span>
+                            <span class="text-body-tertiary fw-normal">Tìm kiếm</span>
                         </button>
                     </div>
                 </div>
