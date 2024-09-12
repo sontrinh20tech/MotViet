@@ -28,27 +28,7 @@
                                     Làm mới
                                 </button>
                             </div>
-                            <div class="d-flex flex-wrap gap-2">
-                                <button type="button" class="btn btn-sm btn-secondary">
-                                    <i class="ci-close fs-sm ms-n1 me-1"></i>
-                                    Sale
-                                </button>
-                                <button type="button" class="btn btn-sm btn-secondary">
-                                    <i class="ci-close fs-sm ms-n1 me-1"></i>
-                                    Adidas
-                                </button>
-                                <button type="button" class="btn btn-sm btn-secondary">
-                                    <i class="ci-close fs-sm ms-n1 me-1"></i>
-                                    Bilabong
-                                </button>
-                                <button type="button" class="btn btn-sm btn-secondary">
-                                    <i class="ci-close fs-sm ms-n1 me-1"></i>
-                                    Size: XXS
-                                </button>
-                                <button type="button" class="btn btn-sm btn-secondary">
-                                    <i class="ci-close fs-sm ms-n1 me-1"></i>
-                                    $40 - $150
-                                </button>
+                            <div class="d-flex flex-wrap gap-2" id="filter-labels">
                             </div>
                         </div>
 
@@ -70,6 +50,7 @@
                                                 @foreach ($kinds as $item)
                                                     <li class="nav-item mb-1">
                                                         <a data-id="{{ $item->id }}"
+                                                            data-label="{{ $item->name }}"
                                                             class="nav-link d-block fw-normal p-0 set-filter-kind"
                                                             href="javascript:void(0)">
                                                             {{ $item->name }}
@@ -183,8 +164,8 @@
                                     <div class="accordion-body p-0 pb-2 pb-lg-0">
                                         <div class="d-flex flex-column gap-2">
                                             <div class="form-check mb-0">
-                                                <input type="checkbox" class="form-check-input" id="sale"
-                                                    checked="">
+                                                <input name="is_sale" value="1" type="checkbox" class="form-check-input" id="sale"
+                                                    >
                                                 <label for="sale" class="form-check-label text-body-emphasis">
                                                     Đang giảm giá
                                                 </label>
@@ -200,33 +181,8 @@
 
 
             <!-- Product grid -->
-            <div class="col-lg-9">
-
-                <!-- Sorting -->
-                <div class="d-sm-flex align-items-center justify-content-between mt-n2 mb-3 mb-sm-4">
-                    <div class="fs-sm text-body-emphasis text-nowrap">Tìm thấy <span
-                            class="fw-semibold">{{ $products->total() }}</span> sản phẩm
-                    </div>
-                    <div class="d-flex align-items-center text-nowrap">
-                        <label class="form-label fw-semibold mb-0 me-2">Sắp xếp bởi:</label>
-                        <div style="width: 190px">
-                            <select class="form-select border-0 rounded-0 px-1">
-                                <option value="Relevance">Tên: A-Z</option>
-                                <option value="Popularity">Tên: Z-A</option>
-                                <option value="Price: Low to High">Giá: Thấp đến cao</option>
-                                <option value="Price: High to Low">Giá: Cao đến thấp</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row gy-4 gy-md-5 pb-4 pb-md-5">
-                    @foreach ($products as $item)
-                        <x-client.product class="col-6 col-md-4 mb-2 mb-sm-3 mb-md-0" :product="$item" />
-                    @endforeach
-                </div>
-
-                {{ $products->links() }}
+            <div class="col-lg-9" id="product-grid">
+                @include('client.home.common.shop_product_grid')
             </div>
         </div>
     </section>
@@ -246,19 +202,22 @@
             $(() => {
                 const endPoint = `{{ route('client.home.shop') }}`;
                 const filterEL = $('#filterSidebar');
-                const delay = 300;
+                const filterHtml = $('#filter-labels');
+                const delay = 0;
                 const filters = {
                     minPrice: 0,
-                    maxPrice: 0,
+                    maxPrice: 500000,
                     kind: [],
                     size: [],
                     color: [],
                     status: [],
                 };
+                let sort = '{{ $sort }}';
+                let isSale = '0';
                 let clear = null;
 
                 function getUrlWithFilters() {
-                    return `${endPoint}?`;
+                    return `${endPoint}?sort=${sort}&is_sale=${isSale}&min_price=${filters.minPrice}&max_price=${filters.maxPrice}${generateFilterArray(filters.kind, 'kind')}${generateFilterArray(filters.color, 'color')}${generateFilterArray(filters.size, 'size')}${generateFilterArray(filters.status, 'status')}`;
                 }
 
                 function generateFilterArray(array, key) {
@@ -280,7 +239,10 @@
                 function setKindFilters() {
                     const items = Array.from(filterEL.find('.set-filter-kind'));
 
-                    filters.kind = items.map((item) => parseInt(item.dataset.id));
+                    filters.kind = items.map((item) => {
+                        generateFilterHtml(item.dataset.label, item.dataset.id);
+                        return parseInt(item.dataset.id);
+                    });
                 }
 
                 function initFilters() {
@@ -289,33 +251,88 @@
                     setKindFilters();
                 }
 
+                function removeFilterHtml(key) {
+                    $('.btn-remove-filter-label[key=' + key + ']').closest('button').remove();
+                    filters.kind = filters.kind.filter(item => item !== parseInt(key));
+                }
+
+                function generateFilterHtml(text, key) {
+                    const html = `
+                    <button type="button" class="btn btn-sm btn-secondary">
+                        <i key="${key}" class="btn-remove-filter-label ci-close fs-sm ms-n1 me-1"></i>
+                        ${text}
+                    </button>
+                    `;
+                    filterHtml.append(html);
+                    filters.kind.push(parseInt(key));
+                }
+
+                function handleFilter() {
+                    if (clear) {
+                        clearTimeout(clear);
+                        clear = null;
+                    }
+
+                    clear = setTimeout(() => {
+                        loadView(getUrlWithFilters(), $('#product-grid'), true, true);
+                    }, delay);
+                    
+                }
+
                 filterEL.find('input[name="size"]').on('change', function(e) {
                     setSizeFilters();
+
+                    handleFilter();
                 });
 
                 filterEL.find('input[name="color"]').on('change', function(e) {
                     setColorFilters();
-                });
 
-                filterEL.find('input[name="min_price"]').on('input', function(e) {
-                    console.log(123);
+                    handleFilter();
                 });
 
                 filterEL.find('.set-filter-kind').on('click', function(e) {
                     const id = parseInt($(this)[0].dataset.id);
 
                     if (filters.kind.includes(id)) {
-                        filters.kind = filters.kind.filter(item => item !== id);
+                        removeFilterHtml(id);
                     } else {
-                        filters.kind.push(id);
+                        generateFilterHtml($(this)[0].dataset.label, id);
                     }
-                    console.log(filters);
+
+                    handleFilter();
+                });
+
+                $(document).on('change', '#product-grid [name="sort"]', function () {
+                    sort = $(this).val();
+                    handleFilter();
+                });
+
+                $(document).on('change', '[name="is_sale"]', function () {
+                    if ($(this).is(':checked')) {
+                        isSale = '1';
+                    } else {
+                        isSale = '0';
+                    }
+                    handleFilter();
+                });
+
+                $('.range-slider-ui')[0].noUiSlider.on('set', function(e) {
+                    const data = e.map((item) => parseInt(item.replace('đ', '')));
+                    
+                    filters.minPrice = data[0];
+                    filters.maxPrice = data[1];
+
+                    handleFilter();
+                });
+
+                $(document).on('click', '.btn-remove-filter-label', function(e) {
+                    removeFilterHtml($(this).attr('key'));
+
+                    handleFilter();
                 });
 
                 initFilters();
-                console.log(filters);
-
-
             });
         </script>
     @endpush

@@ -121,3 +121,7 @@ function getCartDiscountTotal(CartStatus $status = CartStatus::All, string $key 
     
     return $cartTotal - $cartDiscount;
 }
+
+function getNoProductImage() {
+    return asset('images/no-products.jpg');
+}

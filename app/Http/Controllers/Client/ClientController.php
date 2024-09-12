@@ -261,17 +261,8 @@ class ClientController extends Controller
     public function shop(Request $request)
     {
         $keyword = $request->input('keyword');
-
-        $products = Product::search($keyword)
-            ->active()
-            ->with([
-                'images',
-                'sizes',
-                'sizes.size',
-                'colors',
-                'colors.color',
-            ])
-            ->paginate();
+        $sort = $request->input('sort', 'name:asc');
+        $isSale = $request->boolean('is_sale', false);
 
         $kinds = Kind::query()
             ->with([
@@ -284,8 +275,52 @@ class ClientController extends Controller
 
         $colors = Color::query()
             ->get();
-        // dd($request->all());
 
-        return view('client.home.shop', compact('products', 'kinds', 'sizes', 'colors'));
+        $filters = [
+            "min_price" => $request->input('min_price', 0),
+            "max_price" => $request->input('max_price', 500000),
+            'kind' => $request->input('kind', $kinds->pluck('id')->toArray()),
+            'size' => $request->input('size', $sizes->pluck('id')->toArray()),
+            'color' => $request->input('color', $colors->pluck('id')->toArray()),
+        ];
+
+        if (request()->ajax()) {
+            $filters = [
+                ...$filters,
+                'kind' => $request->input('kind', []),
+                'size' => $request->input('size', []),
+                'color' => $request->input('color', []),
+            ];
+        }
+
+        $products = Product::search($keyword)
+            ->active()
+            ->with([
+                'images',
+                'sizes',
+                'sizes.size',
+                'colors',
+                'colors.color',
+            ])
+            ->whereIn('kind_id', $filters['kind'])
+            ->where(function ($query) use ($filters) {
+                $query->where('price', '>=', $filters['min_price'])
+                    ->where('price', '<=', $filters['max_price']);
+            })
+            ->join('product_sizes as ps', 'products.id', '=', 'ps.product_id')
+            ->whereIn('ps.size_id', $filters['size'])
+            ->join('product_colors as pc', 'products.id', '=', 'pc.product_id')
+            ->whereIn('pc.color_id', $filters['color'])
+            ->when($isSale, fn($query) => $query->whereNotNull('old_price'))
+            ->groupBy('products.id')
+            ->select('products.*')
+            ->orderBy('products.' . explode(':', $sort)[0], explode(':', $sort)[1])
+            ->paginate();
+
+        if (request()->ajax()) {
+            return response()->view('client.home.common.shop_product_grid', compact('products', 'sort'));
+        }
+
+        return view('client.home.shop', compact('products', 'kinds', 'sizes', 'colors', 'sort'));
     }
 }
