@@ -3,25 +3,25 @@
     @include('client.layouts.category_banner')
 
     <!-- Featured products -->
-    <section class="container mt-5 pb-5 mb-2 mb-sm-3 mb-lg-4 mb-xl-5">
-        <h2 class="text-center pb-2 pb-sm-3">This week's highlights</h2>
+    <section id="featured" class="container mt-5 pb-5 mb-2 mb-sm-3 mb-lg-4 mb-xl-5">
+        <h2 class="text-center pb-2 pb-sm-3">Sản phẩm</h2>
 
         <!-- Nav pills -->
         <div class="row g-0 overflow-x-auto pb-2 pb-sm-3 mb-3">
             <div class="col-auto pb-1 pb-sm-0 mx-auto">
                 <ul class="nav nav-pills flex-nowrap text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#!">Best sellers</a>
+                        <a class="nav-link {{ $category == null ? 'active' : '' }}" href="{{ route('client.home.index') }}#featured">
+                            Tất cả
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#!">New arrivals</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#!">Sale items</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#!">Top rated</a>
-                    </li>
+                    @foreach ($categories as $item)
+                        <li class="nav-item">
+                            <a class="nav-link {{ $category == $item['id'] ? 'active' : '' }}" href="{{ route('client.home.index', ['category' => $item['id']]) }}#featured">
+                                {{ $item['name'] }}
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>

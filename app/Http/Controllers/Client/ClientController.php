@@ -25,6 +25,7 @@ class ClientController extends Controller
     {
         $limit = 8;
         $page = $request->input('page', 1);
+        $category = $request->input('category');
 
         $products = Product::query()
             ->active()
@@ -35,6 +36,11 @@ class ClientController extends Controller
                 'sizes.size',
                 'images',
             ])
+            ->when($category, function ($query) use ($category) {
+                $query->whereHas('kind.category', function ($query) use ($category) {
+                    $query->where('id', $category);
+                });
+            })
             ->limit($limit)
             ->offset(($page - 1) * $limit)
             ->get();
@@ -55,6 +61,7 @@ class ClientController extends Controller
             'banners' => $banners,
             'products' => $products,
             'canViewMore' => $products->count() > $limit,
+            'category' => $category,
         ]);
     }
 
