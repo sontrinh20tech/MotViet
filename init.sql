@@ -112,12 +112,12 @@ CREATE TABLE IF NOT EXISTS `coupons` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table doan_banquanao.coupons: ~3 rows (approximately)
+-- Dumping data for table doan_banquanao.coupons: ~2 rows (approximately)
 /*!40000 ALTER TABLE `coupons` DISABLE KEYS */;
 INSERT INTO `coupons` (`id`, `discount`, `code`, `amount`, `max_price`, `is_active`, `expiration_date`, `created_at`, `updated_at`) VALUES
 	(1, 95, 'ADMIN', 6, 1000000, 1, '2024-09-07', '2024-08-27 18:07:53', '2024-08-27 18:24:22'),
 	(2, 10, 'THUDONG2024', 50, 50000, 1, '2024-12-01', '2024-08-27 18:14:38', '2024-08-27 18:24:06'),
-	(3, 99, 'TEST', 4, 1000000, 1, '2024-09-15', '2024-09-07 16:22:59', '2024-09-08 16:21:23');
+	(3, 99, 'TEST', 1000, 1000000, 1, '2025-09-10', '2024-09-07 16:22:59', '2024-09-10 15:37:59');
 /*!40000 ALTER TABLE `coupons` ENABLE KEYS */;
 
 -- Dumping structure for table doan_banquanao.failed_jobs
@@ -162,10 +162,15 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   `created_at` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `jobs_queue_index` (`queue`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table doan_banquanao.jobs: ~0 rows (approximately)
+-- Dumping data for table doan_banquanao.jobs: ~4 rows (approximately)
 /*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
+INSERT INTO `jobs` (`id`, `queue`, `payload`, `attempts`, `reserved_at`, `available_at`, `created_at`) VALUES
+	(1, 'default', '{"uuid":"2c13714a-f704-47c7-a12a-eeb958e702fb","displayName":"App\\\\Jobs\\\\Client\\\\SendMailVerifyEmailJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"App\\\\Jobs\\\\Client\\\\SendMailVerifyEmailJob","command":"O:38:\\"App\\\\Jobs\\\\Client\\\\SendMailVerifyEmailJob\\":1:{s:4:\\"user\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:15:\\"App\\\\Models\\\\User\\";s:2:\\"id\\";i:7;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}}"}}', 0, NULL, 1725976855, 1725976855),
+	(2, 'default', '{"uuid":"e5b39a02-f850-48d6-a4d0-f72356ea117f","displayName":"App\\\\Jobs\\\\Client\\\\SendMailVerifyEmailJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"App\\\\Jobs\\\\Client\\\\SendMailVerifyEmailJob","command":"O:38:\\"App\\\\Jobs\\\\Client\\\\SendMailVerifyEmailJob\\":1:{s:4:\\"user\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:15:\\"App\\\\Models\\\\User\\";s:2:\\"id\\";i:7;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}}"}}', 0, NULL, 1725977248, 1725977248),
+	(3, 'default', '{"uuid":"cca950c9-5918-4512-8dfd-b390733abf1e","displayName":"App\\\\Jobs\\\\Client\\\\SendMailVerifyEmailJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"App\\\\Jobs\\\\Client\\\\SendMailVerifyEmailJob","command":"O:38:\\"App\\\\Jobs\\\\Client\\\\SendMailVerifyEmailJob\\":1:{s:4:\\"user\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:15:\\"App\\\\Models\\\\User\\";s:2:\\"id\\";i:7;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}}"}}', 0, NULL, 1725977306, 1725977306),
+	(4, 'default', '{"uuid":"75625c44-cbc3-4f02-bbdf-72e3ae84724d","displayName":"App\\\\Jobs\\\\Client\\\\SendMailVerifyEmailJob","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"maxExceptions":null,"failOnTimeout":false,"backoff":null,"timeout":null,"retryUntil":null,"data":{"commandName":"App\\\\Jobs\\\\Client\\\\SendMailVerifyEmailJob","command":"O:38:\\"App\\\\Jobs\\\\Client\\\\SendMailVerifyEmailJob\\":1:{s:4:\\"user\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":5:{s:5:\\"class\\";s:15:\\"App\\\\Models\\\\User\\";s:2:\\"id\\";i:7;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";s:15:\\"collectionClass\\";N;}}"}}', 0, NULL, 1725977350, 1725977350);
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 
 -- Dumping structure for table doan_banquanao.job_batches
@@ -218,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table doan_banquanao.migrations: ~21 rows (approximately)
+-- Dumping data for table doan_banquanao.migrations: ~18 rows (approximately)
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(1, '0001_01_01_000000_create_users_table', 1),
@@ -268,15 +273,15 @@ CREATE TABLE IF NOT EXISTS `orders` (
   CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table doan_banquanao.orders: ~3 rows (approximately)
+-- Dumping data for table doan_banquanao.orders: ~9 rows (approximately)
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
 INSERT INTO `orders` (`id`, `user_id`, `code`, `address`, `fullname`, `phone_number`, `payment_method`, `status`, `is_paid`, `total`, `discount`, `discount_code`, `note`, `created_at`, `updated_at`) VALUES
-	(2, 7, 'QJKIPLXWU1', '123123', 'ho quang anh', '0372238783', 'cod', 2, 0, 951111, 60000, 'TEST', 'test', '2024-09-07 16:25:28', '2024-09-07 16:25:28'),
-	(13, 7, 'OQJRVMHRJU', '123123', 'ho quang anh', '0372238783', 'online', 2, 0, 123123, NULL, NULL, NULL, '2024-09-07 17:40:50', '2024-09-07 17:40:50'),
-	(14, 7, 'QJFJOJYATX', '123123', 'ho quang anh', '0372238783', 'online', 2, 0, 111111, NULL, NULL, '6', '2024-09-08 12:25:15', '2024-09-08 12:25:15'),
-	(15, 7, 'II2GM4RHLY', '123123', 'ho quang anh', '0372238783', 'online', 2, 0, 3000, 297000, 'TEST', NULL, '2024-09-08 13:00:25', '2024-09-08 13:00:25'),
+	(2, 7, 'QJKIPLXWU1', '123123', 'ho quang anh', '0372238783', 'cod', 1, 0, 951111, 60000, 'TEST', 'test', '2024-09-07 16:25:28', '2024-09-09 16:05:59'),
+	(13, 7, 'OQJRVMHRJU', '123123', 'ho quang anh', '0372238783', 'online', 1, 0, 123123, NULL, NULL, NULL, '2024-09-07 17:40:50', '2024-09-09 16:10:29'),
+	(14, 7, 'QJFJOJYATX', '123123', 'ho quang anh', '0372238783', 'online', 1, 0, 111111, NULL, NULL, '6', '2024-09-08 12:25:15', '2024-09-09 16:11:26'),
+	(15, 7, 'II2GM4RHLY', '123123', 'ho quang anh', '0372238783', 'online', 1, 0, 3000, 297000, 'TEST', NULL, '2024-09-08 13:00:25', '2024-09-09 16:11:47'),
 	(16, 7, '67TAUXY0RT', '123123', 'ho quang anh', '0372238783', 'online', 2, 1, 3000, 297000, 'TEST', NULL, '2024-09-08 13:16:19', '2024-09-08 13:25:07'),
-	(17, 7, 'IP3YVGS2IT', '123123', 'ho quang anh', '0372238783', 'online', 2, 0, 1111.11, 109999.89, 'TEST', NULL, '2024-09-08 16:12:39', '2024-09-08 16:12:39'),
+	(17, 7, 'IP3YVGS2IT', '123123', 'ho quang anh', '0372238783', 'online', 1, 0, 1111.11, 109999.89, 'TEST', NULL, '2024-09-08 16:12:39', '2024-09-09 16:11:37'),
 	(18, 7, 'Q8VQ91ZPPC', '123123', 'ho quang anh', '0372238783', 'cod', 2, 0, 111111, NULL, NULL, 'thanh toan khi nhan hang', '2024-09-08 16:18:38', '2024-09-08 16:18:38'),
 	(19, 7, '2A0AVBLXII', '123123', 'ho quang anh', '0372238783', 'online', 2, 0, 1111.11, 109999.89, 'TEST', 'thanh toan online', '2024-09-08 16:19:22', '2024-09-08 16:19:22'),
 	(20, 7, 'OV8FARZ7GH', '123123', 'ho quang anh', '0372238783', 'online', 2, 0, 0, 0, 'TEST', 'thanh toan online', '2024-09-08 16:20:03', '2024-09-08 16:20:03'),
@@ -306,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `order_details` (
   CONSTRAINT `order_details_size_id_foreign` FOREIGN KEY (`size_id`) REFERENCES `sizes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table doan_banquanao.order_details: ~5 rows (approximately)
+-- Dumping data for table doan_banquanao.order_details: ~11 rows (approximately)
 /*!40000 ALTER TABLE `order_details` DISABLE KEYS */;
 INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `color_id`, `size_id`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
 	(1, 2, 7, 4, 4, 1, 300000, '2024-09-07 16:25:28', '2024-09-07 16:25:28'),
@@ -530,10 +535,10 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   KEY `sessions_last_activity_index` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table doan_banquanao.sessions: ~4 rows (approximately)
+-- Dumping data for table doan_banquanao.sessions: ~1 rows (approximately)
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-	('GqB89gfxaabiJYP1cHB8q74Eik0CLsbEzkKxasxk', 7, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTo4OntzOjY6Il90b2tlbiI7czo0MDoiOTV0eGlKaTF4ejdYZHNxWWxzeEZiVEFmYlNxOThiR282WWRoZVA4NCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MTM6InByb2R1Y3RWaWV3ZWQiO2E6MTp7aTowO2k6NDt9czo0OiJjYXJ0IjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo3O3M6ODoiZGlzY291bnQiO047czoxMDoiZmluYWxfY2FydCI7YTowOnt9fQ==', 1725818543);
+	('4Aeivvi6nSAgEGMgh4J3pntpmNwM7Y25tIrg0jYq', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiMjhBaVc3QXRYSTh1aFpLU1dLOHlnNnRFS2RWemRrZ3czVmF1UkdFMiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2Mtc2FuLXBoYW0iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxMzoicHJvZHVjdFZpZXdlZCI7YToxOntpOjA7aTozO319', 1725986151);
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 
 -- Dumping structure for table doan_banquanao.shipping_addresses
@@ -550,13 +555,13 @@ CREATE TABLE IF NOT EXISTS `shipping_addresses` (
   PRIMARY KEY (`id`),
   KEY `shipping_addresses_user_id_foreign` (`user_id`),
   CONSTRAINT `shipping_addresses_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table doan_banquanao.shipping_addresses: ~2 rows (approximately)
 /*!40000 ALTER TABLE `shipping_addresses` DISABLE KEYS */;
 INSERT INTO `shipping_addresses` (`id`, `user_id`, `address`, `name`, `fullname`, `phone_number`, `is_default`, `created_at`, `updated_at`) VALUES
-	(11, 7, '123123', 'nhà', 'ho quang anh', '0372238783', 1, '2024-09-07 05:58:49', '2024-09-07 05:59:02'),
-	(12, 7, '12312123123', 'cty', 'ho quang anh', '0372238783', 0, '2024-09-07 06:13:18', '2024-09-07 06:13:18');
+	(12, 7, '12312123123', 'cty', 'ho quang anh', '0372238783', 1, '2024-09-07 06:13:18', '2024-09-10 13:01:14'),
+	(13, 7, '123', 'nhà', 'ho quang anh', '0372238783', 0, '2024-09-10 13:01:21', '2024-09-10 13:01:21');
 /*!40000 ALTER TABLE `shipping_addresses` ENABLE KEYS */;
 
 -- Dumping structure for table doan_banquanao.sizes
@@ -614,7 +619,7 @@ INSERT INTO `users` (`id`, `fullname`, `date_of_birth`, `phone_number`, `email`,
 	(4, 'Ho Quang Anh', NULL, NULL, 'user@admin.com', NULL, 1, 1, '$2y$12$KmxTomFAAtCBGZG8hU4SJOTFY82lGVjty.dKPGVtO/BpSaRctJhUC', NULL, NULL, 4, 0, 1, NULL, '2024-08-18 08:21:15', '2024-08-18 08:21:15'),
 	(5, 'trinh xuan son', NULL, NULL, 'son123@gmail.com', NULL, 1, 1, '$2y$12$dCVHK9qUkW9tyL/MNnxioOAWtcWUlgm3Iytz32e9DED3Li4EY7zka', NULL, NULL, 4, 0, 1, NULL, '2024-08-28 09:09:45', '2024-08-28 09:09:45'),
 	(6, 'Sơn Trịnh', NULL, NULL, 'sonit7122@gmail.com', NULL, 1, 1, '$2y$12$uToj/emWVTQP5Rxkzh5wjuxJMbXI6Du352LvbFWxbgKcBuXuVQwci', 'google', '101571965691342130603', 4, 0, 1, NULL, '2024-08-28 09:33:51', '2024-09-03 17:35:36'),
-	(7, 'ho quang anh', '2002-07-01', '0372238783', 'acczints001@gmail.com', '2024-09-04 16:59:55', 1, 1, '$2y$12$l1PJ1q8vj7/HRBLEtOiro.IEXQC5sgaig1ZFnqmM/f4l9SJl33wcS', 'google', '115460625758742207518', 4, 0, 1, NULL, '2024-09-03 13:58:47', '2024-09-04 17:21:46');
+	(7, 'ho quang anh', '2002-07-01', '0372238783', 'acczints001@gmail.com', NULL, 1, 1, '$2y$12$l1PJ1q8vj7/HRBLEtOiro.IEXQC5sgaig1ZFnqmM/f4l9SJl33wcS', 'google', '115460625758742207518', 4, 0, 1, NULL, '2024-09-03 13:58:47', '2024-09-04 17:21:46');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumping structure for table doan_banquanao.wishlists

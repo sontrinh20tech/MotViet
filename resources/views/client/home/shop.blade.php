@@ -69,7 +69,9 @@
                                             <ul class="nav flex-column gap-2 pe-3">
                                                 @foreach ($kinds as $item)
                                                     <li class="nav-item mb-1">
-                                                        <a class="nav-link d-block fw-normal p-0" href="#!">
+                                                        <a data-id="{{ $item->id }}"
+                                                            class="nav-link d-block fw-normal p-0 set-filter-kind"
+                                                            href="javascript:void(0)">
                                                             {{ $item->name }}
                                                             <span class="fs-xs text-body-secondary ms-1">
                                                                 ({{ $item->products->count() }})
@@ -100,8 +102,8 @@
                                             <div class="range-slider-ui"></div>
                                             <div class="d-flex align-items-center">
                                                 <div class="position-relative w-50">
-                                                    <input type="number" class="form-control" min="0"
-                                                        data-range-slider-min="">
+                                                    <input name="min_price" type="number" class="form-control"
+                                                        min="0" data-range-slider-min="">
                                                 </div>
                                                 <i class="ci-minus text-body-emphasis mx-2"></i>
                                                 <div class="position-relative w-50">
@@ -127,8 +129,8 @@
                                     <div class="accordion-body p-0 pb-4 mb-1 mb-xl-2">
                                         <div class="d-flex flex-wrap gap-2">
                                             @foreach ($sizes as $item)
-                                                <input checked type="checkbox" class="btn-check"
-                                                    id="size-{{ $item->id }}">
+                                                <input value="{{ $item->id }}" name="size" checked
+                                                    type="checkbox" class="btn-check" id="size-{{ $item->id }}">
                                                 <label for="size-{{ $item->id }}"
                                                     class="btn btn-sm btn-outline-secondary">{{ $item->name }}</label>
                                             @endforeach
@@ -152,7 +154,8 @@
                                         <div class="d-flex flex-column gap-2">
                                             @foreach ($colors as $item)
                                                 <div class="d-flex align-items-center mb-1">
-                                                    <input checked type="checkbox" class="btn-check"
+                                                    <input value="{{ $item->id }}" name="color" checked
+                                                        type="checkbox" class="btn-check"
                                                         id="cbcolor_{{ $item->id }}">
                                                     <label for="cbcolor_{{ $item->id }}"
                                                         class="btn btn-color fs-xl"
@@ -242,17 +245,18 @@
         <script>
             $(() => {
                 const endPoint = `{{ route('client.home.shop') }}`;
+                const filterEL = $('#filterSidebar');
+                const delay = 300;
                 const filters = {
                     minPrice: 0,
                     maxPrice: 0,
-                    kind: [3,5,1,2,5],
+                    kind: [],
                     size: [],
                     color: [],
                     status: [],
                 };
+                let clear = null;
 
-                console.log(generateFilterArray(filters.kind, 'kind'));
-                
                 function getUrlWithFilters() {
                     return `${endPoint}?`;
                 }
@@ -260,6 +264,58 @@
                 function generateFilterArray(array, key) {
                     return array.map(item => `&${key}[]=${item}`).join('');
                 }
+
+                function setSizeFilters() {
+                    const items = Array.from(filterEL.find('input[name="size"]:checked'));
+
+                    filters.size = items.map((item) => parseInt(item.value));
+                }
+
+                function setColorFilters() {
+                    const items = Array.from(filterEL.find('input[name="color"]:checked'));
+
+                    filters.color = items.map((item) => parseInt(item.value));
+                }
+
+                function setKindFilters() {
+                    const items = Array.from(filterEL.find('.set-filter-kind'));
+
+                    filters.kind = items.map((item) => parseInt(item.dataset.id));
+                }
+
+                function initFilters() {
+                    setSizeFilters();
+                    setColorFilters();
+                    setKindFilters();
+                }
+
+                filterEL.find('input[name="size"]').on('change', function(e) {
+                    setSizeFilters();
+                });
+
+                filterEL.find('input[name="color"]').on('change', function(e) {
+                    setColorFilters();
+                });
+
+                filterEL.find('input[name="min_price"]').on('input', function(e) {
+                    console.log(123);
+                });
+
+                filterEL.find('.set-filter-kind').on('click', function(e) {
+                    const id = parseInt($(this)[0].dataset.id);
+
+                    if (filters.kind.includes(id)) {
+                        filters.kind = filters.kind.filter(item => item !== id);
+                    } else {
+                        filters.kind.push(id);
+                    }
+                    console.log(filters);
+                });
+
+                initFilters();
+                console.log(filters);
+
+
             });
         </script>
     @endpush
