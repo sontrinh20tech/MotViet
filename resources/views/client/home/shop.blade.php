@@ -217,7 +217,7 @@
                 let clear = null;
 
                 function getUrlWithFilters() {
-                    return `${endPoint}?sort=${sort}&is_sale=${isSale}&min_price=${filters.minPrice}&max_price=${filters.maxPrice}${generateFilterArray(filters.kind, 'kind')}${generateFilterArray(filters.color, 'color')}${generateFilterArray(filters.size, 'size')}${generateFilterArray(filters.status, 'status')}`;
+                    return `${endPoint}?sort=${sort}&is_sale=${isSale}&min_price=${filters.minPrice}&max_price=${filters.maxPrice}${generateFilterArray(filters.kind, 'kinds')}${generateFilterArray(filters.color, 'colors')}${generateFilterArray(filters.size, 'sizes')}${generateFilterArray(filters.status, 'status')}`;
                 }
 
                 function generateFilterArray(array, key) {

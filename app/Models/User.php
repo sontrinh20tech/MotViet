@@ -31,6 +31,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'is_active',
         'provider',
         'social_id',
+        'has_send_email_shipping',
+        'has_send_email_order',
     ];
 
     /**

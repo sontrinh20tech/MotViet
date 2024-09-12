@@ -35,6 +35,7 @@ Route::name('client.')->group(function () {
             Route::put('/doi-mat-khau', 'changePassword')->name('changePassword');
             Route::put('/doi-lien-he', 'changeContact')->name('changeContact');
             Route::put('/doi-thong-tin', 'changeInfo')->name('changeInfo');
+            Route::post('/doi-thong-bao', 'changeNoti')->name('changeNoti');
         });
 
         Route::controller(ShippingAddressController::class)->as('shippingAddress.')->group(function () {

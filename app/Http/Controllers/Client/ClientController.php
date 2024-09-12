@@ -279,17 +279,17 @@ class ClientController extends Controller
         $filters = [
             "min_price" => $request->input('min_price', 0),
             "max_price" => $request->input('max_price', 500000),
-            'kind' => $request->input('kind', $kinds->pluck('id')->toArray()),
-            'size' => $request->input('size', $sizes->pluck('id')->toArray()),
-            'color' => $request->input('color', $colors->pluck('id')->toArray()),
+            'kind' => $request->input('kinds', $kinds->pluck('id')->toArray()),
+            'size' => $request->input('sizes', $sizes->pluck('id')->toArray()),
+            'color' => $request->input('colors', $colors->pluck('id')->toArray()),
         ];
 
         if (request()->ajax()) {
             $filters = [
                 ...$filters,
-                'kind' => $request->input('kind', []),
-                'size' => $request->input('size', []),
-                'color' => $request->input('color', []),
+                'kind' => $request->input('kinds', []),
+                'size' => $request->input('sizes', []),
+                'color' => $request->input('colors', []),
             ];
         }
 
