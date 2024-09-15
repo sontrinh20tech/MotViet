@@ -27,7 +27,7 @@ class ClientController extends Controller
         $page = $request->input('page', 1);
         $category = $request->input('category');
 
-        $products = Product::query()
+        $query = Product::query()
             ->active()
             ->with([
                 'colors',
@@ -40,7 +40,9 @@ class ClientController extends Controller
                 $query->whereHas('kind.category', function ($query) use ($category) {
                     $query->where('id', $category);
                 });
-            })
+            });
+
+        $products = $query
             ->limit($limit)
             ->offset(($page - 1) * $limit)
             ->get();
@@ -60,7 +62,7 @@ class ClientController extends Controller
             'categories' => $categories,
             'banners' => $banners,
             'products' => $products,
-            'canViewMore' => $products->count() > $limit,
+            'canViewMore' => $query->count() > $limit,
             'category' => $category,
         ]);
     }

@@ -57,7 +57,7 @@ class AuthController extends Controller
     {
         $user = app()->make(LoginSocialAction::class)->handle();
 
-        Auth::login($user);
+        Auth::login($user, true);
 
         return to_route('client.home.index');
     }

@@ -52,6 +52,12 @@ abstract class Controller
                 ],
             ],
             [
+                'label' => 'Quản lý yêu cầu',
+                'icon' => 'bi bi-bookmarks-fill fs-2x',
+                'route' => route('admin.order.index'),
+                'active_route_name' => ['admin.order.index', 'admin.order.show'],
+            ],
+            [
                 'label' => 'Quản lý Banner',
                 'icon' => 'bi bi-bookmarks-fill fs-2x',
                 'route' => route('admin.banner.index'),

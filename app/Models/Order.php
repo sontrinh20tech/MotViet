@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    use HasFactory; 
+    use HasFactory, SearchableTrait; 
 
     protected $fillable = [
         'user_id',
@@ -102,8 +102,41 @@ class Order extends Model
         return $this->status == OrderStatus::PENDING->value && !$this->isPaid();
     }
 
+    public function canProcessing()
+    {
+        return $this->status == OrderStatus::PENDING->value;
+    }
+
+    public function canShipping()
+    {
+        return $this->status == OrderStatus::PROCESSING->value;
+    }
+    public function canShipped()
+    {
+        return $this->status == OrderStatus::SHIPPING->value;
+    }
+
     public function getPaidLabel()
     {
         return $this->isPaid() ? 'Đã thanh toán' : 'Chưa thanh toán';
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public static function searchFields()
+    {
+        return [
+            'code',
+            'total',
+            'created_at',
+        ];
+    }
+
+    public function isShipped()
+    {
+        return $this->status == OrderStatus::SHIPPED->value;
     }
 }

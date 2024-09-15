@@ -65,7 +65,7 @@
                         @endforeach
                     </div>
                 @else
-                    <a href="{{ $href }}" class="menu-link">
+                    <a href="{{ $href }}" class="menu-link {{ $active }}">
                         <span class="menu-icon">
                             <i class="{{ $level1['icon'] ?? '' }}"></i></span>
                         <span class="menu-title">{{ $level1['label'] ?? '' }}</span>
