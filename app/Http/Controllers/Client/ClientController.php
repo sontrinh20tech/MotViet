@@ -58,6 +58,14 @@ class ClientController extends Controller
 
         $categories = Category::query()->with('kinds')->get();
         $banners = Banner::query()->get();
+        $reviews = Review::query()
+            ->with([
+                'user',
+                'product',
+                'product.images',
+            ])
+            ->orderBy('id', 'desc')->limit(6)
+            ->get();
 
         return view('client.home.index', [
             'categories' => $categories,
@@ -65,6 +73,7 @@ class ClientController extends Controller
             'products' => $products,
             'canViewMore' => $query->count() > $limit,
             'category' => $category,
+            'reviews' => $reviews,
         ]);
     }
 

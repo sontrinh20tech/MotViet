@@ -11,7 +11,7 @@
 
     {{-- @include('client.layouts.special_collection') --}}
     @include('client.layouts.brands')
-    {{-- @include('client.layouts.happy_customer') --}}
+    @include('client.layouts.happy_customer')
     {{-- @include('client.layouts.instagram_feed') --}}
 
     @push('js')
