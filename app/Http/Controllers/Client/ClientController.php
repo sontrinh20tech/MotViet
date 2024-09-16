@@ -10,6 +10,7 @@ use App\Models\Color;
 use App\Models\Kind;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\ShippingAddress;
 use App\Models\Size;
 use App\Models\Wishlist;
@@ -70,6 +71,12 @@ class ClientController extends Controller
     public function productDetail(Product $product)
     {
         $product->load(Product::getProductRelations());
+        $reviews = Review::query()
+            ->with([
+                'user',
+            ])
+            ->where('product_id', $product->id)
+            ->paginate();
 
         $arrProductViewed = Session::get('productViewed', []);
 
@@ -97,7 +104,7 @@ class ClientController extends Controller
             $productVieweds->merge($append);
         }
         // dd($productVieweds->toArray());
-        return view('client.product.detail', compact('product', 'productVieweds'));
+        return view('client.product.detail', compact('product', 'productVieweds', 'reviews'));
     }
 
     public function wishlist()

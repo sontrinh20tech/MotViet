@@ -105,6 +105,8 @@ class Product extends Model
             'sizes',
             'sizes.size',
             'images',
+            // 'reviews',
+            // 'reviews.user',
         ];
     }
 
@@ -127,5 +129,10 @@ class Product extends Model
         }
 
         return $buider ? $query : $query->get();
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }
