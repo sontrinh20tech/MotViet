@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    use HasFactory, SearchableTrait; 
+    use HasFactory, SearchableTrait;
 
     protected $fillable = [
         'user_id',
@@ -116,6 +116,11 @@ class Order extends Model
         return $this->status == OrderStatus::SHIPPING->value;
     }
 
+    public function canReview()
+    {
+        return ($this->status == OrderStatus::SHIPPED->value || $this->status == OrderStatus::SHIPPING->value) && $this->reviews->count() == 0;
+    }
+
     public function getPaidLabel()
     {
         return $this->isPaid() ? 'Đã thanh toán' : 'Chưa thanh toán';
@@ -138,5 +143,10 @@ class Order extends Model
     public function isShipped()
     {
         return $this->status == OrderStatus::SHIPPED->value;
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }

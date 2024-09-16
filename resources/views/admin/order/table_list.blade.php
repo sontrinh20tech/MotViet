@@ -16,7 +16,9 @@
             @foreach ($orders as $item)
                 <tr>
                     <td class="text-centers">
-                        <div>{{ $item->code }}</div>
+                        <div>
+                            <a href="{{ route('admin.order.show', $item->id) }}">{{ $item->code }}</a>
+                        </div>
                         <div class="badge badge-light-{{ $item->isPaid() ? 'success' : 'danger' }}">
                             {{ $item->getPaidLabel() }}
                         </div>
@@ -65,7 +67,7 @@
             e.preventDefault();
             const url = $(this).attr('href');
             showConfirm("Bạn có chắc chắn muốn xóa order này?", function() {
-                ajax(url, 'delete', {}, function (res) {
+                ajax(url, 'delete', {}, function(res) {
                     toast(res.data.message);
                     dispatchReloadEvent();
                 });

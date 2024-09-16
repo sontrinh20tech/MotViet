@@ -5,6 +5,7 @@ use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Client\CouponController;
 use App\Http\Controllers\Client\OrderController;
+use App\Http\Controllers\Client\ReviewController;
 use App\Http\Controllers\Client\ShippingAddressController;
 use App\Http\Controllers\Client\UserController;
 use App\Http\Controllers\Client\WishlistController;
@@ -52,6 +53,12 @@ Route::name('client.')->group(function () {
             Route::post('/dat-hang', 'store')->name('store');
             Route::get('/show-order-detail/{order}', 'show')->name('show');
             Route::put('/huy-don-hang/{order}', 'cancel')->name('cancel');
+            Route::put('/nhan-hang-thanh-cong/{order}', 'shipped')->name('shipped');
+            Route::get('/show-need-review/{order}', 'showNeedReviews')->name('showNeedReviews');
+        });
+
+        Route::controller(ReviewController::class)->as('review.')->group(function () {
+            Route::post('/danh-gia', 'store')->name('store');
         });
     });
 

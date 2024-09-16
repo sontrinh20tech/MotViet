@@ -114,4 +114,30 @@ class OrderController extends Controller
             'footer' => view('client.modal.common.order_detail_footer', compact('order'))->render(),
         ]);
     }
+
+    public function shipped(Order $order)
+    {
+        if (!$order->canReview('web')) {
+            return response()->json([
+                'message' => 'Không thể đổi trạng thái đơn hàng',
+            ], 400); 
+        }
+
+        $order->status = OrderStatus::SHIPPED->value;
+        $order->is_paid = 1;
+        $order->save();
+
+        return response()->json([
+            'message' => 'Đổi trạng thái đơn hàng thành công',
+            'header' => view('client.modal.common.order_detail_header', compact('order'))->render(),
+            'footer' => view('client.modal.common.order_detail_footer', compact('order'))->render(),
+        ]);
+    }
+
+    public function showNeedReviews(Order $order)
+    {
+        $order->load(['orderDetails', 'reviews', 'orderDetails.product', 'orderDetails.product.images', 'orderDetails.product.kind']);
+
+        return response()->view('client.modal.common.product_review_body', compact('order'));
+    }
 }
