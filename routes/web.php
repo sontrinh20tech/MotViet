@@ -65,6 +65,8 @@ Route::name('client.')->group(function () {
     Route::middleware('customGuest:web')->group(function () {
         Route::controller(AuthController::class)->as('auth.')->group(function () {
             Route::get('/dang-nhap', 'login')->name('login');
+            Route::get('/quen-mat-khau', 'forgotPassword')->name('forgotPassword');
+            Route::post('/xy-ly-quen-mat-khau', 'handleForgotPassword')->name('handleForgotPassword');
             Route::post('/dang-nhap', 'handleLogin')->name('handleLogin');
             Route::get('/dang-ky', 'register')->name('register');
             Route::post('/dang-ky', 'handleRegister')->name('handleRegister');
