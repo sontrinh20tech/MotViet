@@ -4,7 +4,7 @@
             <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
                 <th style="width: 20%" class="pe-2 text-nowrap">Nhân viên</th>
                 <th style="width: 20%" class="pe-2 text-nowrap">Email</th>
-                <th style="width: 10%" class="pe-2 text-nowrap">Vai trò</th>
+                {{-- <th style="width: 10%" class="pe-2 text-nowrap">Vai trò</th> --}}
                 <th style="width: 10%" class="pe-2 text-nowrap">Sinh nhật</th>
                 <th style="width: 20%" class="pe-2 text-nowrap text-center">Trạng thái</th>
                 <th style="width: 10%" class="pe-2 text-nowrap">Ngày tạo</th>
@@ -28,7 +28,7 @@
                 <tr>
                     <td class="text-nowrap">{{ $user->fullname }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->getRole->name }}</td>
+                    {{-- <td>{{ $user->getRole->name }}</td> --}}
                     <td>{{ $user->date_of_birth }}</td>
                     <td class="text-center">
                         <div class="badge badge-light-{{ $status[$user->is_active]['type'] }} fw-bold">

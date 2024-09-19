@@ -18,14 +18,14 @@ class UserController extends Controller
             return response()->view('admin.users.table_list_user', compact('users'));
         }
 
-        $roles = Role::query()->orderBy('level')->pluck('name', 'id');
+        // $roles = Role::query()->orderBy('level')->pluck('name', 'id');
 
         $filters = [
-            [
-                'name' => 'role',
-                'label' => 'Vai trò',
-                'data' => $roles->toArray(),
-            ],
+            // [
+            //     'name' => 'role',
+            //     'label' => 'Vai trò',
+            //     'data' => $roles->toArray(),
+            // ],
             [
                 'name' => 'is_active',
                 'label' => 'Trạng thái',

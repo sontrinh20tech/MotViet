@@ -10,6 +10,17 @@ abstract class Controller
     {
         $menu = [
             [
+                'label' => 'Dashboard',
+                'icon' => 'bi bi-bookmarks-fill fs-2x',
+                'items' => [
+                    [
+                        'label' => 'Danh sách nhân viên',
+                        'route' => route('admin.user.index'),
+                        'active_route_name' => ['admin.user.index'],
+                    ],
+                ],
+            ],
+            [
                 'label' => 'Nhân viên',
                 'icon' => 'bi bi-bookmarks-fill fs-2x',
                 'items' => [
@@ -71,27 +82,27 @@ abstract class Controller
                 'active_route_name' => ['admin.coupon.index'],
                 
             ],
-            [
-                'label' => 'Phân quyên',
-                'icon' => 'bi bi-bookmarks-fill fs-2x',
-                'items' => [
-                    [
-                        'label' => 'Danh sách vai trò',
-                        'route' => route('admin.role.index'),
-                        'active_route_name' => [],
-                    ],
-                    [
-                        'label' => 'Thêm mới vai trò',
-                        'route' => route('admin.role.index'),
-                        'active_route_name' => [],
-                    ],
-                    [
-                        'label' => 'Danh sách quyền',
-                        'route' => route('admin.permission.index'),
-                        'active_route_name' => [],
-                    ],
-                ],
-            ]
+            // [
+            //     'label' => 'Phân quyên',
+            //     'icon' => 'bi bi-bookmarks-fill fs-2x',
+            //     'items' => [
+            //         [
+            //             'label' => 'Danh sách vai trò',
+            //             'route' => route('admin.role.index'),
+            //             'active_route_name' => [],
+            //         ],
+            //         [
+            //             'label' => 'Thêm mới vai trò',
+            //             'route' => route('admin.role.index'),
+            //             'active_route_name' => [],
+            //         ],
+            //         [
+            //             'label' => 'Danh sách quyền',
+            //             'route' => route('admin.permission.index'),
+            //             'active_route_name' => [],
+            //         ],
+            //     ],
+            // ]
         ];
 
         View::share('menu', $menu);
