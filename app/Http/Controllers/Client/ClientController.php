@@ -100,19 +100,6 @@ class ClientController extends Controller
             limit: 16
         );
 
-        if ($productVieweds->count() < 16) {
-            $need = 16 - $productVieweds->count();
-
-            $append = Product::getProducts(
-                ids: $arrProductViewed,
-                exceptId: $product->id,
-                limit: $need,
-                buider: true
-            )->where('kind_id', $product->kind_id)->get();
-
-            $productVieweds->merge($append);
-        }
-        // dd($productVieweds->toArray());
         return view('client.product.detail', compact('product', 'productVieweds', 'reviews'));
     }
 

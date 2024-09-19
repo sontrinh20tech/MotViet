@@ -6,6 +6,7 @@ use App\Enums\CartStatus;
 use App\Enums\OrderStatus;
 use App\Enums\PaymentMethod;
 use App\Http\Controllers\Controller;
+use App\Jobs\SendMailOrderCreated;
 use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\Product;
@@ -56,6 +57,8 @@ class OrderController extends Controller
                     'price' => $item['price'],
                 ]);
             }
+
+            SendMailOrderCreated::dispatch($order->user_id, $order);
 
             DB::commit();
         } catch (\Exception $e) {

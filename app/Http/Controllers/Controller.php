@@ -47,7 +47,7 @@ abstract class Controller
                     [
                         'label' => 'Danh sách sản phẩm',
                         'route' => route('admin.product.index'),
-                        'active_route_name' => ['admin.product.index', 'admin.product.create'],
+                        'active_route_name' => ['admin.product.index', 'admin.product.create', 'admin.product.edit'],
                     ],
                 ],
             ],

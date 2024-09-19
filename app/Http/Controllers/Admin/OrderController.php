@@ -6,6 +6,8 @@ use App\Enums\OrderStatus;
 use App\Enums\PaymentMethod;
 use App\Exports\OrderExport;
 use App\Http\Controllers\Controller;
+use App\Jobs\SendMailOrderConfirmedJob;
+use App\Jobs\SendMailOrderShippingJob;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -73,6 +75,14 @@ class OrderController extends Controller
             $order->is_paid = 1;
         }
         $order->save();
+
+        if ($order->canShipping()) {
+            SendMailOrderConfirmedJob::dispatch($order->user_id, $order);
+        }
+
+        if ($order->canShipped()) {
+            SendMailOrderShippingJob::dispatch($order->user_id, $order);
+        }
 
         return redirect()->back()->with('success', 'Cập nhật trạng thái đơn hàng thành công');
     }
