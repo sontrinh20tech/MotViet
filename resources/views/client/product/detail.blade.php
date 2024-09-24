@@ -140,8 +140,8 @@
                                 aria-label="Decrement quantity">
                                 <i class="ci-minus"></i>
                             </button>
-                            <input name="quantity" type="number" class="form-control form-control-lg"
-                                min="1" value="1" readonly="">
+                            <input data-old_value="1" name="quantity" type="number" class="btn-quantity-detail form-control form-control-lg"
+                                min="1" value="1">
                             <button type="button" class="btn btn-icon btn-lg" data-increment=""
                                 aria-label="Increment quantity">
                                 <i class="ci-plus"></i>
@@ -445,6 +445,11 @@
                         return;
                     }
 
+                    if (quantityEl.val() == '') {
+                        toast('Số lượng không hợp lệ', 'warning');
+                        return;
+                    }
+
                     ajax(url, 'post', data, function(res) {
                         cartEl.find('.offcanvas-body').html(res.data.body);
                         cartEl.find('.offcanvas-footer').html(res.data.footer);
@@ -480,6 +485,17 @@
                             toast(res.data.message);
                         });
                     }, timer);
+                });
+
+                $(document).on('input', '.btn-quantity-detail', function () {
+                    const val = $(this).val();
+
+                    if (val == '') {
+                        $(this).val($(this)[0].dataset.old_value);
+                    }
+                    else {
+                        $(this)[0].dataset.old_value = val;
+                    }
                 });
             });
         </script>
