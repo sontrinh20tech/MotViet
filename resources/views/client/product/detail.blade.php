@@ -70,13 +70,18 @@
                     <!-- Reviews -->
                     <a class="d-none d-md-flex align-items-center gap-2 text-decoration-none mb-3" href="#reviews">
                         <div class="d-flex gap-1 fs-sm">
-                            <i class="ci-star-filled text-warning"></i>
-                            <i class="ci-star-filled text-warning"></i>
-                            <i class="ci-star-filled text-warning"></i>
-                            <i class="ci-star-filled text-warning"></i>
-                            <i class="ci-star text-body-tertiary opacity-75"></i>
+                            @php
+                                $avg = $product->reviews->avg('rating');
+                            @endphp
+                            @for ($i = 0; $i < 5; $i++)
+                                @if ($i < round($avg, 0, 2))
+                                    <i class="ci-star-filled text-warning"></i>
+                                @else
+                                    <i class="ci-star text-body-tertiary opacity-75"></i>
+                                @endif
+                            @endfor
                         </div>
-                        <span class="text-body-tertiary fs-sm">23 reviews</span>
+                        <span class="text-body-tertiary fs-sm">{{ $product->reviews->count() }} đánh giá</span>
                     </a>
 
                     <!-- Title -->
@@ -140,8 +145,9 @@
                                 aria-label="Decrement quantity">
                                 <i class="ci-minus"></i>
                             </button>
-                            <input data-old_value="1" name="quantity" type="number" class="btn-quantity-detail form-control form-control-lg"
-                                min="1" value="1">
+                            <input data-old_value="1" name="quantity" type="number"
+                                class="btn-quantity-detail form-control form-control-lg" min="1"
+                                value="1">
                             <button type="button" class="btn btn-icon btn-lg" data-increment=""
                                 aria-label="Increment quantity">
                                 <i class="ci-plus"></i>
@@ -174,14 +180,13 @@
                     <!-- Stock status -->
                     <div class="d-flex flex-wrap justify-content-between fs-sm mb-3">
                         <span class="fw-medium text-dark-emphasis me-2">🔥 Nhanh lên! Chương trình giảm giá đang đến
-                            gần
-                            end</span>
+                            gần</span>
                         <span><span class="fw-medium text-dark-emphasis">{{ $product->stock }}</span> sản phẩm trong
                             kho!</span>
                     </div>
                     <div class="progress" role="progressbar" aria-label="Left in stock" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100" style="height: 4px">
-                        <div class="progress-bar rounded-pill" style="width: 25%"></div>
+                        <div class="progress-bar rounded-pill" style="width: 100%"></div>
                     </div>
                 </div>
             </div>
@@ -487,13 +492,12 @@
                     }, timer);
                 });
 
-                $(document).on('input', '.btn-quantity-detail', function () {
+                $(document).on('input', '.btn-quantity-detail', function() {
                     const val = $(this).val();
 
                     if (val == '') {
                         $(this).val($(this)[0].dataset.old_value);
-                    }
-                    else {
+                    } else {
                         $(this)[0].dataset.old_value = val;
                     }
                 });
