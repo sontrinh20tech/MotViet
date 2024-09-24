@@ -24,7 +24,10 @@
                             <!-- Shipping address overview + Edit button -->
                             @if (!$shippingAddress)
                                 <div class="nav">
-                                    <div>Không có địa chỉ giao hàng mặc định nào</div>
+                                    <div>
+                                        <i class="ci-alert-triangle text-warning"></i>
+                                        Không có địa chỉ giao hàng mặc định nào
+                                    </div>
                                     <a class="nav-link text-decoration-underline p-0 ps-1"
                                         href="{{ route('client.home.addresses') }}">thêm ngay
                                     </a>
@@ -114,7 +117,7 @@
                                     <textarea name="note" class="form-control form-control-lg mb-4" rows="3" placeholder="Ghi chú"></textarea>
 
                                     <!-- Pay button visible on screens > 991px wide (lg breakpoint) -->
-                                    @if ($products->count() == 0)
+                                    @if ($products->count() == 0 || !$shippingAddress)
                                         <button type="button" disabled
                                             class="btn-process-checkout btn btn-lg btn-primary w-100 d-none d-lg-flex">Thanh
                                             toán
@@ -138,7 +141,7 @@
         </div>
     </section>
     <div class="fixed-bottom z-sticky w-100 py-2 px-3 bg-body border-top shadow d-lg-none">
-        @if ($products->count() == 0)
+        @if ($products->count() == 0 || !$shippingAddress)
             <button disabled type="button" class="btn-process-checkout btn btn-lg btn-primary w-100"
                 href="javascript:void(0)">Thanh toán</button>
         @else
