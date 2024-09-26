@@ -4,12 +4,17 @@ namespace App\Models;
 
 use App\Enums\OrderStatus;
 use App\Enums\PaymentMethod;
+use App\Enums\ThongKeType;
+use App\Traits\ModelScopeTrait;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Order extends Model
 {
-    use HasFactory, SearchableTrait;
+    use HasFactory, SearchableTrait, ModelScopeTrait;
 
     protected $fillable = [
         'user_id',
@@ -148,5 +153,28 @@ class Order extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public static function getEarningCount(string $type, bool $isPast = false)
+    {
+        $query =  self::query()
+            ->whereStatus(OrderStatus::SHIPPED->value)
+            ->filter($type, $isPast);
+
+        return $query->sum('total');
+    }
+
+    public static function getOrderByType(string $type, bool $isPast = false)
+    {
+        $query =  self::query()
+            ->where('status', '!=', OrderStatus::CANCEL->value)
+            ->filter($type, $isPast);
+
+        return $query->get();
+    }
+
+    public function isCancel()
+    {
+        return $this->status == OrderStatus::CANCEL->value;
     }
 }

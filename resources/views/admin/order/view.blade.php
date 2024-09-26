@@ -358,7 +358,7 @@
                                 <form action="{{ route('admin.order.update', $order->id) }}" method="post">
                                     @csrf
                                     @method('put')
-                                    @if ($order->canCancel())
+                                    @if (!$order->isCancel())
                                         <button type="submit" name="status" value="1"
                                             class="btn btn-danger">Hủy</button>
                                     @endif

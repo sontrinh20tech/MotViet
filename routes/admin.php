@@ -20,6 +20,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware('customAuth:admin')->group(function () {
         Route::controller(HomeController::class)->as('home.')->group(function () {
             Route::get('/', 'dashboard')->name('dashboard');
+            Route::get('/chart-order', 'getChartOrder')->name('getChartOrder');
+            Route::get('/chart-kind-sale', 'getChartKindSale')->name('getChartKindSale');
         });
 
         Route::controller(UserController::class)->prefix('user')->as('user.')->group(function () {

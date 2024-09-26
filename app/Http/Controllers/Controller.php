@@ -12,13 +12,8 @@ abstract class Controller
             [
                 'label' => 'Dashboard',
                 'icon' => 'bi bi-bookmarks-fill fs-2x',
-                'items' => [
-                    [
-                        'label' => 'Danh sách nhân viên',
-                        'route' => route('admin.user.index'),
-                        'active_route_name' => ['admin.user.index'],
-                    ],
-                ],
+                'route' => route('admin.home.dashboard'),
+                'active_route_name' => ['admin.home.dashboard'],
             ],
             [
                 'label' => 'Nhân viên',
@@ -63,7 +58,7 @@ abstract class Controller
                 ],
             ],
             [
-                'label' => 'Quản lý yêu cầu',
+                'label' => 'Quản lý đơn hàng',
                 'icon' => 'bi bi-bookmarks-fill fs-2x',
                 'route' => route('admin.order.index'),
                 'active_route_name' => ['admin.order.index', 'admin.order.show'],

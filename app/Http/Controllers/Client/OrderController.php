@@ -21,6 +21,11 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $cart = getCart(CartStatus::NotDisabled, 'final_cart');
+
+        if (count($cart) == 0) {
+            return back()->with('message', 'Không thể đặt hàng khi không có sản phẩm');
+        }
+
         $discount = getDiscount();
         $data = [
             'user_id' => Auth::id(),

@@ -11,7 +11,7 @@ use App\Http\Controllers\Client\UserController;
 use App\Http\Controllers\Client\WishlistController;
 use Illuminate\Support\Facades\Route;
 
-Route::name('client.')->group(function () {
+Route::name('client.')->middleware('visitor')->group(function () {
     Route::middleware('customAuth:web')->group(function () {
         Route::controller(ClientController::class)->as('home.')->group(function () {
             Route::get('/san-pham-yeu-thich', 'wishlist')->name('wishlist');
