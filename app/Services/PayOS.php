@@ -39,7 +39,10 @@ class PayOS
             "signature" => hash_hmac('sha256', $sig, env('PAYOS_CHECK_SUM_KEY')),
         ];
 
-        return $this->request->post('v2/payment-requests', $body)->json();
+        $result =  $this->request->post('v2/payment-requests', $body)->json();
+        \Illuminate\Support\Facades\Log::info(json_encode($result));
+
+        return $result;
     }
 
     public function getPaymentStatus(string|int $code)

@@ -88,8 +88,6 @@ class OrderController extends Controller
                 return redirect($res['data']['checkoutUrl']);
             }
 
-            Log::error($res['des']);
-
             return abort(500);
         }
     }
