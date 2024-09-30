@@ -198,3 +198,8 @@ function getWeeksInMonth($year, $month)
 
     return $weeks;
 }
+
+function getBackgroundImage()
+{
+    return asset('images/user-background.webp');
+}

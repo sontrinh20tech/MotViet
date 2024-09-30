@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Actions\Admin\User\GetListEmployeeAction;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\User\UpdateUserRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -40,4 +41,11 @@ class UserController extends Controller
     }
 
     public function create() {}
+
+    public function update(UpdateUserRequest $request, User $user)
+    {
+        $user->update($request->validated());
+
+        return back()->with('success', 'Cập nhật thông tin thành công');
+    }
 }

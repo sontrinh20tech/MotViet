@@ -120,6 +120,11 @@ class HomeController extends Controller
         return response()->json($result->merge($kinds)->toArray());
     }
 
+    public function profile(User $user)
+    {
+        return view('admin.home.profile', compact('user'));
+    }
+
     private function getDashboardFilters(string $defaultName = ThongKeType::MONTH->value): array
     {
         $filters =  [
@@ -223,8 +228,6 @@ class HomeController extends Controller
     private function mapDataWithType($data, string $type, string $field)
     {
         $result = [];
-        $cb = Carbon::parse('2024-09-29');
-        // dd($cb->month);
 
         switch ($type) {
             case ThongKeType::DAY->value:
