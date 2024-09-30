@@ -52,7 +52,7 @@
             </div>
 
             <div class="app-navbar flex-shrink-0">
-                <div class="app-navbar-item align-items-stretch ms-1 ms-lg-3">
+                <div class="d-none app-navbar-item align-items-stretch ms-1 ms-lg-3">
                     <div id="kt_header_search" class="header-search d-flex align-items-stretch"
                         data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter"
                         data-kt-search-layout="menu" data-kt-menu-trigger="auto" data-kt-menu-overflow="false"

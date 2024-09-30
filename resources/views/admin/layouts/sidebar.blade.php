@@ -4,7 +4,7 @@
 
     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
         <a href="{{ route('admin.home.dashboard') }}">
-            <img alt="Logo" src="{{ getLogo() }}" class="h-30px app-sidebar-logo-default">
+            <img alt="Logo" src="{{ getLogo() }}" class="h-60px app-sidebar-logo-default">
         </a>
         <div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-icon btn-sm h-30px w-30px rotate "
             data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body"

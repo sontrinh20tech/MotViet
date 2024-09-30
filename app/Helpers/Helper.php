@@ -5,7 +5,7 @@ use Carbon\Carbon;
 
 function getLogo(): string
 {
-    return asset('images/falcon.png');
+    return asset('images/logo.png');
 }
 
 function getUserAvatar(): string
