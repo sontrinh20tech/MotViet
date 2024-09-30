@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Actions\Admin\User\GetListEmployeeAction;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\User\UpdatePasswordRequest;
 use App\Http\Requests\Admin\User\UpdateUserRequest;
+use App\Jobs\SendMailForgotPasswordJon;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -47,5 +50,21 @@ class UserController extends Controller
         $user->update($request->validated());
 
         return back()->with('success', 'Cập nhật thông tin thành công');
+    }
+
+    public function updatePassword(UpdatePasswordRequest $request, User $user)
+    {
+        $user->update([
+            'password' => Hash::make($request->password),
+        ]);
+
+        return back()->with('success', 'Cập nhật mật khẩu thành công');
+    }
+
+    public function resetPassword(Request $request)
+    {
+        SendMailForgotPasswordJon::dispatch($request->email);
+
+        return back()->with('success', 'Gửi mail reset mật khẩu thành công');
     }
 }

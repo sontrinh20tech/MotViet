@@ -28,6 +28,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::controller(UserController::class)->prefix('user')->as('user.')->group(function () {
             Route::get('/', 'index')->name('index');
             Route::put('/update/{user}', 'update')->name('update');
+            Route::put('/update-password/{user}', 'updatePassword')->name('updatePassword');
+            Route::post('/reset-password', 'resetPassword')->name('resetPassword');
         });
 
         Route::controller(RoleController::class)->prefix('role')->as('role.')->group(function () {
