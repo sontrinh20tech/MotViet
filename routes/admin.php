@@ -22,11 +22,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('/', 'dashboard')->name('dashboard');
             Route::get('/chart-order', 'getChartOrder')->name('getChartOrder');
             Route::get('/chart-kind-sale', 'getChartKindSale')->name('getChartKindSale');
+            Route::get('/profile/{user}', 'profile')->name('profile');
         });
 
         Route::controller(UserController::class)->prefix('user')->as('user.')->group(function () {
             Route::get('/', 'index')->name('index');
-            Route::get('/them', 'create')->name('create');
+            Route::put('/update/{user}', 'update')->name('update');
         });
 
         Route::controller(RoleController::class)->prefix('role')->as('role.')->group(function () {
