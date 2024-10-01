@@ -179,7 +179,7 @@
                                     <div class="col-lg-8 fv-row fv-plugins-icon-container">
                                         <input type="date" name="date_of_birth"
                                             class="form-control form-control-lg @error('date_of_birth') is-invalid @enderror"
-                                            value="Keenthemes">
+                                            value="{{ old('date_of_birth', $user->date_of_birth) }}">
                                         @error('date_of_birth')
                                             <div
                                                 class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
