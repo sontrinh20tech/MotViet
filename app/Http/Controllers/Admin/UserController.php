@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Actions\Admin\User\GetListEmployeeAction;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\User\StoreUserRequest;
 use App\Http\Requests\Admin\User\UpdatePasswordRequest;
 use App\Http\Requests\Admin\User\UpdateUserRequest;
 use App\Jobs\SendMailForgotPasswordJon;
@@ -43,7 +44,14 @@ class UserController extends Controller
         return view('admin.users.index', compact('users', 'filters'));
     }
 
-    public function create() {}
+    public function store(StoreUserRequest $request)
+    {
+        User::create($request->validated());
+
+        return response()->json([
+            'message' => 'Thêm tài khoản thành công'
+        ]);
+    }
 
     public function update(UpdateUserRequest $request, User $user)
     {
@@ -72,7 +80,9 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return back()->with('success', 'Xóa tài khoản thành công');
+        return response()->json([
+            'message' => 'Xóa tài khoản thành công.'
+        ]);
     }
 
     public function updateActive(Request $request, User $user)

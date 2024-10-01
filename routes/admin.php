@@ -32,6 +32,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::post('/reset-password', 'resetPassword')->name('resetPassword');
             Route::delete('/destroy/{user}', 'destroy')->name('destroy');
             Route::post('/update-status/{user}', 'updateActive')->name('updateActive');
+            Route::post('/store', 'store')->name('store');
         });
 
         Route::controller(RoleController::class)->prefix('role')->as('role.')->group(function () {

@@ -58,6 +58,10 @@
                             <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base"
                                 data-select2-id="select2-data-161-pji5">
                                 <!--begin::Filter-->
+                                <button type="button" class="btn btn-primary me-3" data-bs-toggle="modal"
+                                    data-bs-target="#createEmployeeModal">
+                                    <i class="ki-duotone ki-plus fs-2"></i> Thêm nhân viên
+                                </button>
 
                                 <x-admin.filter :data="$filters" id="filter_user" />
                                 <!--end::Menu 1--> <!--end::Filter-->
@@ -87,4 +91,5 @@
             </div>
         </div>
     </div>
+    @include('admin.users.modals.create')
 </x-admin.layout.home>

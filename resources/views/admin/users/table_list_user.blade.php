@@ -55,11 +55,11 @@
                                 <input type="hidden" name="status" value="1">
                             </form>
                         @endif
-                        <a class="btn-delete-product btn btn-default btn-sm"
+                        <a class="btn btn-default btn-sm"
                             href="{{ route('admin.home.profile', $user->id) }}">
                             <i class="bi bi-pencil-square text-warning"></i>
                         </a>
-                        <a class="btn-delete-product btn btn-default btn-sm"
+                        <a class="btn-delete-user btn btn-default btn-sm"
                             href="{{ route('admin.user.destroy', $user->id) }}">
                             <i class="bi bi-trash text-danger"></i>
                         </a>
@@ -78,11 +78,24 @@
             e.preventDefault();
 
             const form = $(this).parent().find('form');
-            console.log(form);
             showConfirm("Bạn có chắc chắn muốn đổi trạng thái ?", function () {
                 const formData = new FormData(form[0]);
 
                 ajax(form.attr('action'), 'post', formData, function (res) {
+                    toast(res.data.message);
+                    dispatchReloadEvent();
+                });
+            });
+        });
+
+        $(document).on('click', '.btn-delete-user', function(e) {
+            e.preventDefault();
+
+            const url = $(this).attr('href');
+            console.log(url);
+            
+            showConfirm("Bạn có chắc chắn muốn xóa tài khoản ?", function () {
+                ajax(url, 'delete', {}, function (res) {
                     toast(res.data.message);
                     dispatchReloadEvent();
                 });
