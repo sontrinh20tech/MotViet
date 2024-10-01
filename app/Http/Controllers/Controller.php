@@ -11,16 +11,21 @@ abstract class Controller
         $menu = [
             [
                 'label' => 'Dashboard',
-                'icon' => 'bi bi-bookmarks-fill fs-2x',
+                'icon' => 'bi bi-speedometer fs-2x',
                 'route' => route('admin.home.dashboard'),
                 'active_route_name' => ['admin.home.dashboard'],
             ],
             [
-                'label' => 'Nhân viên',
-                'icon' => 'bi bi-bookmarks-fill fs-2x',
+                'label' => 'Tài khoản',
+                'icon' => 'bi bi-people-fill fs-2x',
                 'items' => [
                     [
                         'label' => 'Danh sách nhân viên',
+                        'route' => route('admin.user.index'),
+                        'active_route_name' => ['admin.user.index'],
+                    ],
+                    [
+                        'label' => 'Danh sách khách hàng',
                         'route' => route('admin.user.index'),
                         'active_route_name' => ['admin.user.index'],
                     ],
@@ -28,7 +33,7 @@ abstract class Controller
             ],
             [
                 'label' => 'Sản phẩm',
-                'icon' => 'bi bi-bookmarks-fill fs-2x',
+                'icon' => 'bi bi-box2 fs-2x',
                 'items' => [
                     [
                         'label' => 'Danh sách phân loại',
@@ -59,20 +64,20 @@ abstract class Controller
             ],
             [
                 'label' => 'Quản lý đơn hàng',
-                'icon' => 'bi bi-bookmarks-fill fs-2x',
+                'icon' => 'bi bi-basket3-fill fs-2x',
                 'route' => route('admin.order.index'),
                 'active_route_name' => ['admin.order.index', 'admin.order.show'],
             ],
             [
                 'label' => 'Quản lý Banner',
-                'icon' => 'bi bi-bookmarks-fill fs-2x',
+                'icon' => 'bi bi-card-image fs-2x',
                 'route' => route('admin.banner.index'),
                 'active_route_name' => ['admin.banner.index'],
                 
             ],
             [
                 'label' => 'Quản lý mã giảm giá',
-                'icon' => 'bi bi-bookmarks-fill fs-2x',
+                'icon' => 'bi bi-cash fs-2x',
                 'route' => route('admin.coupon.index'),
                 'active_route_name' => ['admin.coupon.index'],
                 

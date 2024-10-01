@@ -22,14 +22,14 @@ class UserController extends Controller
             return response()->view('admin.users.table_list_user', compact('users'));
         }
 
-        // $roles = Role::query()->orderBy('level')->pluck('name', 'id');
+        $roles = Role::query()->orderBy('level')->pluck('name', 'id');
 
         $filters = [
-            // [
-            //     'name' => 'role',
-            //     'label' => 'Vai trò',
-            //     'data' => $roles->toArray(),
-            // ],
+            [
+                'name' => 'role',
+                'label' => 'Vai trò',
+                'data' => $roles->toArray(),
+            ],
             [
                 'name' => 'is_active',
                 'label' => 'Trạng thái',
@@ -66,5 +66,23 @@ class UserController extends Controller
         SendMailForgotPasswordJon::dispatch($request->email);
 
         return back()->with('success', 'Gửi mail reset mật khẩu thành công');
+    }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return back()->with('success', 'Xóa tài khoản thành công');
+    }
+
+    public function updateActive(Request $request, User $user)
+    {
+        $user->update([
+            'is_active' => $request->status,
+        ]);
+
+        return response()->json([
+            'message' => 'Cập nhật trạng thái thành công.'
+        ]);
     }
 }

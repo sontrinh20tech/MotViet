@@ -30,6 +30,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::put('/update/{user}', 'update')->name('update');
             Route::put('/update-password/{user}', 'updatePassword')->name('updatePassword');
             Route::post('/reset-password', 'resetPassword')->name('resetPassword');
+            Route::delete('/destroy/{user}', 'destroy')->name('destroy');
+            Route::post('/update-status/{user}', 'updateActive')->name('updateActive');
         });
 
         Route::controller(RoleController::class)->prefix('role')->as('role.')->group(function () {
