@@ -174,47 +174,50 @@
                                 <!--begin::Scroll-->
                                 <div class="hover-scroll-overlay-y pe-6 me-n6" style="height: 415px">
                                     @foreach ($productDeliverys as $item)
-                                        <div class="border border-dashed border-gray-300 rounded px-7 py-3 mb-6">
-                                            <!--begin::Info-->
-                                            <div class="d-flex flex-stack mb-3">
-                                                <!--begin::Wrapper-->
-                                                <div class="me-3">
-                                                    <!--begin::Icon-->
-                                                    <img src="{{ $item->orderDetails->first()->product->getThumbnail() }}"
-                                                        class="w-50px ms-n1 me-1" alt="">
-                                                    <!--end::Icon-->
+                                        @if ($item->orderDetails?->first())
+                                            <div class="border border-dashed border-gray-300 rounded px-7 py-3 mb-6">
+                                                <!--begin::Info-->
+                                                <div class="d-flex flex-stack mb-3">
+                                                    <!--begin::Wrapper-->
+                                                    <div class="me-3">
+                                                        <!--begin::Icon-->
+                                                        <img src="{{ $item->orderDetails?->first()?->product->getThumbnail() }}"
+                                                            class="w-50px ms-n1 me-1" alt="">
+                                                        <!--end::Icon-->
 
-                                                    <!--begin::Title-->
-                                                    <a href="{{ route('admin.product.edit', $item->orderDetails->first()->product->id) }}"
-                                                        class="text-gray-800 text-hover-primary fw-bold">
-                                                        {{ $item->orderDetails->first()->product->name }}
-                                                    </a>
-                                                    <!--end::Title-->
+                                                        <!--begin::Title-->
+                                                        <a href="{{ route('admin.product.edit', $item->orderDetails?->first()?->product->id) }}"
+                                                            class="text-gray-800 text-hover-primary fw-bold">
+                                                            {{ $item->orderDetails?->first()?->product->name }}
+                                                        </a>
+                                                        <!--end::Title-->
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!--end::Info-->
+                                                <!--end::Info-->
 
-                                            <!--begin::Customer-->
-                                            <div class="d-flex flex-stack">
-                                                <!--begin::Name-->
-                                                <span class="text-gray-500 fw-bold">Đến:
-                                                    <a href="{{ route('admin.order.show', $item->id) }}"
-                                                        class="text-gray-800 text-hover-primary fw-bold">
-                                                        <div>{{ $item->fullname }} - {{ $item->phone_number }}</div>
-                                                        <div>{{ $item->address }}</div>
-                                                    </a>
-                                                </span>
-                                                <!--end::Name-->
+                                                <!--begin::Customer-->
+                                                <div class="d-flex flex-stack">
+                                                    <!--begin::Name-->
+                                                    <span class="text-gray-500 fw-bold">Đến:
+                                                        <a href="{{ route('admin.order.show', $item->id) }}"
+                                                            class="text-gray-800 text-hover-primary fw-bold">
+                                                            <div>{{ $item->fullname }} - {{ $item->phone_number }}
+                                                            </div>
+                                                            <div>{{ $item->address }}</div>
+                                                        </a>
+                                                    </span>
+                                                    <!--end::Name-->
 
-                                                <!--begin::Label-->
-                                                <span class="badge text-white"
-                                                    style="background: {{ $item->getStatusColor() }}">
-                                                    {{ $item->getStatusLabel() }}
-                                                </span>
-                                                <!--end::Label-->
+                                                    <!--begin::Label-->
+                                                    <span class="badge text-white"
+                                                        style="background: {{ $item->getStatusColor() }}">
+                                                        {{ $item->getStatusLabel() }}
+                                                    </span>
+                                                    <!--end::Label-->
+                                                </div>
+                                                <!--end::Customer-->
                                             </div>
-                                            <!--end::Customer-->
-                                        </div>
+                                        @endif
                                     @endforeach
                                 </div>
                                 <!--end::Scroll-->
