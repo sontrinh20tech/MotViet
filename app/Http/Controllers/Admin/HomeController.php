@@ -16,6 +16,9 @@ class HomeController extends Controller
 {
     public function dashboard()
     {
+        if (!auth('admin')->user()->can('dashboard')) {
+            return to_route('admin.product.index');
+        }
         $type = request('filter', ThongKeType::MONTH->value);
         $filters = $this->getDashboardFilters($type);
         $activeFilter = $this->getFilterActive($filters);
@@ -122,6 +125,9 @@ class HomeController extends Controller
 
     public function profile(User $user)
     {
+        if (!auth('admin')->user()->can('update-profile', [$user])) {
+            abort(404);
+        }
         return view('admin.home.profile', compact('user'));
     }
 

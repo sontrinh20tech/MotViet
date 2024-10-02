@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Actions\Admin\User\GetListCustomerAction;
 use App\Actions\Admin\User\GetListEmployeeAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\User\StoreUserRequest;
@@ -42,6 +43,28 @@ class UserController extends Controller
         ];
 
         return view('admin.users.index', compact('users', 'filters'));
+    }
+
+    public function customer()
+    {
+        $users = app()->make(GetListCustomerAction::class)->handle();
+
+        if (request()->ajax()) {
+            return response()->view('admin.users.table_list_customer', compact('users'));
+        }
+
+        $filters = [
+            [
+                'name' => 'is_active',
+                'label' => 'Trạng thái',
+                'data' => [
+                    User::INACTIVE => 'Không hoạt động',
+                    User::ACTIVE => 'Đang hoạt động',
+                ],
+            ]
+        ];
+
+        return view('admin.users.customer', compact('users', 'filters'));
     }
 
     public function store(StoreUserRequest $request)

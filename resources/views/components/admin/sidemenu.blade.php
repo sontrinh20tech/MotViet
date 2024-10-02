@@ -34,6 +34,7 @@
         data-kt-menu-expand="false">
 
         @foreach ($items as $level1)
+            @continue(!($level1['enabled'] ?? false))
             @php
                 $href = $level1['route'] ?? 'javascript:void(0)';
                 $hasChild = !empty($level1['items']);
@@ -50,6 +51,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion">
                         @foreach ($level1['items'] as $level2)
+                            @continue(!($level2['enabled'] ?? false))
                             @php
                                 $href2 = $level2['route'] ?? 'javascript:void(0)';
                                 $active = isActiveRoute($level2['active_route_name'] ?? []) ? 'active' : '';

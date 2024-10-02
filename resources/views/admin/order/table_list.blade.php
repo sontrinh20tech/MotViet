@@ -47,11 +47,13 @@
                             <i class="bi bi-eye text-info"></i>
                             <span class="text-info">Xem</span>
                         </a>
-                        <a class="btn-destroy-order btn btn-default btn-sm"
-                            href="{{ route('admin.order.destroy', $item->id) }}">
-                            <i class="bi bi-trash text-danger"></i>
-                            <span class="text-danger">Xóa</span>
-                        </a>
+                        @can('delete-order', auth('admin')->user())
+                            <a class="btn-destroy-order btn btn-default btn-sm"
+                                href="{{ route('admin.order.destroy', $item->id) }}">
+                                <i class="bi bi-trash text-danger"></i>
+                                <span class="text-danger">Xóa</span>
+                            </a>
+                        @endcan
                     </td>
                 </tr>
             @endforeach

@@ -26,7 +26,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         });
 
         Route::controller(UserController::class)->prefix('user')->as('user.')->group(function () {
-            Route::get('/', 'index')->name('index');
+            Route::get('/nhan-vien', 'index')->name('index');
+            Route::get('/khach-hang', 'customer')->name('customer');
             Route::put('/update/{user}', 'update')->name('update');
             Route::put('/update-password/{user}', 'updatePassword')->name('updatePassword');
             Route::post('/reset-password', 'resetPassword')->name('resetPassword');
