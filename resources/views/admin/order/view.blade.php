@@ -57,7 +57,7 @@
                                     <!--begin::Filter-->
 
                                     <!--begin::Export-->
-                                    <a href="{{ route('admin.order.export', $order->id) }}" class="btn btn-light-primary me-3">
+                                    <a target="_blank" href="{{ route('admin.order.export', $order->id) }}" class="btn btn-light-primary me-3">
                                         <i class="ki-duotone ki-printer fs-2"><span class="path1"></span><span
                                                 class="path2"></span></i>
                                         In hóa đơn

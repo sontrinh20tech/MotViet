@@ -43,7 +43,7 @@
                             @php
                                 $avg = $item->reviews->avg('rating');
                             @endphp
-                            @for ($i = 0; $i < 5; $i++)
+                            @for ($i = 1; $i <= 5; $i++)
                                 <div class="rating-label @if ($i <= $avg) checked @endif">
                                     <i class="ki-duotone ki-star fs-6"></i>
                                 </div>
