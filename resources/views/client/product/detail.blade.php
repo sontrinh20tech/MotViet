@@ -383,7 +383,7 @@
     <!-- Viewed products (carousel) -->
     <section class="container pt-5 mt-2 mt-sm-3 mt-lg-4 mt-xl-5">
         <div class="d-flex align-items-center justify-content-between pt-1 pt-lg-0 pb-3 mb-2 mb-sm-3">
-            <h2 class="mb-0 me-3">Sản phẩm đã xem</h2>
+            <h2 class="mb-0 me-3">Sản phẩm liên quan</h2>
 
             <!-- Slider prev/next buttons -->
             <div class="d-flex gap-2">

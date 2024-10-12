@@ -79,6 +79,7 @@ class ClientController extends Controller
 
     public function productDetail(Product $product)
     {
+        $maximumRelatedProduct = 10;
         $product->load(Product::getProductRelations());
         $reviews = Review::query()
             ->with([
@@ -94,11 +95,17 @@ class ClientController extends Controller
             Session::put('productViewed', $arrProductViewed);
         }
 
-        $productVieweds = Product::getProducts(
-            ids: $arrProductViewed,
-            exceptId: $product->id,
-            limit: 16
-        );
+        $productVieweds = Product::query()
+            ->where(function ($query) use ($product) {
+                $query->orWhereHas('kind', function ($query) use ($product) {
+                    $query->where('id', $product->kind_id);
+                });
+            })
+            ->where('id', '!=', $product->id)
+            ->active()
+            ->with(Product::getProductRelations())
+            ->limit($maximumRelatedProduct)
+            ->get();
 
         return view('client.product.detail', compact('product', 'productVieweds', 'reviews'));
     }
