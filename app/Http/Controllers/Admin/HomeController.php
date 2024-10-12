@@ -107,20 +107,29 @@ class HomeController extends Controller
                 'id' => $item->first()->id,
             ];
         });
+        $result = $result->sortBy('value', SORT_REGULAR, true);
+        $maxCount = 10;
 
-        $kinds = Kind::query()
-            ->whereNotIn('id', $result->pluck('id')->toArray())
-            ->get();
+        if ($result->count() > $maxCount) {
+            $result = $result->slice(0, $maxCount);
+        } else {
+            $kinds = Kind::query()
+                ->whereNotIn('id', $result->pluck('id')->toArray())
+                ->limit($maxCount - $result->count())
+                ->get();
 
-        $kinds = $kinds->map(function ($item) {
-            return [
-                'value' => 0,
-                'name' => $item->name,
-                'id' => $item->id,
-            ];
-        });
-        
-        return response()->json($result->merge($kinds)->toArray());
+            $kinds = $kinds->map(function ($item) {
+                return [
+                    'value' => 0,
+                    'name' => $item->name,
+                    'id' => $item->id,
+                ];
+            });
+
+            $result = $result->merge($kinds);
+        }
+
+        return response()->json($result->toArray());
     }
 
     public function profile(User $user)
@@ -133,7 +142,7 @@ class HomeController extends Controller
 
     private function getDashboardFilters(string $defaultName = ThongKeType::MONTH->value): array
     {
-        $filters =  [
+        $filters = [
             [
                 'label' => 'Theo ngày',
                 'name' => ThongKeType::DAY->value,

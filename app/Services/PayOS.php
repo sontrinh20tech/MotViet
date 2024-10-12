@@ -21,13 +21,14 @@ class PayOS
     }
     public function createOrder(Order $order)
     {
+        $orderCode = $order->id + time();
         $cancelUrl = route('client.home.index');
         $des = $order->code;
         $returnUrl = route('client.home.orderSuccess');
         $expiredAt = time() + 86400;
-        $sig = "amount=" . $order->total . "&cancelUrl=" . $cancelUrl . "&description=" . $des . "&orderCode=" . $order->id . "&returnUrl=" . $returnUrl;
+        $sig = "amount=" . $order->total . "&cancelUrl=" . $cancelUrl . "&description=" . $des . "&orderCode=" . $orderCode . "&returnUrl=" . $returnUrl;
         $body = [
-            'orderCode' => $order->id,
+            'orderCode' => $orderCode,
             'amount' => $order->total,
             'description' => $des,
             "buyerName" => $order->fullname,
