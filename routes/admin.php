@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\ImportController;
 use App\Http\Controllers\Admin\KindController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PermissionController;
@@ -98,4 +99,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::post('/dang-nhap', 'handleLogin')->name('handleLogin');
         });
     });
+
+    Route::get('import', [ImportController::class, 'import']);
 });
