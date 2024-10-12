@@ -7,6 +7,7 @@ use App\Enums\ThongKeType;
 use App\Http\Controllers\Controller;
 use App\Models\Kind;
 use App\Models\Order;
+use App\Models\Product;
 use App\Models\User;
 use App\Models\Visitor;
 use Carbon\Carbon;
@@ -60,6 +61,25 @@ class HomeController extends Controller
             ->where('status', '>', OrderStatus::PROCESSING->value)
             ->get();
 
+        $bestSellingProducts = Product::withSum('orderDetails', 'quantity')
+            ->orderBy('order_details_sum_quantity', 'desc')
+            ->limit(5)
+            ->with([
+                'images',
+                'kind',
+            ])
+            ->get();
+
+        $topRatedProducts = Product::withAvg('reviews', 'rating')
+            ->withCount('reviews')
+            ->orderBy('reviews_avg_rating', 'desc')
+            ->limit(5)
+            ->with([
+                'images',
+                'kind',
+            ])
+            ->get();
+
         return view('admin.home.dashboard', compact(
             'earningCount',
             'orderCount',
@@ -70,6 +90,8 @@ class HomeController extends Controller
             'type',
             'recentOrders',
             'productDeliverys',
+            'bestSellingProducts',
+            'topRatedProducts',
         ));
     }
 

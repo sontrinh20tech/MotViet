@@ -152,6 +152,156 @@
                 </div>
                 <!--end::Row-->
 
+                <div class="row gy-5 g-xl-10 mb-xl-10">
+                    <!--begin::Col-->
+                    <div class="col-xl-6">
+
+                        <!--begin::List widget 5-->
+                        <div class="card card-flush h-xl-100">
+                            <!--begin::Header-->
+                            <div class="card-header">
+                                <!--begin::Title-->
+                                <h3 class="card-title align-items-start flex-column">
+                                    <span class="fw-bold text-gray-900">Sản phẩm yêu thích</span>
+                                </h3>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Header-->
+
+                            <!--begin::Body-->
+                            <div class="card-body pt-2">
+                                <div class="table-responsive">
+                                    <!--begin::Table-->
+                                    <table class="table table-row-dashed align-middle gs-0 gy-4 my-0">
+                                        <!--begin::Table head-->
+                                        <thead>
+                                            <tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
+                                                <th class="text-nowrap ">SẢN PHẨM</th>
+                                                <th class="text-nowrap min-w-100px">ĐÁNH GIÁ</th>
+                                            </tr>
+                                        </thead>
+                                        <!--end::Table head-->
+
+                                        <!--begin::Table body-->
+                                        <tbody>
+                                            @foreach ($topRatedProducts as $item)
+                                                <tr>
+                                                    <td>
+                                                        <div class="me-3 d-flex">
+                                                            <img src="{{ $item->getThumbnail() }}"
+                                                                class="w-50px ms-n1 me-2" alt="">
+                                                            <a href="{{ route('admin.product.edit', $item->id) }}"
+                                                                class="text-gray-800 text-hover-primary fw-bold">
+                                                                {{ $item->name }}
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="d-flex">
+                                                            <div class="rating justify-content-end">
+                                                                @for ($i = 1; $i <= 5; $i++)
+                                                                    <div
+                                                                        class="rating-label @if ($i <= $item->reviews_avg_rating) checked @endif">
+                                                                        <i class="ki-duotone ki-star fs-6"></i>
+                                                                    </div>
+                                                                @endfor
+                                                            </div>
+
+                                                            <div class="ms-2">{{ $item->reviews_count }} đánh giá</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                        <!--end::Table body-->
+                                    </table>
+                                    <!--end::Table-->
+                                </div>
+                            </div>
+                            <!--end::Body-->
+                        </div>
+                        <!--end::List widget 5-->
+                    </div>
+                    <!--end::Col-->
+
+                    <!--begin::Col-->
+                    <div class="col-xl-6">
+
+                        <div class="card h-md-100">
+                            <!--begin::Header-->
+                            <div class="card-header align-items-center border-0">
+                                <!--begin::Title-->
+                                <h3 class="fw-bold text-gray-900 m-0">Sản phẩm bán chạy</h3>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Header-->
+
+                            <!--begin::Body-->
+                            <div class="card-body pt-2">
+                                <!--begin::Tab Content-->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="kt_stats_widget_2_tab_1" role="tabpanel">
+                                        <!--begin::Table container-->
+                                        <div class="table-responsive">
+                                            <!--begin::Table-->
+                                            <table class="table table-row-dashed align-middle gs-0 gy-4 my-0">
+                                                <!--begin::Table head-->
+                                                <thead>
+                                                    <tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
+                                                        <th class="text-nowrap ">SẢN PHẨM</th>
+                                                        <th class="text-nowrap text-end min-w-100px">SỐ LƯỢNG MUA</th>
+                                                        <th class="text-nowrap pe-0 text-center min-w-100px">THỂ LOẠI
+                                                        </th>
+                                                        <th class="text-nowrap pe-0 text-end min-w-100px">SỐ LƯỢNG CÒN
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <!--end::Table head-->
+
+                                                <!--begin::Table body-->
+                                                <tbody>
+                                                    @foreach ($bestSellingProducts as $item)
+                                                        <tr>
+                                                            <td>
+                                                                <div class="me-3 d-flex">
+                                                                    <img src="{{ $item->getThumbnail() }}"
+                                                                        class="w-50px ms-n1 me-2" alt="">
+                                                                    <a href="{{ route('admin.product.edit', $item->id) }}"
+                                                                        class="text-gray-800 text-hover-primary fw-bold">
+                                                                        {{ $item->name }}
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                {{ $item->order_details_sum_quantity }}
+                                                            </td>
+
+                                                            <td class="text-center">
+                                                                {{ $item->kind->name }}
+                                                            </td>
+
+                                                            <td class="text-center">
+                                                                {{ $item->stock }}
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                </tbody>
+                                                <!--end::Table body-->
+                                            </table>
+                                            <!--end::Table-->
+                                        </div>
+                                        <!--end::Table container-->
+                                    </div>
+                                    <!--end::Tap pane-->
+                                </div>
+                                <!--end::Tab Content-->
+                            </div>
+                            <!--end: Card Body-->
+                        </div>
+                    </div>
+                    <!--end::Col-->
+                </div>
+
                 <!--begin::Row-->
                 <div class="row gy-5 g-xl-10">
                     <!--begin::Col-->
@@ -163,7 +313,8 @@
                             <div class="card-header pt-7">
                                 <!--begin::Title-->
                                 <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label fw-bold text-gray-900">Sản phẩm đã và đang vận chuyển</span>
+                                    <span class="card-label fw-bold text-gray-900">Sản phẩm đã và đang vận
+                                        chuyển</span>
                                 </h3>
                                 <!--end::Title-->
                             </div>
@@ -244,7 +395,8 @@
                             <div class="card-body pt-2">
                                 <!--begin::Tab Content-->
                                 <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="kt_stats_widget_2_tab_1" role="tabpanel">
+                                    <div class="tab-pane fade show active" id="kt_stats_widget_2_tab_1"
+                                        role="tabpanel">
                                         <!--begin::Table container-->
                                         <div class="table-responsive">
                                             <!--begin::Table-->

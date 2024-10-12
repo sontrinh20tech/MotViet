@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Oct 12, 2024 at 04:15 PM
+-- Generation Time: Oct 12, 2024 at 06:22 PM
 -- Server version: 9.0.1
 -- PHP Version: 8.2.24
 
@@ -222,7 +222,11 @@ INSERT INTO `jobs` (`id`, `queue`, `payload`, `attempts`, `reserved_at`, `availa
 (24, 'default', '{\"uuid\":\"291d05a5-9492-46b0-b86a-cbc4b7ffbdc8\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderShippingJob\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderShippingJob\",\"command\":\"O:33:\\\"App\\\\Jobs\\\\SendMailOrderShippingJob\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:38;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728739187, 1728739187),
 (25, 'default', '{\"uuid\":\"ecf2b14b-7846-4874-a306-dcd6acb113f8\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"command\":\"O:29:\\\"App\\\\Jobs\\\\SendMailOrderCreated\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:39;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728739216, 1728739216),
 (26, 'default', '{\"uuid\":\"ecd12a65-1497-46d4-ad97-e65bdb763110\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderConfirmedJob\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderConfirmedJob\",\"command\":\"O:34:\\\"App\\\\Jobs\\\\SendMailOrderConfirmedJob\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:39;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728739231, 1728739231),
-(27, 'default', '{\"uuid\":\"3e068606-588d-47b1-9057-b62272b6ff1f\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderShippingJob\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderShippingJob\",\"command\":\"O:33:\\\"App\\\\Jobs\\\\SendMailOrderShippingJob\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:39;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728739239, 1728739239);
+(27, 'default', '{\"uuid\":\"3e068606-588d-47b1-9057-b62272b6ff1f\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderShippingJob\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderShippingJob\",\"command\":\"O:33:\\\"App\\\\Jobs\\\\SendMailOrderShippingJob\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:39;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728739239, 1728739239),
+(28, 'default', '{\"uuid\":\"4681d905-2bc7-4062-bbf9-969c068a2048\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"command\":\"O:29:\\\"App\\\\Jobs\\\\SendMailOrderCreated\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:40;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728752725, 1728752725),
+(29, 'default', '{\"uuid\":\"7a6256c8-3dd8-4aa5-becd-0fd87f8878fe\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderConfirmedJob\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderConfirmedJob\",\"command\":\"O:34:\\\"App\\\\Jobs\\\\SendMailOrderConfirmedJob\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:40;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728752738, 1728752738),
+(30, 'default', '{\"uuid\":\"9c8474f5-0e4c-4be4-bf54-36cb9bffe4f0\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderShippingJob\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderShippingJob\",\"command\":\"O:33:\\\"App\\\\Jobs\\\\SendMailOrderShippingJob\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:40;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728752801, 1728752801),
+(31, 'default', '{\"uuid\":\"0074e032-fbf1-46f4-8ac4-7c6b4ebfe188\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"command\":\"O:29:\\\"App\\\\Jobs\\\\SendMailOrderCreated\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:41;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728753300, 1728753300);
 
 -- --------------------------------------------------------
 
@@ -349,7 +353,9 @@ INSERT INTO `orders` (`id`, `user_id`, `code`, `address`, `fullname`, `phone_num
 (36, 7, 'GVDCMGOX0J', 'Dong da, ha noi, vietnam', 'ho quang anh', '0372238783', 'online', 5, 1, 149000, NULL, NULL, NULL, '2024-10-12 20:15:41', '2024-10-12 20:17:27'),
 (37, 7, 'DL3Q4PWAJF', 'Dong da, ha noi, vietnam', 'ho quang anh', '0372238783', 'online', 5, 1, 149000, NULL, NULL, NULL, '2024-10-12 20:16:39', '2024-10-12 20:17:35'),
 (38, 7, 'HJEAWNVZ8I', 'Dong da, ha noi, vietnam', 'ho quang anh', '0372238783', 'online', 5, 1, 149000, NULL, NULL, NULL, '2024-10-12 20:18:33', '2024-10-12 20:19:48'),
-(39, 7, 'B43LXWLYOC', 'Dong da, ha noi, vietnam', 'ho quang anh', '0372238783', 'online', 5, 1, 149000, NULL, NULL, NULL, '2024-10-12 20:20:16', '2024-10-12 20:20:40');
+(39, 7, 'B43LXWLYOC', 'Dong da, ha noi, vietnam', 'ho quang anh', '0372238783', 'online', 5, 1, 149000, NULL, NULL, NULL, '2024-10-12 20:20:16', '2024-10-12 20:20:40'),
+(40, 7, 'UMFWGCIPTM', 'Dong da, ha noi, vietnam', 'ho quang anh', '0372238783', 'cod', 5, 1, 298000, NULL, NULL, NULL, '2024-10-13 00:05:25', '2024-10-13 00:06:42'),
+(41, 7, '8XJSCUUVEL', 'Dong da, ha noi, vietnam', 'ho quang anh', '0372238783', 'online', 2, 0, 298000, NULL, NULL, NULL, '2024-10-13 00:15:00', '2024-10-13 00:15:00');
 
 -- --------------------------------------------------------
 
@@ -378,7 +384,10 @@ INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `color_id`, `size_i
 (34, 36, 251, 5, 1, 1, 149000, '2024-10-12 20:15:41', '2024-10-12 20:15:41'),
 (35, 37, 251, 5, 1, 1, 149000, '2024-10-12 20:16:39', '2024-10-12 20:16:39'),
 (36, 38, 252, 5, 2, 1, 149000, '2024-10-12 20:18:33', '2024-10-12 20:18:33'),
-(37, 39, 296, 5, 1, 1, 149000, '2024-10-12 20:20:16', '2024-10-12 20:20:16');
+(37, 39, 296, 5, 1, 1, 149000, '2024-10-12 20:20:16', '2024-10-12 20:20:16'),
+(38, 40, 371, 5, 2, 1, 149000, '2024-10-13 00:05:25', '2024-10-13 00:05:25'),
+(39, 40, 373, 5, 3, 1, 149000, '2024-10-13 00:05:25', '2024-10-13 00:05:25'),
+(40, 41, 369, 5, 4, 2, 149000, '2024-10-13 00:15:00', '2024-10-13 00:15:00');
 
 -- --------------------------------------------------------
 
@@ -563,11 +572,11 @@ INSERT INTO `products` (`id`, `name`, `price`, `old_price`, `description`, `wash
 (366, 'Áo phông dài tay nữ', 149000, 200000, NULL, NULL, 14, 1, 100, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (367, 'Áo phông dài tay nữ', 149000, 200000, NULL, NULL, 14, 1, 100, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (368, 'Áo phông dài tay nữ cổ cao', 149000, 200000, NULL, NULL, 14, 1, 100, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(369, 'Áo phông dài tay nữ có hình in', 149000, 200000, NULL, NULL, 14, 1, 100, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
+(369, 'Áo phông dài tay nữ có hình in', 149000, 200000, NULL, NULL, 14, 1, 98, '2024-10-12 15:55:46', '2024-10-13 00:15:00'),
 (370, 'Áo phông dài tay nữ có hình in', 149000, 200000, NULL, NULL, 14, 1, 100, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(371, 'Áo phông nữ', 149000, 200000, NULL, NULL, 14, 1, 100, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
+(371, 'Áo phông nữ', 149000, 200000, NULL, NULL, 14, 1, 99, '2024-10-12 15:55:46', '2024-10-13 00:05:25'),
 (372, 'Áo phông nữ cổ cao phối khoá', 149000, 200000, NULL, NULL, 14, 1, 100, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(373, 'Áo phông nữ cotton dáng rộng có hình in', 149000, 200000, NULL, NULL, 14, 1, 100, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
+(373, 'Áo phông nữ cotton dáng rộng có hình in', 149000, 200000, NULL, NULL, 14, 1, 99, '2024-10-12 15:55:46', '2024-10-13 00:05:25'),
 (374, 'Áo phông nữ cotton USA dáng oversize có hình in', 149000, 200000, NULL, NULL, 14, 1, 100, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (375, 'Áo phông nữ cotton USA dáng oversize có hình in', 149000, 200000, NULL, NULL, 14, 1, 100, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (376, 'Áo phông nữ cotton USA dáng oversize có hình in', 149000, 200000, NULL, NULL, 14, 1, 100, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
@@ -4291,6 +4300,16 @@ CREATE TABLE `reviews` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `user_id`, `order_id`, `product_id`, `rating`, `note`, `created_at`, `updated_at`) VALUES
+(4, 7, 39, 296, 5, NULL, '2024-10-13 00:03:22', '2024-10-13 00:03:22'),
+(5, 7, 38, 252, 5, 'good', '2024-10-13 00:03:31', '2024-10-13 00:03:31'),
+(6, 7, 40, 371, 2, 'bad', '2024-10-13 00:07:09', '2024-10-13 00:07:09'),
+(7, 7, 40, 373, 1, NULL, '2024-10-13 00:07:09', '2024-10-13 00:07:09');
+
 -- --------------------------------------------------------
 
 --
@@ -4335,8 +4354,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('OZmMMyO6qzDzNCvCmF8mnBIHXtbTERYhNfI7KElm', 7, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo5OntzOjY6Il90b2tlbiI7czo0MDoid21aanBMQVE3U1dRaHVub3ZLb3licFhLaDJoa1hHWG1Ha2pwNjFnbCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTQ6Imh0dHA6Ly9sb2NhbGhvc3Q6OTk5OS9hZG1pbi9jaGFydC1raW5kLXNhbGU/ZmlsdGVyPWRheSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo3O3M6MTM6InByb2R1Y3RWaWV3ZWQiO2E6Mzp7aTowO2k6MjUxO2k6MTtpOjI1MjtpOjI7aToyOTY7fXM6NDoiY2FydCI7YTowOnt9czo4OiJkaXNjb3VudCI7TjtzOjEwOiJmaW5hbF9jYXJ0IjthOjA6e319', 1728739571),
-('wAtksEJnuUXdEsd2B0ixQihEwAGgleEjPES0vZFA', 7, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiblJ5emZGNVpmVGlqY1R5eVo1Q3l6UHFhUTdLdFpkU21ObEg3RXlWciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly9sb2NhbGhvc3Q6OTk5OS9hZG1pbi9kYW5nLW5oYXAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1728747188);
+('0U3TBTGRWiNbB2viE8xf8NdB221gqAK4hpGy5lRW', 7, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo5OntzOjY6Il90b2tlbiI7czo0MDoiblJ5emZGNVpmVGlqY1R5eVo1Q3l6UHFhUTdLdFpkU21ObEg3RXlWciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly9sb2NhbGhvc3Q6OTk5OS9jaGktdGlldC1zYW4tcGhhbS80NDEiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo3O3M6MTM6InByb2R1Y3RWaWV3ZWQiO2E6ODp7aTowO2k6MjUyO2k6MTtpOjI1NTtpOjI7aToyNTE7aTozO2k6Mjk2O2k6NDtpOjM3MTtpOjU7aTozNzM7aTo2O2k6MzY5O2k6NztpOjQ0MTt9czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6NDoiY2FydCI7YTowOnt9czo4OiJkaXNjb3VudCI7TjtzOjEwOiJmaW5hbF9jYXJ0IjthOjA6e319', 1728757262);
 
 -- --------------------------------------------------------
 
@@ -4563,7 +4581,72 @@ INSERT INTO `visitors` (`id`, `ip`, `user_agent`, `created_at`, `updated_at`) VA
 (114, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 20:20:11', '2024-10-12 20:20:11'),
 (115, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 20:20:14', '2024-10-12 20:20:14'),
 (116, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 20:20:16', '2024-10-12 20:20:16'),
-(117, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 20:20:20', '2024-10-12 20:20:20');
+(117, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 20:20:20', '2024-10-12 20:20:20'),
+(118, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 23:16:56', '2024-10-12 23:16:56'),
+(119, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 23:16:56', '2024-10-12 23:16:56'),
+(120, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 23:17:12', '2024-10-12 23:17:12'),
+(121, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 23:17:15', '2024-10-12 23:17:15'),
+(122, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 23:17:19', '2024-10-12 23:17:19'),
+(123, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 23:17:22', '2024-10-12 23:17:22'),
+(124, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 23:37:43', '2024-10-12 23:37:43'),
+(125, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 23:37:45', '2024-10-12 23:37:45'),
+(126, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-12 23:37:47', '2024-10-12 23:37:47'),
+(127, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:01:16', '2024-10-13 00:01:16'),
+(128, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:03:11', '2024-10-13 00:03:11'),
+(129, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:03:14', '2024-10-13 00:03:14'),
+(130, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:03:16', '2024-10-13 00:03:16'),
+(131, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:03:17', '2024-10-13 00:03:17'),
+(132, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:03:22', '2024-10-13 00:03:22'),
+(133, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:03:24', '2024-10-13 00:03:24'),
+(134, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:03:26', '2024-10-13 00:03:26'),
+(135, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:03:27', '2024-10-13 00:03:27'),
+(136, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:03:31', '2024-10-13 00:03:31'),
+(137, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:03:32', '2024-10-13 00:03:32'),
+(138, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:03:34', '2024-10-13 00:03:34'),
+(139, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:04:35', '2024-10-13 00:04:35'),
+(140, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:04:37', '2024-10-13 00:04:37'),
+(141, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:04:42', '2024-10-13 00:04:42'),
+(142, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:04:45', '2024-10-13 00:04:45'),
+(143, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:04:57', '2024-10-13 00:04:57'),
+(144, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:04:59', '2024-10-13 00:04:59'),
+(145, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:05:01', '2024-10-13 00:05:01'),
+(146, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:05:04', '2024-10-13 00:05:04'),
+(147, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:05:09', '2024-10-13 00:05:09'),
+(148, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:05:19', '2024-10-13 00:05:19'),
+(149, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:05:25', '2024-10-13 00:05:25'),
+(150, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:05:25', '2024-10-13 00:05:25'),
+(151, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:06:45', '2024-10-13 00:06:45'),
+(152, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:06:56', '2024-10-13 00:06:56'),
+(153, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:06:58', '2024-10-13 00:06:58'),
+(154, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:06:59', '2024-10-13 00:06:59'),
+(155, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:07:09', '2024-10-13 00:07:09'),
+(156, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:07:12', '2024-10-13 00:07:12'),
+(157, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:07:14', '2024-10-13 00:07:14'),
+(158, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:07:51', '2024-10-13 00:07:51'),
+(159, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:08:17', '2024-10-13 00:08:17'),
+(160, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:08:31', '2024-10-13 00:08:31'),
+(161, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:12:37', '2024-10-13 00:12:37'),
+(162, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:14:18', '2024-10-13 00:14:18'),
+(163, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:14:39', '2024-10-13 00:14:39'),
+(164, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:14:42', '2024-10-13 00:14:42'),
+(165, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:14:53', '2024-10-13 00:14:53'),
+(166, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:14:53', '2024-10-13 00:14:53'),
+(167, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:14:58', '2024-10-13 00:14:58'),
+(168, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:15:00', '2024-10-13 00:15:00'),
+(169, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:15:08', '2024-10-13 00:15:08'),
+(170, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:18:17', '2024-10-13 00:18:17'),
+(171, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:35:03', '2024-10-13 00:35:03'),
+(172, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:36:10', '2024-10-13 00:36:10'),
+(173, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:36:15', '2024-10-13 00:36:15'),
+(174, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 00:46:52', '2024-10-13 00:46:52'),
+(175, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:05:55', '2024-10-13 01:05:55'),
+(176, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:07:00', '2024-10-13 01:07:00'),
+(177, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:07:08', '2024-10-13 01:07:08'),
+(178, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:07:10', '2024-10-13 01:07:10'),
+(179, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:07:10', '2024-10-13 01:07:10'),
+(180, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:07:23', '2024-10-13 01:07:23'),
+(181, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:07:28', '2024-10-13 01:07:28'),
+(182, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:21:02', '2024-10-13 01:21:02');
 
 -- --------------------------------------------------------
 
@@ -4827,7 +4910,7 @@ ALTER TABLE `features`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `kinds`
@@ -4845,13 +4928,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -4893,7 +4976,7 @@ ALTER TABLE `product_sizes`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -4923,7 +5006,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
 
 --
 -- AUTO_INCREMENT for table `wishlists`

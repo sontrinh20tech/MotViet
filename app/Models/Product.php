@@ -51,7 +51,9 @@ class Product extends Model
     public static function searchFields()
     {
         return [
-            'name', 'price', 'old_price',
+            'name',
+            'price',
+            'old_price',
         ];
     }
 
@@ -90,7 +92,7 @@ class Product extends Model
     {
         $array = ['<p><br></p>'];
 
-        if (!$this->washing_instructions  || in_array($this->washing_instructions, $array)) {
+        if (!$this->washing_instructions || in_array($this->washing_instructions, $array)) {
             return view('client.product.default.washing_instruction')->render();
         }
 
@@ -134,5 +136,10 @@ class Product extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function orderDetails()
+    {
+        return $this->hasMany(OrderDetail::class);
     }
 }

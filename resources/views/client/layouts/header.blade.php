@@ -12,7 +12,9 @@
 
         <!-- Navbar brand (Logo) -->
         <a class="navbar-brand fs-2 py-0 m-0 me-auto me-sm-n5"
-            href="{{ route('client.home.index') }}">{{ config('app.name') }}</a>
+            href="{{ route('client.home.index') }}">
+            <img style="height: 80px;" src="{{ getLogo() }}" class="img-fluid" alt="logo">
+        </a>
 
         <!-- Button group -->
         <div class="d-flex align-items-center">
