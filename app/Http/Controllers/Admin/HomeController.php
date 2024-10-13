@@ -151,6 +151,8 @@ class HomeController extends Controller
             $result = $result->merge($kinds);
         }
 
+        $result = $result->values();
+
         return response()->json($result->toArray());
     }
 

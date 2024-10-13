@@ -16,6 +16,7 @@ class OrderDetail extends Model
         'size_id',
         'quantity',
         'price',
+        'created_at',
     ];
 
     public function product()

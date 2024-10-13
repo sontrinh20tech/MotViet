@@ -41,29 +41,31 @@
                 <div class="swiper-wrapper">
 
                     @foreach ($reviews as $item)
-                    <div class="swiper-slide h-auto">
-                        <div class="card h-100 border-0 rounded-4 p-sm-2">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="ratio ratio-1x1 flex-shrink-0" style="max-width: 80px">
-                                        <img src="{{ $item->product->getThumbnail() }}" width="80"
-                                            alt="Image">
-                                    </div>
-                                    <div class="ps-2 ms-1">
-                                        <div class="d-flex gap-1 fs-xs pb-2 mb-1">
-                                            <i class="ci-star-filled text-warning"></i>
-                                            <i class="ci-star-filled text-warning"></i>
-                                            <i class="ci-star-filled text-warning"></i>
-                                            <i class="ci-star-filled text-warning"></i>
-                                            <i class="ci-star-filled text-warning"></i>
+                        <div class="swiper-slide h-auto">
+                            <div class="card h-100 border-0 rounded-4 p-sm-2">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="ratio ratio-1x1 flex-shrink-0" style="max-width: 80px">
+                                            <img src="{{ $item->product->getThumbnail() }}" width="80"
+                                                alt="Image">
                                         </div>
-                                        <h3 class="h6 mb-0">{{ $item->user->fullname }}</h3>
+                                        <div class="ps-2 ms-1">
+                                            <div class="d-flex gap-1 fs-xs pb-2 mb-1">
+                                                @for ($i = 1; $i <= 5; $i++)
+                                                    @if ($i <= $item->rating)
+                                                        <i class="ci-star-filled text-warning"></i>
+                                                    @else
+                                                        <i class="ci-star text-body-tertiary opacity-75"></i>
+                                                    @endif
+                                                @endfor
+                                            </div>
+                                            <h3 class="h6 mb-0">{{ $item->user->fullname }}</h3>
+                                        </div>
                                     </div>
+                                    <p class="mb-0">{{ $item->note }}</p>
                                 </div>
-                                <p class="mb-0">{{ $item->note }}</p>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
 

@@ -29,6 +29,7 @@ class Order extends Model
         'code',
         'discount',
         'discount_code',
+        'created_at',
     ];
 
     public function getStatusLabel()
@@ -157,7 +158,7 @@ class Order extends Model
 
     public static function getEarningCount(string $type, bool $isPast = false)
     {
-        $query =  self::query()
+        $query = self::query()
             ->whereStatus(OrderStatus::SHIPPED->value)
             ->filter($type, $isPast);
 
@@ -166,7 +167,7 @@ class Order extends Model
 
     public static function getOrderByType(string $type, bool $isPast = false)
     {
-        $query =  self::query()
+        $query = self::query()
             ->where('status', '!=', OrderStatus::CANCEL->value)
             ->filter($type, $isPast);
 

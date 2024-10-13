@@ -45,6 +45,7 @@
                                     'now' => $earningCount['now'],
                                     'yesterday' => $earningCount['yesterday'],
                                 ],
+                                'grid' => '6',
                             ],
                             [
                                 'amount' => $visitorCount['now'],
@@ -53,6 +54,8 @@
                                     'now' => $visitorCount['now'],
                                     'yesterday' => $visitorCount['yesterday'],
                                 ],
+                                'grid' => '6',
+
                             ],
                             [
                                 'amount' => $orderCount['now'],
@@ -61,6 +64,8 @@
                                     'now' => $orderCount['now'],
                                     'yesterday' => $orderCount['yesterday'],
                                 ],
+                                'grid' => '6',
+
                             ],
                             [
                                 'amount' => $newCustomerCount['now'],
@@ -69,11 +74,13 @@
                                     'now' => $newCustomerCount['now'],
                                     'yesterday' => $newCustomerCount['yesterday'],
                                 ],
+                                'grid' => '6',
+
                             ],
                         ];
                     @endphp
                     @for ($i = 0; $i < 4; $i++)
-                        <div class="col-xxl-3 col-md-6 col-lg-6">
+                        <div class="col-xxl-{{ $data[$i]['grid'] }} col-md-6 col-lg-6">
                             <div class="card card-flush mb-5 mb-xl-10">
                                 <div class="card-header pt-5">
                                     <div class="card-title d-flex flex-column">
@@ -105,7 +112,7 @@
                         </div>
                     @endfor
 
-                    <div class="col-lg-12 col-xl-12 col-xxl-6 mb-5 mb-xl-0">
+                    <div class="col-lg-12 col-xl-12 col-xxl-8 mb-5 mb-xl-0">
 
                         <div class="card card-flush overflow-hidden h-md-100">
                             <div class="card-header">
@@ -123,7 +130,7 @@
                     </div>
 
                     <!--begin::Col-->
-                    <div class="col-lg-12 col-xl-12 col-xxl-6 mb-5 mb-xl-0">
+                    <div class="col-lg-12 col-xl-12 col-xxl-4 mb-5 mb-xl-0">
                         <!--begin::Chart widget 3-->
                         <div class="card card-flush overflow-hidden h-md-100">
                             <!--begin::Header-->

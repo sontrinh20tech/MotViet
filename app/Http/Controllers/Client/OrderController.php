@@ -76,7 +76,7 @@ class OrderController extends Controller
 
         if (PaymentMethod::Cod->value == $request->input('payment_method')) {
             return to_route('client.home.orderSuccess', [
-                'orderCode' => $order->id,
+                'currentCode' => $order->code,
             ]);
         }
 
