@@ -19,7 +19,9 @@
                 <form action="{{ route('client.auth.handleRegister') }}" method="post">
                     @csrf
                     <div class="position-relative mb-4">
-                        <label for="register-email" class="form-label">Họ và tên</label>
+                        <label for="register-email" class="form-label">Họ và tên
+                            <span class="text-danger">*</span>
+                        </label>
                         <input value="{{ old('fullname') }}" name="fullname" type="text"
                             class="form-control form-control-lg @error('fullname') is-invalid @enderror"
                             id="register-fullname">
@@ -28,7 +30,9 @@
                         @enderror
                     </div>
                     <div class="position-relative mb-4">
-                        <label for="register-email" class="form-label">Địa chỉ email</label>
+                        <label for="register-email" class="form-label">Địa chỉ email
+                            <span class="text-danger">*</span>
+                        </label>
                         <input value="{{ old('email') }}" name="email" type="text"
                             class="form-control form-control-lg @error('email') is-invalid @enderror"
                             id="register-email">
@@ -37,7 +41,9 @@
                         @enderror
                     </div>
                     <div class="mb-4">
-                        <label for="register-password" class="form-label">Mật khẩu</label>
+                        <label for="register-password" class="form-label">Mật khẩu
+                            <span class="text-danger">*</span>
+                        </label>
                         <div class="password-toggle">
                             <input name="password" type="password"
                                 class="form-control form-control-lg @error('password') is-invalid @enderror"
@@ -53,7 +59,9 @@
                     </div>
 
                     <div class="mb-4">
-                        <label for="register-password" class="form-label">Xác nhận mật khẩu</label>
+                        <label for="register-password" class="form-label">Xác nhận mật khẩu
+                            <span class="text-danger">*</span>
+                        </label>
                         <div class="password-toggle">
                             <input name="password_confirmation" type="password"
                                 class="form-control form-control-lg @error('password_confirmation') is-invalid @enderror"

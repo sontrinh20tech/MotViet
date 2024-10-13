@@ -24,7 +24,7 @@ class PayOS
         $orderCode = $order->id + time();
         $cancelUrl = route('client.home.index');
         $des = $order->code;
-        $returnUrl = route('client.home.orderSuccess');
+        $returnUrl = route('client.home.orderSuccess', ['currentCode', $order->code]);
         $expiredAt = time() + 86400;
         $sig = "amount=" . $order->total . "&cancelUrl=" . $cancelUrl . "&description=" . $des . "&orderCode=" . $orderCode . "&returnUrl=" . $returnUrl;
         $body = [

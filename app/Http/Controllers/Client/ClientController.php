@@ -212,7 +212,7 @@ class ClientController extends Controller
 
     public function orderSuccess()
     {
-        $order = Order::query()->find(request()->input('orderCode'));
+        $order = Order::query()->find(request()->input('currentCode'));
 
         if (!$order) {
             return abort(404);
