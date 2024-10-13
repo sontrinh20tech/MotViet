@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql:3306
--- Generation Time: Oct 12, 2024 at 06:22 PM
+-- Generation Time: Oct 13, 2024 at 05:20 PM
 -- Server version: 9.0.1
 -- PHP Version: 8.2.24
 
@@ -146,7 +146,7 @@ CREATE TABLE `coupons` (
 INSERT INTO `coupons` (`id`, `discount`, `code`, `amount`, `max_price`, `is_active`, `expiration_date`, `created_at`, `updated_at`) VALUES
 (1, 95, 'ADMIN', 6, 1000000, 1, '2024-09-07', '2024-08-27 18:07:53', '2024-08-27 18:24:22'),
 (2, 10, 'THUDONG2024', 50, 50000, 1, '2024-12-01', '2024-08-27 18:14:38', '2024-08-27 18:24:06'),
-(3, 99, 'TEST', 994, 1000000, 1, '2025-09-10', '2024-09-07 16:22:59', '2024-09-19 01:57:36');
+(3, 90, 'TEST', 993, 1000000, 1, '2025-09-10', '2024-09-07 16:22:59', '2024-10-13 23:01:25');
 
 -- --------------------------------------------------------
 
@@ -226,7 +226,10 @@ INSERT INTO `jobs` (`id`, `queue`, `payload`, `attempts`, `reserved_at`, `availa
 (28, 'default', '{\"uuid\":\"4681d905-2bc7-4062-bbf9-969c068a2048\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"command\":\"O:29:\\\"App\\\\Jobs\\\\SendMailOrderCreated\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:40;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728752725, 1728752725),
 (29, 'default', '{\"uuid\":\"7a6256c8-3dd8-4aa5-becd-0fd87f8878fe\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderConfirmedJob\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderConfirmedJob\",\"command\":\"O:34:\\\"App\\\\Jobs\\\\SendMailOrderConfirmedJob\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:40;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728752738, 1728752738),
 (30, 'default', '{\"uuid\":\"9c8474f5-0e4c-4be4-bf54-36cb9bffe4f0\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderShippingJob\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderShippingJob\",\"command\":\"O:33:\\\"App\\\\Jobs\\\\SendMailOrderShippingJob\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:40;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728752801, 1728752801),
-(31, 'default', '{\"uuid\":\"0074e032-fbf1-46f4-8ac4-7c6b4ebfe188\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"command\":\"O:29:\\\"App\\\\Jobs\\\\SendMailOrderCreated\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:41;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728753300, 1728753300);
+(31, 'default', '{\"uuid\":\"0074e032-fbf1-46f4-8ac4-7c6b4ebfe188\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"command\":\"O:29:\\\"App\\\\Jobs\\\\SendMailOrderCreated\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:7;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:41;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728753300, 1728753300),
+(32, 'default', '{\"uuid\":\"7954df2a-6076-4fcd-a103-f5425ceb78b2\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"command\":\"O:29:\\\"App\\\\Jobs\\\\SendMailOrderCreated\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:4;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:42;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728835285, 1728835285),
+(33, 'default', '{\"uuid\":\"b1bceb4a-cb7c-405b-8272-2d5e6ce60519\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"command\":\"O:29:\\\"App\\\\Jobs\\\\SendMailOrderCreated\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:4;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:43;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728836416, 1728836416),
+(34, 'default', '{\"uuid\":\"5e30188d-7782-453f-ae08-1481b94bd781\",\"displayName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\SendMailOrderCreated\",\"command\":\"O:29:\\\"App\\\\Jobs\\\\SendMailOrderCreated\\\":2:{s:9:\\\"\\u0000*\\u0000userId\\\";i:4;s:8:\\\"\\u0000*\\u0000order\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:16:\\\"App\\\\Models\\\\Order\\\";s:2:\\\"id\\\";i:254;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}}\"}}', 0, NULL, 1728840009, 1728840009);
 
 -- --------------------------------------------------------
 
@@ -355,7 +358,220 @@ INSERT INTO `orders` (`id`, `user_id`, `code`, `address`, `fullname`, `phone_num
 (38, 7, 'HJEAWNVZ8I', 'Dong da, ha noi, vietnam', 'ho quang anh', '0372238783', 'online', 5, 1, 149000, NULL, NULL, NULL, '2024-10-12 20:18:33', '2024-10-12 20:19:48'),
 (39, 7, 'B43LXWLYOC', 'Dong da, ha noi, vietnam', 'ho quang anh', '0372238783', 'online', 5, 1, 149000, NULL, NULL, NULL, '2024-10-12 20:20:16', '2024-10-12 20:20:40'),
 (40, 7, 'UMFWGCIPTM', 'Dong da, ha noi, vietnam', 'ho quang anh', '0372238783', 'cod', 5, 1, 298000, NULL, NULL, NULL, '2024-10-13 00:05:25', '2024-10-13 00:06:42'),
-(41, 7, '8XJSCUUVEL', 'Dong da, ha noi, vietnam', 'ho quang anh', '0372238783', 'online', 2, 0, 298000, NULL, NULL, NULL, '2024-10-13 00:15:00', '2024-10-13 00:15:00');
+(41, 7, '8XJSCUUVEL', 'Dong da, ha noi, vietnam', 'ho quang anh', '0372238783', 'online', 2, 0, 298000, NULL, NULL, NULL, '2024-10-13 00:15:00', '2024-10-13 00:15:00'),
+(42, 4, 'W8ACTUF6Y4', 'te', 'Ho Quang Anh', '0372238783', 'online', 2, 1, 14900, 134100, 'TEST', NULL, '2024-10-13 23:01:25', '2024-10-13 23:02:07'),
+(43, 4, 'CIFXCVSFUH', 'te', 'Ho Quang Anh', '0372238783', 'cod', 2, 0, 149000, NULL, NULL, NULL, '2024-10-13 23:20:16', '2024-10-13 23:20:16'),
+(44, 4, 'NIKH4OOUKQ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 376039, NULL, NULL, NULL, '2024-09-26 00:00:00', '2024-10-13 23:42:41'),
+(45, 4, 'T98HAYACSY', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 955327, NULL, NULL, NULL, '2024-09-10 00:00:00', '2024-10-13 23:42:41'),
+(46, 4, 'CTZNA3P6F9', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 334747, NULL, NULL, NULL, '2024-09-06 00:00:00', '2024-10-13 23:42:41'),
+(47, 4, 'KEUZ4BZRU6', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 795837, NULL, NULL, NULL, '2024-09-13 00:00:00', '2024-10-13 23:42:41'),
+(48, 4, 'WMT8YSO5Q8', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 419191, NULL, NULL, NULL, '2024-09-15 00:00:00', '2024-10-13 23:42:41'),
+(49, 4, 'TG2ONKZR1X', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 654517, NULL, NULL, NULL, '2024-09-16 00:00:00', '2024-10-13 23:42:41'),
+(50, 4, 'WRVFT4PXZY', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 544970, NULL, NULL, NULL, '2024-09-24 00:00:00', '2024-10-13 23:42:41'),
+(51, 4, 'WYHXOC5K4I', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 297657, NULL, NULL, NULL, '2024-09-25 00:00:00', '2024-10-13 23:42:41'),
+(52, 4, '76YOLF2JT5', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 306820, NULL, NULL, NULL, '2024-09-05 00:00:00', '2024-10-13 23:42:41'),
+(53, 4, 'NEBB7RQ6B6', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 289053, NULL, NULL, NULL, '2024-09-06 00:00:00', '2024-10-13 23:42:41'),
+(54, 4, 'IUYBTT60UA', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 540335, NULL, NULL, NULL, '2024-09-01 00:00:00', '2024-10-13 23:44:33'),
+(55, 4, 'PWSU4PKHDI', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 789141, NULL, NULL, NULL, '2024-09-06 00:00:00', '2024-10-13 23:44:33'),
+(56, 4, 'JD9FNH8IWF', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 271267, NULL, NULL, NULL, '2024-09-18 00:00:00', '2024-10-13 23:44:33'),
+(57, 4, 'YC6HOYZBNY', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 324935, NULL, NULL, NULL, '2024-09-21 00:00:00', '2024-10-13 23:44:33'),
+(58, 4, 'LBNIDL7BTG', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 233667, NULL, NULL, NULL, '2024-09-02 00:00:00', '2024-10-13 23:44:33'),
+(59, 4, '6DU7U6YYP5', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 351990, NULL, NULL, NULL, '2024-09-22 00:00:00', '2024-10-13 23:44:33'),
+(60, 4, '8JGNDRXGIH', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 781857, NULL, NULL, NULL, '2024-09-25 00:00:00', '2024-10-13 23:44:33'),
+(61, 4, 'CDHG9LM0B5', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 693508, NULL, NULL, NULL, '2024-09-04 00:00:00', '2024-10-13 23:44:33'),
+(62, 4, 'RHRRW3RRCU', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 830442, NULL, NULL, NULL, '2024-09-10 00:00:00', '2024-10-13 23:44:33'),
+(63, 4, 'Z41YQ7FQZQ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 531842, NULL, NULL, NULL, '2024-09-29 00:00:00', '2024-10-13 23:44:33'),
+(64, 4, 'KKVFHQWOQG', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 388184, NULL, NULL, NULL, '2024-09-10 00:00:00', '2024-10-13 23:44:33'),
+(65, 4, 'ECBTMW4D6W', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 333011, NULL, NULL, NULL, '2024-09-09 00:00:00', '2024-10-13 23:44:33'),
+(66, 4, 'YEUDEKASIC', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 492407, NULL, NULL, NULL, '2024-09-17 00:00:00', '2024-10-13 23:44:33'),
+(67, 4, 'JRTHHTZ99Z', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 241587, NULL, NULL, NULL, '2024-09-13 00:00:00', '2024-10-13 23:44:33'),
+(68, 4, 'XNBCHPKLLK', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 424164, NULL, NULL, NULL, '2024-09-25 00:00:00', '2024-10-13 23:44:33'),
+(69, 4, '3LXCCZAQAA', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 234568, NULL, NULL, NULL, '2024-09-11 00:00:00', '2024-10-13 23:44:33'),
+(70, 4, 'IUL6DMB2JL', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 982089, NULL, NULL, NULL, '2024-09-11 00:00:00', '2024-10-13 23:44:33'),
+(71, 4, '6HLL01EZV2', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 136255, NULL, NULL, NULL, '2024-09-07 00:00:00', '2024-10-13 23:44:33'),
+(72, 4, 'B3ZM0MEVFA', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 485857, NULL, NULL, NULL, '2024-09-20 00:00:00', '2024-10-13 23:44:33'),
+(73, 4, '2AURIY8I1P', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 922274, NULL, NULL, NULL, '2024-09-11 00:00:00', '2024-10-13 23:44:33'),
+(74, 4, 'REUQRLUPR2', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 826899, NULL, NULL, NULL, '2024-09-22 00:00:00', '2024-10-13 23:44:33'),
+(75, 4, '5RBSXQE8T8', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 216674, NULL, NULL, NULL, '2024-09-17 00:00:00', '2024-10-13 23:44:33'),
+(76, 4, 'PGYU20GXAS', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 300883, NULL, NULL, NULL, '2024-09-14 00:00:00', '2024-10-13 23:44:33'),
+(77, 4, 'RUOXOK8J1V', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 747442, NULL, NULL, NULL, '2024-09-09 00:00:00', '2024-10-13 23:44:33'),
+(78, 4, 'YOXSPVAZKT', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 307884, NULL, NULL, NULL, '2024-09-21 00:00:00', '2024-10-13 23:44:33'),
+(79, 4, 'UWEINT95HX', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 435042, NULL, NULL, NULL, '2024-09-27 00:00:00', '2024-10-13 23:44:33'),
+(80, 4, 'VZGVXIUACM', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 685932, NULL, NULL, NULL, '2024-09-23 00:00:00', '2024-10-13 23:44:33'),
+(81, 4, 'JLA0QMJTAY', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 162865, NULL, NULL, NULL, '2024-09-01 00:00:00', '2024-10-13 23:44:33'),
+(82, 4, 'R9ZLB54IJC', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 631210, NULL, NULL, NULL, '2024-09-24 00:00:00', '2024-10-13 23:44:33'),
+(83, 4, 'K6H28EGP9S', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 398361, NULL, NULL, NULL, '2024-09-19 00:00:00', '2024-10-13 23:44:33'),
+(84, 4, 'Y3KSVMYS1S', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 305382, NULL, NULL, NULL, '2024-09-20 00:00:00', '2024-10-13 23:44:33'),
+(85, 4, 'FUJSRT4JWC', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 700422, NULL, NULL, NULL, '2024-09-07 00:00:00', '2024-10-13 23:44:33'),
+(86, 4, 'XOC8MRANHA', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 788877, NULL, NULL, NULL, '2024-09-13 00:00:00', '2024-10-13 23:44:33'),
+(87, 4, '9M1LLLSYJR', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 280645, NULL, NULL, NULL, '2024-09-02 00:00:00', '2024-10-13 23:44:33'),
+(88, 4, 'D79LSMJHHG', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 621385, NULL, NULL, NULL, '2024-09-17 00:00:00', '2024-10-13 23:44:33'),
+(89, 4, 'SO1ZIVVIAZ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 318255, NULL, NULL, NULL, '2024-09-28 00:00:00', '2024-10-13 23:44:33'),
+(90, 4, '18SCRFUQFD', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 212052, NULL, NULL, NULL, '2024-09-19 00:00:00', '2024-10-13 23:44:33'),
+(91, 4, 'NFH0YIILWD', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 705248, NULL, NULL, NULL, '2024-09-06 00:00:00', '2024-10-13 23:44:33'),
+(92, 4, 'ODUU5LQJXV', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 353691, NULL, NULL, NULL, '2024-09-28 00:00:00', '2024-10-13 23:44:33'),
+(93, 4, 'URG3H72UIS', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 906677, NULL, NULL, NULL, '2024-09-20 00:00:00', '2024-10-13 23:44:33'),
+(94, 4, 'QZ71KAOKM8', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 204963, NULL, NULL, NULL, '2024-09-21 00:00:00', '2024-10-13 23:44:33'),
+(95, 4, 'CGNBSD08E6', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 859950, NULL, NULL, NULL, '2024-09-02 00:00:00', '2024-10-13 23:44:33'),
+(96, 4, 'TZOTFQX68B', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 223656, NULL, NULL, NULL, '2024-09-03 00:00:00', '2024-10-13 23:44:33'),
+(97, 4, 'AYWXICAPRB', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 939076, NULL, NULL, NULL, '2024-09-28 00:00:00', '2024-10-13 23:44:33'),
+(98, 4, 'WHBRUC7VK4', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 767222, NULL, NULL, NULL, '2024-09-06 00:00:00', '2024-10-13 23:44:33'),
+(99, 4, 'QZOQAZ9IJT', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 391955, NULL, NULL, NULL, '2024-09-29 00:00:00', '2024-10-13 23:44:33'),
+(100, 4, 'P8ZYDTB30O', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 453960, NULL, NULL, NULL, '2024-09-06 00:00:00', '2024-10-13 23:44:33'),
+(101, 4, 'BNUQZP6KXP', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 671492, NULL, NULL, NULL, '2024-09-06 00:00:00', '2024-10-13 23:44:33'),
+(102, 4, 'BBYJGAWHVD', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 358479, NULL, NULL, NULL, '2024-09-13 00:00:00', '2024-10-13 23:44:33'),
+(103, 4, 'PCHIG2UIRE', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 132147, NULL, NULL, NULL, '2024-09-27 00:00:00', '2024-10-13 23:44:33'),
+(104, 4, 'HLVYGJJHYE', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 584588, NULL, NULL, NULL, '2024-10-09 00:00:00', '2024-10-13 23:44:33'),
+(105, 4, 'MEXU5V2SJU', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 166538, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(106, 4, 'RUNWO6KMQB', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 880263, NULL, NULL, NULL, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(107, 4, '0E2LB4SEEJ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 536157, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(108, 4, 'APQQOZLFP3', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 613943, NULL, NULL, NULL, '2024-10-01 00:00:00', '2024-10-13 23:44:33'),
+(109, 4, 'KDYA5SX9VR', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 959881, NULL, NULL, NULL, '2024-10-04 00:00:00', '2024-10-13 23:44:33'),
+(110, 4, '5N9MIW5QUH', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 461631, NULL, NULL, NULL, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(111, 4, 'CWIHIAMM3C', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 153873, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(112, 4, 'XD3VYFAPLD', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 839291, NULL, NULL, NULL, '2024-10-13 00:00:00', '2024-10-13 23:44:33'),
+(113, 4, 'UHUSGC0ECG', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 396475, NULL, NULL, NULL, '2024-10-13 00:00:00', '2024-10-13 23:44:33'),
+(114, 4, 'OQ0TTYLIIA', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 166600, NULL, NULL, NULL, '2024-10-03 00:00:00', '2024-10-13 23:44:33'),
+(115, 4, 'ZBQVHZEWIG', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 977321, NULL, NULL, NULL, '2024-10-09 00:00:00', '2024-10-13 23:44:33'),
+(116, 4, 'ZH8MS4DI62', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 769689, NULL, NULL, NULL, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(117, 4, 'PB5VLQIYSH', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 245998, NULL, NULL, NULL, '2024-10-13 00:00:00', '2024-10-13 23:44:33'),
+(118, 4, 'JCI3JE2DX6', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 644892, NULL, NULL, NULL, '2024-10-08 00:00:00', '2024-10-13 23:44:33'),
+(119, 4, 'RNP0H6ILJ4', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 507260, NULL, NULL, NULL, '2024-10-04 00:00:00', '2024-10-13 23:44:33'),
+(120, 4, 'XQQ0KN1S9G', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 864899, NULL, NULL, NULL, '2024-10-09 00:00:00', '2024-10-13 23:44:33'),
+(121, 4, 'TGBHVOYO2T', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 227572, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(122, 4, 'F3OQCTMN3Q', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 463471, NULL, NULL, NULL, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(123, 4, '17JV674BEC', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 100219, NULL, NULL, NULL, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(124, 4, 'I3SPGCAQ9N', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 417785, NULL, NULL, NULL, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(125, 4, '4P8XD1TUXN', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 687666, NULL, NULL, NULL, '2024-10-13 00:00:00', '2024-10-13 23:44:33'),
+(126, 4, 'CLJWZ7FOXX', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 803601, NULL, NULL, NULL, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(127, 4, 'ZA0T2HEBWW', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 915270, NULL, NULL, NULL, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(128, 4, 'BKS8CH0L6V', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 250470, NULL, NULL, NULL, '2024-10-04 00:00:00', '2024-10-13 23:44:33'),
+(129, 4, 'KY1FXAFO0U', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 147365, NULL, NULL, NULL, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(130, 4, 'FJHQOR8RAO', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 419153, NULL, NULL, NULL, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(131, 4, 'CNGUDB4HOL', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 664913, NULL, NULL, NULL, '2024-10-06 00:00:00', '2024-10-13 23:44:33'),
+(132, 4, '8GIUFFMUZU', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 143005, NULL, NULL, NULL, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(133, 4, 'GFHMVJD8FD', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 553976, NULL, NULL, NULL, '2024-10-03 00:00:00', '2024-10-13 23:44:33'),
+(134, 4, 'KFSCASQIFR', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 995252, NULL, NULL, NULL, '2024-10-01 00:00:00', '2024-10-13 23:44:33'),
+(135, 4, 'T6SMDAPGH7', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 707827, NULL, NULL, NULL, '2024-10-10 00:00:00', '2024-10-13 23:44:33'),
+(136, 4, 'JYAXZ8MXKD', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 918911, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(137, 4, 'DGJCKF2XXJ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 717485, NULL, NULL, NULL, '2024-10-13 00:00:00', '2024-10-13 23:44:33'),
+(138, 4, 'JVIWYRA0PM', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 187192, NULL, NULL, NULL, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(139, 4, 'WXVOCRVDG5', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 456900, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(140, 4, 'SHPXWMEIXP', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 750272, NULL, NULL, NULL, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(141, 4, 'CHCJSCTBB0', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 697094, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(142, 4, 'KUSAULNVVZ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 233003, NULL, NULL, NULL, '2024-10-02 00:00:00', '2024-10-13 23:44:33'),
+(143, 4, 'NFONHVLKPJ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 143643, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(144, 4, 'XFYJO8LFM2', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 313671, NULL, NULL, NULL, '2024-10-08 00:00:00', '2024-10-13 23:44:33'),
+(145, 4, '7ZOIW8A2UG', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 224104, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(146, 4, 'LAQYKTUSLI', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 669272, NULL, NULL, NULL, '2024-10-08 00:00:00', '2024-10-13 23:44:33'),
+(147, 4, 'PG4X3N8QAA', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 691088, NULL, NULL, NULL, '2024-10-10 00:00:00', '2024-10-13 23:44:33'),
+(148, 4, '4FZ6TYBJID', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 119824, NULL, NULL, NULL, '2024-10-07 00:00:00', '2024-10-13 23:44:33'),
+(149, 4, 'MYVGVNLL0R', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 305824, NULL, NULL, NULL, '2024-10-08 00:00:00', '2024-10-13 23:44:33'),
+(150, 4, 'AADNJUQ9KB', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 473940, NULL, NULL, NULL, '2024-10-08 00:00:00', '2024-10-13 23:44:33'),
+(151, 4, 'ASTGZDT6DS', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 301524, NULL, NULL, NULL, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(152, 4, 'R7YHE5QIPI', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 183330, NULL, NULL, NULL, '2024-10-04 00:00:00', '2024-10-13 23:44:33'),
+(153, 4, 'N5XMMIZNAX', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 660090, NULL, NULL, NULL, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(154, 4, 'PRTLQPCQAX', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 486938, NULL, NULL, NULL, '2024-09-08 00:00:00', '2024-10-13 23:57:30'),
+(155, 4, 'T8BTLYN6NI', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 241128, NULL, NULL, NULL, '2024-09-04 00:00:00', '2024-10-13 23:57:30'),
+(156, 4, 'J6O7DOCIFY', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 509748, NULL, NULL, NULL, '2024-09-09 00:00:00', '2024-10-13 23:57:30'),
+(157, 4, 'D4RSIXY887', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 316539, NULL, NULL, NULL, '2024-09-30 00:00:00', '2024-10-13 23:57:30'),
+(158, 4, 'XMDVXSF6QX', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 494256, NULL, NULL, NULL, '2024-09-16 00:00:00', '2024-10-13 23:57:30'),
+(159, 4, '70EBXHPNL8', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 657033, NULL, NULL, NULL, '2024-09-04 00:00:00', '2024-10-13 23:57:30'),
+(160, 4, 'APIFHQ48GN', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 378416, NULL, NULL, NULL, '2024-09-25 00:00:00', '2024-10-13 23:57:30'),
+(161, 4, 'QETNIK8U0H', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 629905, NULL, NULL, NULL, '2024-09-16 00:00:00', '2024-10-13 23:57:30'),
+(162, 4, 'IL3EJLQI2T', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 340581, NULL, NULL, NULL, '2024-09-02 00:00:00', '2024-10-13 23:57:30'),
+(163, 4, 'QHHVBFCHRQ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 912978, NULL, NULL, NULL, '2024-09-11 00:00:00', '2024-10-13 23:57:30'),
+(164, 4, 'TAYGULZM5A', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 787615, NULL, NULL, NULL, '2024-09-08 00:00:00', '2024-10-13 23:57:30'),
+(165, 4, 'L57FJ4BAZL', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 942652, NULL, NULL, NULL, '2024-09-05 00:00:00', '2024-10-13 23:57:30'),
+(166, 4, 'VFQ8ZY8JJO', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 626802, NULL, NULL, NULL, '2024-09-07 00:00:00', '2024-10-13 23:57:30'),
+(167, 4, 'CQEVHADOUG', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 953492, NULL, NULL, NULL, '2024-09-14 00:00:00', '2024-10-13 23:57:30'),
+(168, 4, '61QJ6BKMTF', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 802274, NULL, NULL, NULL, '2024-09-13 00:00:00', '2024-10-13 23:57:30'),
+(169, 4, 'V05CXGAGR5', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 428621, NULL, NULL, NULL, '2024-09-08 00:00:00', '2024-10-13 23:57:30'),
+(170, 4, 'ADGNNMUFZV', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 591104, NULL, NULL, NULL, '2024-09-01 00:00:00', '2024-10-13 23:57:30'),
+(171, 4, 'O6YZJKNDQX', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 332366, NULL, NULL, NULL, '2024-09-05 00:00:00', '2024-10-13 23:57:30'),
+(172, 4, '8JUZY7BWGQ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 671025, NULL, NULL, NULL, '2024-09-20 00:00:00', '2024-10-13 23:57:30'),
+(173, 4, 'CCX6PPPWHZ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 448408, NULL, NULL, NULL, '2024-09-28 00:00:00', '2024-10-13 23:57:30'),
+(174, 4, 'A6UL3EUU2R', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 451425, NULL, NULL, NULL, '2024-09-04 00:00:00', '2024-10-13 23:57:30'),
+(175, 4, 'NWVFDLCQLJ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 389688, NULL, NULL, NULL, '2024-09-06 00:00:00', '2024-10-13 23:57:30'),
+(176, 4, '117J55DX4F', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 173566, NULL, NULL, NULL, '2024-09-06 00:00:00', '2024-10-13 23:57:30'),
+(177, 4, 'XUFECDKIC6', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 495682, NULL, NULL, NULL, '2024-09-07 00:00:00', '2024-10-13 23:57:30'),
+(178, 4, '0UF9KQHQYN', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 409726, NULL, NULL, NULL, '2024-09-18 00:00:00', '2024-10-13 23:57:30'),
+(179, 4, '3VKOQJXUYZ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 812868, NULL, NULL, NULL, '2024-09-26 00:00:00', '2024-10-13 23:57:30'),
+(180, 4, 'OS6TZIJCGD', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 112474, NULL, NULL, NULL, '2024-09-04 00:00:00', '2024-10-13 23:57:31'),
+(181, 4, 'J1U1TVEY4C', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 524682, NULL, NULL, NULL, '2024-09-09 00:00:00', '2024-10-13 23:57:31'),
+(182, 4, 'NU9VEIVP6P', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 960900, NULL, NULL, NULL, '2024-09-30 00:00:00', '2024-10-13 23:57:31'),
+(183, 4, 'XISO4H2RWF', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 124548, NULL, NULL, NULL, '2024-09-25 00:00:00', '2024-10-13 23:57:31'),
+(184, 4, 'X48ZNGEZVA', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 773026, NULL, NULL, NULL, '2024-09-04 00:00:00', '2024-10-13 23:57:31'),
+(185, 4, 'ZOHT3JYMG5', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 647528, NULL, NULL, NULL, '2024-09-16 00:00:00', '2024-10-13 23:57:31'),
+(186, 4, 'USALKBRR9B', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 356553, NULL, NULL, NULL, '2024-09-15 00:00:00', '2024-10-13 23:57:31'),
+(187, 4, '94VISYIFMV', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 994680, NULL, NULL, NULL, '2024-09-23 00:00:00', '2024-10-13 23:57:31'),
+(188, 4, 'TVIHKWF9KQ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 825267, NULL, NULL, NULL, '2024-09-23 00:00:00', '2024-10-13 23:57:31'),
+(189, 4, '6YC60UY9KD', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 980048, NULL, NULL, NULL, '2024-09-29 00:00:00', '2024-10-13 23:57:31'),
+(190, 4, 'BVVW7PLBVE', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 406550, NULL, NULL, NULL, '2024-09-16 00:00:00', '2024-10-13 23:57:31'),
+(191, 4, 'AM5I9K3OZU', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 674737, NULL, NULL, NULL, '2024-09-23 00:00:00', '2024-10-13 23:57:31'),
+(192, 4, 'AVCF8QX4VE', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 196228, NULL, NULL, NULL, '2024-09-18 00:00:00', '2024-10-13 23:57:31'),
+(193, 4, 'BUSVPBN9LJ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 543447, NULL, NULL, NULL, '2024-09-24 00:00:00', '2024-10-13 23:57:31'),
+(194, 4, 'ESUNZXXPSH', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 521440, NULL, NULL, NULL, '2024-09-05 00:00:00', '2024-10-13 23:57:31'),
+(195, 4, 'AVSIITIGY2', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 398728, NULL, NULL, NULL, '2024-09-27 00:00:00', '2024-10-13 23:57:31'),
+(196, 4, 'QRU4YDKZU6', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 985577, NULL, NULL, NULL, '2024-09-05 00:00:00', '2024-10-13 23:57:31'),
+(197, 4, 'XSM85PV1FW', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 109909, NULL, NULL, NULL, '2024-09-23 00:00:00', '2024-10-13 23:57:31'),
+(198, 4, 'E8UQ48IONF', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 767745, NULL, NULL, NULL, '2024-09-24 00:00:00', '2024-10-13 23:57:31'),
+(199, 4, 'EVEZU4TJ6D', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 137392, NULL, NULL, NULL, '2024-09-23 00:00:00', '2024-10-13 23:57:31'),
+(200, 4, '7JTNVVERNO', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 290352, NULL, NULL, NULL, '2024-09-08 00:00:00', '2024-10-13 23:57:31'),
+(201, 4, 'YD8WOQXJSL', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 503409, NULL, NULL, NULL, '2024-09-15 00:00:00', '2024-10-13 23:57:31'),
+(202, 4, 'WL0HXROC4Q', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 636032, NULL, NULL, NULL, '2024-09-03 00:00:00', '2024-10-13 23:57:31'),
+(203, 4, 'PLP6MRFKRB', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 489627, NULL, NULL, NULL, '2024-09-08 00:00:00', '2024-10-13 23:57:31'),
+(204, 4, 'ZWL6JQLPV6', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 673767, NULL, NULL, NULL, '2024-10-14 00:00:00', '2024-10-13 23:57:31'),
+(205, 4, 'AXFO9ZDNJQ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 480788, NULL, NULL, NULL, '2024-10-06 00:00:00', '2024-10-13 23:57:31'),
+(206, 4, 'HKS5LW4U6L', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 911674, NULL, NULL, NULL, '2024-10-11 00:00:00', '2024-10-13 23:57:31'),
+(207, 4, 'DGVI9GJ0VA', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 326836, NULL, NULL, NULL, '2024-10-13 00:00:00', '2024-10-13 23:57:31'),
+(208, 4, 'LZNL8L74FJ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 312069, NULL, NULL, NULL, '2024-10-08 00:00:00', '2024-10-13 23:57:31'),
+(209, 4, 'FOYEKHTWBC', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 225078, NULL, NULL, NULL, '2024-10-03 00:00:00', '2024-10-13 23:57:31'),
+(210, 4, 'HMFFGHUMTH', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 135537, NULL, NULL, NULL, '2024-10-09 00:00:00', '2024-10-13 23:57:31'),
+(211, 4, '2TQKMMUY1S', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 629539, NULL, NULL, NULL, '2024-10-02 00:00:00', '2024-10-13 23:57:31'),
+(212, 4, '0T8FHZUSPG', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 681261, NULL, NULL, NULL, '2024-10-04 00:00:00', '2024-10-13 23:57:31'),
+(213, 4, 'RJF4ZRNTUG', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 850272, NULL, NULL, NULL, '2024-10-01 00:00:00', '2024-10-13 23:57:31'),
+(214, 4, 'J0QWEMBVCL', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 109229, NULL, NULL, NULL, '2024-10-05 00:00:00', '2024-10-13 23:57:31'),
+(215, 4, '0AUSN2VXRV', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 406132, NULL, NULL, NULL, '2024-10-07 00:00:00', '2024-10-13 23:57:31'),
+(216, 4, 'LRJEQQ2M0E', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 734976, NULL, NULL, NULL, '2024-10-04 00:00:00', '2024-10-13 23:57:31'),
+(217, 4, 'FKZXIB1MFQ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 113938, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:57:31'),
+(218, 4, 'OJZBFMIFLV', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 270553, NULL, NULL, NULL, '2024-10-08 00:00:00', '2024-10-13 23:57:31'),
+(219, 4, 'SXFOVKGJUK', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 119594, NULL, NULL, NULL, '2024-10-10 00:00:00', '2024-10-13 23:57:31'),
+(220, 4, 'NJ8LMPESDB', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 912793, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:57:31'),
+(221, 4, 'JRMBUHSXMZ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 864908, NULL, NULL, NULL, '2024-10-10 00:00:00', '2024-10-13 23:57:31'),
+(222, 4, 'QWFQX0XBUR', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 229470, NULL, NULL, NULL, '2024-10-10 00:00:00', '2024-10-13 23:57:31'),
+(223, 4, 'UX85SYGS23', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 343168, NULL, NULL, NULL, '2024-10-01 00:00:00', '2024-10-13 23:57:31'),
+(224, 4, 'KXCAMN68LD', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 315848, NULL, NULL, NULL, '2024-10-01 00:00:00', '2024-10-13 23:57:31'),
+(225, 4, 'MWNUBBOPJO', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 886414, NULL, NULL, NULL, '2024-10-02 00:00:00', '2024-10-13 23:57:31'),
+(226, 4, '1LCJS5XSNB', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 697308, NULL, NULL, NULL, '2024-10-13 00:00:00', '2024-10-13 23:57:31'),
+(227, 4, 'OJAAEXCVJX', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 418179, NULL, NULL, NULL, '2024-10-10 00:00:00', '2024-10-13 23:57:31'),
+(228, 4, 'C2WO3FRWTY', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 132572, NULL, NULL, NULL, '2024-10-11 00:00:00', '2024-10-13 23:57:31'),
+(229, 4, 'LBO01B8RTG', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 141214, NULL, NULL, NULL, '2024-10-10 00:00:00', '2024-10-13 23:57:31'),
+(230, 4, 'OJATHX6D8H', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 722826, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:57:31'),
+(231, 4, 'P5FRUPIFAU', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 125980, NULL, NULL, NULL, '2024-10-14 00:00:00', '2024-10-13 23:57:31'),
+(232, 4, 'XV5THAFWMK', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 261745, NULL, NULL, NULL, '2024-10-04 00:00:00', '2024-10-13 23:57:31'),
+(233, 4, '7KNV8WAPP4', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 200984, NULL, NULL, NULL, '2024-10-09 00:00:00', '2024-10-13 23:57:31'),
+(234, 4, 'BVVYEN5IS0', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 461216, NULL, NULL, NULL, '2024-10-02 00:00:00', '2024-10-13 23:57:31'),
+(235, 4, 'W3R6LYRGTY', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 667307, NULL, NULL, NULL, '2024-10-01 00:00:00', '2024-10-13 23:57:31'),
+(236, 4, 'UORGYMEQLC', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 352561, NULL, NULL, NULL, '2024-10-03 00:00:00', '2024-10-13 23:57:31'),
+(237, 4, 'LQYBBCJFRN', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 879435, NULL, NULL, NULL, '2024-10-04 00:00:00', '2024-10-13 23:57:31'),
+(238, 4, '2DSZ0ZOXFI', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 963753, NULL, NULL, NULL, '2024-10-12 00:00:00', '2024-10-13 23:57:31'),
+(239, 4, '7LTJMNHQ6D', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 273866, NULL, NULL, NULL, '2024-10-08 00:00:00', '2024-10-13 23:57:31'),
+(240, 4, 'B5CXP0H8F3', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 760051, NULL, NULL, NULL, '2024-10-02 00:00:00', '2024-10-13 23:57:31'),
+(241, 4, 'PSYUQNRKDN', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 729798, NULL, NULL, NULL, '2024-10-03 00:00:00', '2024-10-13 23:57:31'),
+(242, 4, 'PL7GR1IFNQ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 823275, NULL, NULL, NULL, '2024-10-14 00:00:00', '2024-10-13 23:57:31'),
+(243, 4, 'WDD9KK9ESC', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 984055, NULL, NULL, NULL, '2024-10-09 00:00:00', '2024-10-13 23:57:31'),
+(244, 4, 'ANJGTTTZMG', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 971614, NULL, NULL, NULL, '2024-10-11 00:00:00', '2024-10-13 23:57:31'),
+(245, 4, 'H6PW2EYVSQ', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 888790, NULL, NULL, NULL, '2024-10-02 00:00:00', '2024-10-13 23:57:31'),
+(246, 4, 'SQRYSHR7Z3', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 904467, NULL, NULL, NULL, '2024-10-09 00:00:00', '2024-10-13 23:57:31'),
+(247, 4, 'C3BNL4QKXX', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 319653, NULL, NULL, NULL, '2024-10-05 00:00:00', '2024-10-13 23:57:31'),
+(248, 4, 'KFSBTM8IV9', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 997782, NULL, NULL, NULL, '2024-10-07 00:00:00', '2024-10-13 23:57:31'),
+(249, 4, 'UDDEX8XZGS', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 146372, NULL, NULL, NULL, '2024-10-06 00:00:00', '2024-10-13 23:57:31'),
+(250, 4, 'SHZZZQWYU5', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 489917, NULL, NULL, NULL, '2024-10-09 00:00:00', '2024-10-13 23:57:31'),
+(251, 4, 'CWVDWKQELC', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 176099, NULL, NULL, NULL, '2024-10-03 00:00:00', '2024-10-13 23:57:31'),
+(252, 4, '2BWOSHICLH', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 917599, NULL, NULL, NULL, '2024-10-09 00:00:00', '2024-10-13 23:57:31'),
+(253, 4, 'AEIKUMLH7Q', 'Ha noi, Viet Nam', 'Ho Quang Anh', '0372238981', 'cod', 5, 1, 262611, NULL, NULL, NULL, '2024-10-08 00:00:00', '2024-10-13 23:57:31'),
+(254, 4, '7S6YSS2ZVS', 'te', 'Ho Quang Anh', '0372238783', 'cod', 2, 0, 149000, NULL, NULL, NULL, '2024-10-14 00:20:09', '2024-10-14 00:20:09');
 
 -- --------------------------------------------------------
 
@@ -387,7 +603,220 @@ INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `color_id`, `size_i
 (37, 39, 296, 5, 1, 1, 149000, '2024-10-12 20:20:16', '2024-10-12 20:20:16'),
 (38, 40, 371, 5, 2, 1, 149000, '2024-10-13 00:05:25', '2024-10-13 00:05:25'),
 (39, 40, 373, 5, 3, 1, 149000, '2024-10-13 00:05:25', '2024-10-13 00:05:25'),
-(40, 41, 369, 5, 4, 2, 149000, '2024-10-13 00:15:00', '2024-10-13 00:15:00');
+(40, 41, 369, 5, 4, 2, 149000, '2024-10-13 00:15:00', '2024-10-13 00:15:00'),
+(41, 42, 255, 5, 1, 1, 149000, '2024-10-13 23:01:25', '2024-10-13 23:01:25'),
+(42, 43, 251, 5, 3, 1, 149000, '2024-10-13 23:20:16', '2024-10-13 23:20:16'),
+(43, 44, 344, 5, 4, 1, 149000, '2024-09-26 00:00:00', '2024-10-13 23:42:41'),
+(44, 45, 381, 5, 4, 1, 149000, '2024-09-10 00:00:00', '2024-10-13 23:42:41'),
+(45, 46, 266, 5, 4, 1, 149000, '2024-09-06 00:00:00', '2024-10-13 23:42:41'),
+(46, 47, 432, 5, 4, 1, 149000, '2024-09-13 00:00:00', '2024-10-13 23:42:41'),
+(47, 48, 385, 5, 4, 1, 149000, '2024-09-15 00:00:00', '2024-10-13 23:42:41'),
+(48, 49, 263, 5, 4, 1, 149000, '2024-09-16 00:00:00', '2024-10-13 23:42:41'),
+(49, 50, 318, 5, 4, 1, 149000, '2024-09-24 00:00:00', '2024-10-13 23:42:41'),
+(50, 51, 307, 5, 4, 1, 149000, '2024-09-25 00:00:00', '2024-10-13 23:42:41'),
+(51, 52, 333, 5, 4, 1, 149000, '2024-09-05 00:00:00', '2024-10-13 23:42:41'),
+(52, 53, 260, 5, 4, 1, 149000, '2024-09-06 00:00:00', '2024-10-13 23:42:41'),
+(53, 54, 348, 5, 4, 1, 149000, '2024-09-01 00:00:00', '2024-10-13 23:44:33'),
+(54, 55, 356, 5, 4, 1, 149000, '2024-09-06 00:00:00', '2024-10-13 23:44:33'),
+(55, 56, 337, 5, 4, 1, 149000, '2024-09-18 00:00:00', '2024-10-13 23:44:33'),
+(56, 57, 286, 5, 4, 1, 149000, '2024-09-21 00:00:00', '2024-10-13 23:44:33'),
+(57, 58, 452, 5, 4, 1, 149000, '2024-09-02 00:00:00', '2024-10-13 23:44:33'),
+(58, 59, 432, 5, 4, 1, 149000, '2024-09-22 00:00:00', '2024-10-13 23:44:33'),
+(59, 60, 274, 5, 4, 1, 149000, '2024-09-25 00:00:00', '2024-10-13 23:44:33'),
+(60, 61, 420, 5, 4, 1, 149000, '2024-09-04 00:00:00', '2024-10-13 23:44:33'),
+(61, 62, 446, 5, 4, 1, 149000, '2024-09-10 00:00:00', '2024-10-13 23:44:33'),
+(62, 63, 445, 5, 4, 1, 149000, '2024-09-29 00:00:00', '2024-10-13 23:44:33'),
+(63, 64, 316, 5, 4, 1, 149000, '2024-09-10 00:00:00', '2024-10-13 23:44:33'),
+(64, 65, 284, 5, 4, 1, 149000, '2024-09-09 00:00:00', '2024-10-13 23:44:33'),
+(65, 66, 296, 5, 4, 1, 149000, '2024-09-17 00:00:00', '2024-10-13 23:44:33'),
+(66, 67, 341, 5, 4, 1, 149000, '2024-09-13 00:00:00', '2024-10-13 23:44:33'),
+(67, 68, 400, 5, 4, 1, 149000, '2024-09-25 00:00:00', '2024-10-13 23:44:33'),
+(68, 69, 437, 5, 4, 1, 149000, '2024-09-11 00:00:00', '2024-10-13 23:44:33'),
+(69, 70, 277, 5, 4, 1, 149000, '2024-09-11 00:00:00', '2024-10-13 23:44:33'),
+(70, 71, 288, 5, 4, 1, 149000, '2024-09-07 00:00:00', '2024-10-13 23:44:33'),
+(71, 72, 436, 5, 4, 1, 149000, '2024-09-20 00:00:00', '2024-10-13 23:44:33'),
+(72, 73, 399, 5, 4, 1, 149000, '2024-09-11 00:00:00', '2024-10-13 23:44:33'),
+(73, 74, 359, 5, 4, 1, 149000, '2024-09-22 00:00:00', '2024-10-13 23:44:33'),
+(74, 75, 284, 5, 4, 1, 149000, '2024-09-17 00:00:00', '2024-10-13 23:44:33'),
+(75, 76, 400, 5, 4, 1, 149000, '2024-09-14 00:00:00', '2024-10-13 23:44:33'),
+(76, 77, 388, 5, 4, 1, 149000, '2024-09-09 00:00:00', '2024-10-13 23:44:33'),
+(77, 78, 264, 5, 4, 1, 149000, '2024-09-21 00:00:00', '2024-10-13 23:44:33'),
+(78, 79, 452, 5, 4, 1, 149000, '2024-09-27 00:00:00', '2024-10-13 23:44:33'),
+(79, 80, 335, 5, 4, 1, 149000, '2024-09-23 00:00:00', '2024-10-13 23:44:33'),
+(80, 81, 416, 5, 4, 1, 149000, '2024-09-01 00:00:00', '2024-10-13 23:44:33'),
+(81, 82, 311, 5, 4, 1, 149000, '2024-09-24 00:00:00', '2024-10-13 23:44:33'),
+(82, 83, 437, 5, 4, 1, 149000, '2024-09-19 00:00:00', '2024-10-13 23:44:33'),
+(83, 84, 351, 5, 4, 1, 149000, '2024-09-20 00:00:00', '2024-10-13 23:44:33'),
+(84, 85, 427, 5, 4, 1, 149000, '2024-09-07 00:00:00', '2024-10-13 23:44:33'),
+(85, 86, 332, 5, 4, 1, 149000, '2024-09-13 00:00:00', '2024-10-13 23:44:33'),
+(86, 87, 387, 5, 4, 1, 149000, '2024-09-02 00:00:00', '2024-10-13 23:44:33'),
+(87, 88, 405, 5, 4, 1, 149000, '2024-09-17 00:00:00', '2024-10-13 23:44:33'),
+(88, 89, 340, 5, 4, 1, 149000, '2024-09-28 00:00:00', '2024-10-13 23:44:33'),
+(89, 90, 348, 5, 4, 1, 149000, '2024-09-19 00:00:00', '2024-10-13 23:44:33'),
+(90, 91, 412, 5, 4, 1, 149000, '2024-09-06 00:00:00', '2024-10-13 23:44:33'),
+(91, 92, 450, 5, 4, 1, 149000, '2024-09-28 00:00:00', '2024-10-13 23:44:33'),
+(92, 93, 401, 5, 4, 1, 149000, '2024-09-20 00:00:00', '2024-10-13 23:44:33'),
+(93, 94, 450, 5, 4, 1, 149000, '2024-09-21 00:00:00', '2024-10-13 23:44:33'),
+(94, 95, 271, 5, 4, 1, 149000, '2024-09-02 00:00:00', '2024-10-13 23:44:33'),
+(95, 96, 380, 5, 4, 1, 149000, '2024-09-03 00:00:00', '2024-10-13 23:44:33'),
+(96, 97, 355, 5, 4, 1, 149000, '2024-09-28 00:00:00', '2024-10-13 23:44:33'),
+(97, 98, 432, 5, 4, 1, 149000, '2024-09-06 00:00:00', '2024-10-13 23:44:33'),
+(98, 99, 398, 5, 4, 1, 149000, '2024-09-29 00:00:00', '2024-10-13 23:44:33'),
+(99, 100, 439, 5, 4, 1, 149000, '2024-09-06 00:00:00', '2024-10-13 23:44:33'),
+(100, 101, 365, 5, 4, 1, 149000, '2024-09-06 00:00:00', '2024-10-13 23:44:33'),
+(101, 102, 358, 5, 4, 1, 149000, '2024-09-13 00:00:00', '2024-10-13 23:44:33'),
+(102, 103, 275, 5, 4, 1, 149000, '2024-09-27 00:00:00', '2024-10-13 23:44:33'),
+(103, 104, 458, 5, 4, 1, 149000, '2024-10-09 00:00:00', '2024-10-13 23:44:33'),
+(104, 105, 278, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(105, 106, 392, 5, 4, 1, 149000, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(106, 107, 438, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(107, 108, 406, 5, 4, 1, 149000, '2024-10-01 00:00:00', '2024-10-13 23:44:33'),
+(108, 109, 282, 5, 4, 1, 149000, '2024-10-04 00:00:00', '2024-10-13 23:44:33'),
+(109, 110, 415, 5, 4, 1, 149000, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(110, 111, 283, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(111, 112, 280, 5, 4, 1, 149000, '2024-10-13 00:00:00', '2024-10-13 23:44:33'),
+(112, 113, 263, 5, 4, 1, 149000, '2024-10-13 00:00:00', '2024-10-13 23:44:33'),
+(113, 114, 411, 5, 4, 1, 149000, '2024-10-03 00:00:00', '2024-10-13 23:44:33'),
+(114, 115, 428, 5, 4, 1, 149000, '2024-10-09 00:00:00', '2024-10-13 23:44:33'),
+(115, 116, 393, 5, 4, 1, 149000, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(116, 117, 292, 5, 4, 1, 149000, '2024-10-13 00:00:00', '2024-10-13 23:44:33'),
+(117, 118, 328, 5, 4, 1, 149000, '2024-10-08 00:00:00', '2024-10-13 23:44:33'),
+(118, 119, 376, 5, 4, 1, 149000, '2024-10-04 00:00:00', '2024-10-13 23:44:33'),
+(119, 120, 417, 5, 4, 1, 149000, '2024-10-09 00:00:00', '2024-10-13 23:44:33'),
+(120, 121, 441, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(121, 122, 439, 5, 4, 1, 149000, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(122, 123, 273, 5, 4, 1, 149000, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(123, 124, 369, 5, 4, 1, 149000, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(124, 125, 298, 5, 4, 1, 149000, '2024-10-13 00:00:00', '2024-10-13 23:44:33'),
+(125, 126, 277, 5, 4, 1, 149000, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(126, 127, 435, 5, 4, 1, 149000, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(127, 128, 448, 5, 4, 1, 149000, '2024-10-04 00:00:00', '2024-10-13 23:44:33'),
+(128, 129, 426, 5, 4, 1, 149000, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(129, 130, 432, 5, 4, 1, 149000, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(130, 131, 462, 5, 4, 1, 149000, '2024-10-06 00:00:00', '2024-10-13 23:44:33'),
+(131, 132, 343, 5, 4, 1, 149000, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(132, 133, 358, 5, 4, 1, 149000, '2024-10-03 00:00:00', '2024-10-13 23:44:33'),
+(133, 134, 444, 5, 4, 1, 149000, '2024-10-01 00:00:00', '2024-10-13 23:44:33'),
+(134, 135, 383, 5, 4, 1, 149000, '2024-10-10 00:00:00', '2024-10-13 23:44:33'),
+(135, 136, 341, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(136, 137, 289, 5, 4, 1, 149000, '2024-10-13 00:00:00', '2024-10-13 23:44:33'),
+(137, 138, 257, 5, 4, 1, 149000, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(138, 139, 371, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(139, 140, 439, 5, 4, 1, 149000, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(140, 141, 444, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(141, 142, 281, 5, 4, 1, 149000, '2024-10-02 00:00:00', '2024-10-13 23:44:33'),
+(142, 143, 397, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(143, 144, 281, 5, 4, 1, 149000, '2024-10-08 00:00:00', '2024-10-13 23:44:33'),
+(144, 145, 393, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:44:33'),
+(145, 146, 413, 5, 4, 1, 149000, '2024-10-08 00:00:00', '2024-10-13 23:44:33'),
+(146, 147, 440, 5, 4, 1, 149000, '2024-10-10 00:00:00', '2024-10-13 23:44:33'),
+(147, 148, 273, 5, 4, 1, 149000, '2024-10-07 00:00:00', '2024-10-13 23:44:33'),
+(148, 149, 311, 5, 4, 1, 149000, '2024-10-08 00:00:00', '2024-10-13 23:44:33'),
+(149, 150, 378, 5, 4, 1, 149000, '2024-10-08 00:00:00', '2024-10-13 23:44:33'),
+(150, 151, 428, 5, 4, 1, 149000, '2024-10-14 00:00:00', '2024-10-13 23:44:33'),
+(151, 152, 254, 5, 4, 1, 149000, '2024-10-04 00:00:00', '2024-10-13 23:44:33'),
+(152, 153, 424, 5, 4, 1, 149000, '2024-10-11 00:00:00', '2024-10-13 23:44:33'),
+(153, 154, 277, 5, 4, 1, 149000, '2024-09-08 00:00:00', '2024-10-13 23:57:30'),
+(154, 155, 358, 5, 4, 1, 149000, '2024-09-04 00:00:00', '2024-10-13 23:57:30'),
+(155, 156, 440, 5, 4, 1, 149000, '2024-09-09 00:00:00', '2024-10-13 23:57:30'),
+(156, 157, 269, 5, 4, 1, 149000, '2024-09-30 00:00:00', '2024-10-13 23:57:30'),
+(157, 158, 369, 5, 4, 1, 149000, '2024-09-16 00:00:00', '2024-10-13 23:57:30'),
+(158, 159, 302, 5, 4, 1, 149000, '2024-09-04 00:00:00', '2024-10-13 23:57:30'),
+(159, 160, 310, 5, 4, 1, 149000, '2024-09-25 00:00:00', '2024-10-13 23:57:30'),
+(160, 161, 259, 5, 4, 1, 149000, '2024-09-16 00:00:00', '2024-10-13 23:57:30'),
+(161, 162, 307, 5, 4, 1, 149000, '2024-09-02 00:00:00', '2024-10-13 23:57:30'),
+(162, 163, 313, 5, 4, 1, 149000, '2024-09-11 00:00:00', '2024-10-13 23:57:30'),
+(163, 164, 282, 5, 4, 1, 149000, '2024-09-08 00:00:00', '2024-10-13 23:57:30'),
+(164, 165, 433, 5, 4, 1, 149000, '2024-09-05 00:00:00', '2024-10-13 23:57:30'),
+(165, 166, 367, 5, 4, 1, 149000, '2024-09-07 00:00:00', '2024-10-13 23:57:30'),
+(166, 167, 277, 5, 4, 1, 149000, '2024-09-14 00:00:00', '2024-10-13 23:57:30'),
+(167, 168, 429, 5, 4, 1, 149000, '2024-09-13 00:00:00', '2024-10-13 23:57:30'),
+(168, 169, 438, 5, 4, 1, 149000, '2024-09-08 00:00:00', '2024-10-13 23:57:30'),
+(169, 170, 295, 5, 4, 1, 149000, '2024-09-01 00:00:00', '2024-10-13 23:57:30'),
+(170, 171, 393, 5, 4, 1, 149000, '2024-09-05 00:00:00', '2024-10-13 23:57:30'),
+(171, 172, 258, 5, 4, 1, 149000, '2024-09-20 00:00:00', '2024-10-13 23:57:30'),
+(172, 173, 434, 5, 4, 1, 149000, '2024-09-28 00:00:00', '2024-10-13 23:57:30'),
+(173, 174, 424, 5, 4, 1, 149000, '2024-09-04 00:00:00', '2024-10-13 23:57:30'),
+(174, 175, 324, 5, 4, 1, 149000, '2024-09-06 00:00:00', '2024-10-13 23:57:30'),
+(175, 176, 455, 5, 4, 1, 149000, '2024-09-06 00:00:00', '2024-10-13 23:57:30'),
+(176, 177, 359, 5, 4, 1, 149000, '2024-09-07 00:00:00', '2024-10-13 23:57:30'),
+(177, 178, 423, 5, 4, 1, 149000, '2024-09-18 00:00:00', '2024-10-13 23:57:30'),
+(178, 179, 438, 5, 4, 1, 149000, '2024-09-26 00:00:00', '2024-10-13 23:57:30'),
+(179, 180, 277, 5, 4, 1, 149000, '2024-09-04 00:00:00', '2024-10-13 23:57:31'),
+(180, 181, 409, 5, 4, 1, 149000, '2024-09-09 00:00:00', '2024-10-13 23:57:31'),
+(181, 182, 385, 5, 4, 1, 149000, '2024-09-30 00:00:00', '2024-10-13 23:57:31'),
+(182, 183, 266, 5, 4, 1, 149000, '2024-09-25 00:00:00', '2024-10-13 23:57:31'),
+(183, 184, 295, 5, 4, 1, 149000, '2024-09-04 00:00:00', '2024-10-13 23:57:31'),
+(184, 185, 383, 5, 4, 1, 149000, '2024-09-16 00:00:00', '2024-10-13 23:57:31'),
+(185, 186, 359, 5, 4, 1, 149000, '2024-09-15 00:00:00', '2024-10-13 23:57:31'),
+(186, 187, 399, 5, 4, 1, 149000, '2024-09-23 00:00:00', '2024-10-13 23:57:31'),
+(187, 188, 430, 5, 4, 1, 149000, '2024-09-23 00:00:00', '2024-10-13 23:57:31'),
+(188, 189, 399, 5, 4, 1, 149000, '2024-09-29 00:00:00', '2024-10-13 23:57:31'),
+(189, 190, 447, 5, 4, 1, 149000, '2024-09-16 00:00:00', '2024-10-13 23:57:31'),
+(190, 191, 261, 5, 4, 1, 149000, '2024-09-23 00:00:00', '2024-10-13 23:57:31'),
+(191, 192, 363, 5, 4, 1, 149000, '2024-09-18 00:00:00', '2024-10-13 23:57:31'),
+(192, 193, 429, 5, 4, 1, 149000, '2024-09-24 00:00:00', '2024-10-13 23:57:31'),
+(193, 194, 256, 5, 4, 1, 149000, '2024-09-05 00:00:00', '2024-10-13 23:57:31'),
+(194, 195, 377, 5, 4, 1, 149000, '2024-09-27 00:00:00', '2024-10-13 23:57:31'),
+(195, 196, 427, 5, 4, 1, 149000, '2024-09-05 00:00:00', '2024-10-13 23:57:31'),
+(196, 197, 289, 5, 4, 1, 149000, '2024-09-23 00:00:00', '2024-10-13 23:57:31'),
+(197, 198, 279, 5, 4, 1, 149000, '2024-09-24 00:00:00', '2024-10-13 23:57:31'),
+(198, 199, 292, 5, 4, 1, 149000, '2024-09-23 00:00:00', '2024-10-13 23:57:31'),
+(199, 200, 333, 5, 4, 1, 149000, '2024-09-08 00:00:00', '2024-10-13 23:57:31'),
+(200, 201, 298, 5, 4, 1, 149000, '2024-09-15 00:00:00', '2024-10-13 23:57:31'),
+(201, 202, 264, 5, 4, 1, 149000, '2024-09-03 00:00:00', '2024-10-13 23:57:31'),
+(202, 203, 409, 5, 4, 1, 149000, '2024-09-08 00:00:00', '2024-10-13 23:57:31'),
+(203, 204, 427, 5, 4, 1, 149000, '2024-10-14 00:00:00', '2024-10-13 23:57:31'),
+(204, 205, 294, 5, 4, 1, 149000, '2024-10-06 00:00:00', '2024-10-13 23:57:31'),
+(205, 206, 332, 5, 4, 1, 149000, '2024-10-11 00:00:00', '2024-10-13 23:57:31'),
+(206, 207, 381, 5, 4, 1, 149000, '2024-10-13 00:00:00', '2024-10-13 23:57:31'),
+(207, 208, 392, 5, 4, 1, 149000, '2024-10-08 00:00:00', '2024-10-13 23:57:31'),
+(208, 209, 376, 5, 4, 1, 149000, '2024-10-03 00:00:00', '2024-10-13 23:57:31'),
+(209, 210, 426, 5, 4, 1, 149000, '2024-10-09 00:00:00', '2024-10-13 23:57:31'),
+(210, 211, 338, 5, 4, 1, 149000, '2024-10-02 00:00:00', '2024-10-13 23:57:31'),
+(211, 212, 398, 5, 4, 1, 149000, '2024-10-04 00:00:00', '2024-10-13 23:57:31'),
+(212, 213, 432, 5, 4, 1, 149000, '2024-10-01 00:00:00', '2024-10-13 23:57:31'),
+(213, 214, 295, 5, 4, 1, 149000, '2024-10-05 00:00:00', '2024-10-13 23:57:31'),
+(214, 215, 423, 5, 4, 1, 149000, '2024-10-07 00:00:00', '2024-10-13 23:57:31'),
+(215, 216, 294, 5, 4, 1, 149000, '2024-10-04 00:00:00', '2024-10-13 23:57:31'),
+(216, 217, 366, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:57:31'),
+(217, 218, 372, 5, 4, 1, 149000, '2024-10-08 00:00:00', '2024-10-13 23:57:31'),
+(218, 219, 374, 5, 4, 1, 149000, '2024-10-10 00:00:00', '2024-10-13 23:57:31'),
+(219, 220, 398, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:57:31'),
+(220, 221, 304, 5, 4, 1, 149000, '2024-10-10 00:00:00', '2024-10-13 23:57:31'),
+(221, 222, 399, 5, 4, 1, 149000, '2024-10-10 00:00:00', '2024-10-13 23:57:31'),
+(222, 223, 289, 5, 4, 1, 149000, '2024-10-01 00:00:00', '2024-10-13 23:57:31'),
+(223, 224, 464, 5, 4, 1, 149000, '2024-10-01 00:00:00', '2024-10-13 23:57:31'),
+(224, 225, 435, 5, 4, 1, 149000, '2024-10-02 00:00:00', '2024-10-13 23:57:31'),
+(225, 226, 289, 5, 4, 1, 149000, '2024-10-13 00:00:00', '2024-10-13 23:57:31'),
+(226, 227, 293, 5, 4, 1, 149000, '2024-10-10 00:00:00', '2024-10-13 23:57:31'),
+(227, 228, 433, 5, 4, 1, 149000, '2024-10-11 00:00:00', '2024-10-13 23:57:31'),
+(228, 229, 379, 5, 4, 1, 149000, '2024-10-10 00:00:00', '2024-10-13 23:57:31'),
+(229, 230, 427, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:57:31'),
+(230, 231, 435, 5, 4, 1, 149000, '2024-10-14 00:00:00', '2024-10-13 23:57:31'),
+(231, 232, 402, 5, 4, 1, 149000, '2024-10-04 00:00:00', '2024-10-13 23:57:31'),
+(232, 233, 285, 5, 4, 1, 149000, '2024-10-09 00:00:00', '2024-10-13 23:57:31'),
+(233, 234, 399, 5, 4, 1, 149000, '2024-10-02 00:00:00', '2024-10-13 23:57:31'),
+(234, 235, 431, 5, 4, 1, 149000, '2024-10-01 00:00:00', '2024-10-13 23:57:31'),
+(235, 236, 434, 5, 4, 1, 149000, '2024-10-03 00:00:00', '2024-10-13 23:57:31'),
+(236, 237, 402, 5, 4, 1, 149000, '2024-10-04 00:00:00', '2024-10-13 23:57:31'),
+(237, 238, 430, 5, 4, 1, 149000, '2024-10-12 00:00:00', '2024-10-13 23:57:31'),
+(238, 239, 257, 5, 4, 1, 149000, '2024-10-08 00:00:00', '2024-10-13 23:57:31'),
+(239, 240, 265, 5, 4, 1, 149000, '2024-10-02 00:00:00', '2024-10-13 23:57:31'),
+(240, 241, 285, 5, 4, 1, 149000, '2024-10-03 00:00:00', '2024-10-13 23:57:31'),
+(241, 242, 361, 5, 4, 1, 149000, '2024-10-14 00:00:00', '2024-10-13 23:57:31'),
+(242, 243, 414, 5, 4, 1, 149000, '2024-10-09 00:00:00', '2024-10-13 23:57:31'),
+(243, 244, 426, 5, 4, 1, 149000, '2024-10-11 00:00:00', '2024-10-13 23:57:31'),
+(244, 245, 446, 5, 4, 1, 149000, '2024-10-02 00:00:00', '2024-10-13 23:57:31'),
+(245, 246, 375, 5, 4, 1, 149000, '2024-10-09 00:00:00', '2024-10-13 23:57:31'),
+(246, 247, 266, 5, 4, 1, 149000, '2024-10-05 00:00:00', '2024-10-13 23:57:31'),
+(247, 248, 275, 5, 4, 1, 149000, '2024-10-07 00:00:00', '2024-10-13 23:57:31'),
+(248, 249, 323, 5, 4, 1, 149000, '2024-10-06 00:00:00', '2024-10-13 23:57:31'),
+(249, 250, 287, 5, 4, 1, 149000, '2024-10-09 00:00:00', '2024-10-13 23:57:31'),
+(250, 251, 305, 5, 4, 1, 149000, '2024-10-03 00:00:00', '2024-10-13 23:57:31'),
+(251, 252, 320, 5, 4, 1, 149000, '2024-10-09 00:00:00', '2024-10-13 23:57:31'),
+(252, 253, 372, 5, 4, 1, 149000, '2024-10-08 00:00:00', '2024-10-13 23:57:31'),
+(253, 254, 255, 5, 2, 1, 149000, '2024-10-14 00:20:09', '2024-10-14 00:20:09');
 
 -- --------------------------------------------------------
 
@@ -454,11 +883,11 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `price`, `old_price`, `description`, `washing_instructions`, `kind_id`, `is_active`, `stock`, `created_at`, `updated_at`) VALUES
 (250, 'Áo phông active nam có hình in', 149000, 200000, NULL, NULL, 8, 1, 100, '2024-10-12 15:44:41', '2024-10-12 15:44:41'),
-(251, 'Áo phông dài tay nam', 149000, 200000, NULL, NULL, 8, 1, 98, '2024-10-12 15:44:41', '2024-10-12 20:16:39'),
+(251, 'Áo phông dài tay nam', 149000, 200000, NULL, NULL, 8, 1, 97, '2024-10-12 15:44:41', '2024-10-13 23:20:16'),
 (252, 'Áo phông nam có hình in', 149000, 200000, NULL, NULL, 8, 1, 99, '2024-10-12 15:44:42', '2024-10-12 20:18:33'),
 (253, 'Áo phông nam có hình in', 149000, 200000, NULL, NULL, 8, 1, 100, '2024-10-12 15:44:42', '2024-10-12 15:44:42'),
 (254, 'Áo phông nam có hình in', 149000, 200000, NULL, NULL, 8, 1, 100, '2024-10-12 15:44:42', '2024-10-12 15:44:42'),
-(255, 'Áo phông nam có hình in', 149000, 200000, NULL, NULL, 8, 1, 99, '2024-10-12 15:44:42', '2024-10-12 16:23:38'),
+(255, 'Áo phông nam có hình in', 149000, 200000, NULL, NULL, 8, 1, 97, '2024-10-12 15:44:42', '2024-10-14 00:20:09'),
 (256, 'Áo phông nam có hình in', 149000, 200000, NULL, NULL, 8, 1, 100, '2024-10-12 15:44:42', '2024-10-12 15:44:42'),
 (257, 'Áo phông nam có hình in', 149000, 200000, NULL, NULL, 8, 1, 100, '2024-10-12 15:44:42', '2024-10-12 15:44:42'),
 (258, 'Áo phông nam có hình in', 149000, 200000, NULL, NULL, 8, 1, 100, '2024-10-12 15:44:42', '2024-10-12 15:44:42'),
@@ -1666,14 +2095,6 @@ INSERT INTO `product_colors` (`id`, `product_id`, `color_id`, `is_active`, `crea
 (3002, 371, 10, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (3003, 371, 11, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (3004, 371, 12, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(3005, 372, 5, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(3006, 372, 6, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(3007, 372, 7, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(3008, 372, 8, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(3009, 372, 9, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(3010, 372, 10, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(3011, 372, 11, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(3012, 372, 12, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (3013, 373, 5, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (3014, 373, 6, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (3015, 373, 7, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
@@ -2263,8 +2684,7 @@ INSERT INTO `product_colors` (`id`, `product_id`, `color_id`, `is_active`, `crea
 (3599, 446, 7, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (3600, 446, 8, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (3601, 446, 9, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
-(3602, 446, 10, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23');
-INSERT INTO `product_colors` (`id`, `product_id`, `color_id`, `is_active`, `created_at`, `updated_at`) VALUES
+(3602, 446, 10, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (3603, 446, 11, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (3604, 446, 12, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (3605, 447, 5, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
@@ -2272,7 +2692,8 @@ INSERT INTO `product_colors` (`id`, `product_id`, `color_id`, `is_active`, `crea
 (3607, 447, 7, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (3608, 447, 8, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (3609, 447, 9, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
-(3610, 447, 10, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
+(3610, 447, 10, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23');
+INSERT INTO `product_colors` (`id`, `product_id`, `color_id`, `is_active`, `created_at`, `updated_at`) VALUES
 (3611, 447, 11, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (3612, 447, 12, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (3613, 448, 5, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
@@ -2410,7 +2831,15 @@ INSERT INTO `product_colors` (`id`, `product_id`, `color_id`, `is_active`, `crea
 (3745, 464, 9, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (3746, 464, 10, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (3747, 464, 11, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
-(3748, 464, 12, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23');
+(3748, 464, 12, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
+(3757, 372, 5, 1, NULL, NULL),
+(3758, 372, 6, 1, NULL, NULL),
+(3759, 372, 7, 1, NULL, NULL),
+(3760, 372, 8, 1, NULL, NULL),
+(3761, 372, 9, 1, NULL, NULL),
+(3762, 372, 10, 1, NULL, NULL),
+(3763, 372, 11, 1, NULL, NULL),
+(3764, 372, 12, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -3723,12 +4152,6 @@ INSERT INTO `product_sizes` (`id`, `product_id`, `size_id`, `is_active`, `create
 (2235, 371, 4, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2236, 371, 5, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2237, 371, 6, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(2238, 372, 1, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(2239, 372, 2, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(2240, 372, 3, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(2241, 372, 4, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(2242, 372, 5, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(2243, 372, 6, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2244, 373, 1, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2245, 373, 2, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2246, 373, 3, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
@@ -3781,14 +4204,14 @@ INSERT INTO `product_sizes` (`id`, `product_id`, `size_id`, `is_active`, `create
 (2293, 381, 2, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2294, 381, 3, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2295, 381, 4, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(2296, 381, 5, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46');
-INSERT INTO `product_sizes` (`id`, `product_id`, `size_id`, `is_active`, `created_at`, `updated_at`) VALUES
+(2296, 381, 5, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2297, 381, 6, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2298, 382, 1, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2299, 382, 2, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2300, 382, 3, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2301, 382, 4, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
-(2302, 382, 5, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
+(2302, 382, 5, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46');
+INSERT INTO `product_sizes` (`id`, `product_id`, `size_id`, `is_active`, `created_at`, `updated_at`) VALUES
 (2303, 382, 6, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2304, 383, 1, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
 (2305, 383, 2, 1, '2024-10-12 15:55:46', '2024-10-12 15:55:46'),
@@ -4281,7 +4704,13 @@ INSERT INTO `product_sizes` (`id`, `product_id`, `size_id`, `is_active`, `create
 (2792, 464, 3, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (2793, 464, 4, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
 (2794, 464, 5, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
-(2795, 464, 6, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23');
+(2795, 464, 6, 1, '2024-10-12 16:04:23', '2024-10-12 16:04:23'),
+(2802, 372, 1, 1, NULL, NULL),
+(2803, 372, 2, 1, NULL, NULL),
+(2804, 372, 3, 1, NULL, NULL),
+(2805, 372, 4, 1, NULL, NULL),
+(2806, 372, 5, 1, NULL, NULL),
+(2807, 372, 6, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -4308,7 +4737,13 @@ INSERT INTO `reviews` (`id`, `user_id`, `order_id`, `product_id`, `rating`, `not
 (4, 7, 39, 296, 5, NULL, '2024-10-13 00:03:22', '2024-10-13 00:03:22'),
 (5, 7, 38, 252, 5, 'good', '2024-10-13 00:03:31', '2024-10-13 00:03:31'),
 (6, 7, 40, 371, 2, 'bad', '2024-10-13 00:07:09', '2024-10-13 00:07:09'),
-(7, 7, 40, 373, 1, NULL, '2024-10-13 00:07:09', '2024-10-13 00:07:09');
+(7, 7, 40, 373, 1, NULL, '2024-10-13 00:07:09', '2024-10-13 00:07:09'),
+(8, 4, 253, 372, 3, NULL, '2024-10-14 00:01:38', '2024-10-14 00:01:38'),
+(9, 4, 252, 320, 2, NULL, '2024-10-14 00:01:43', '2024-10-14 00:01:43'),
+(10, 4, 251, 305, 1, NULL, '2024-10-14 00:01:48', '2024-10-14 00:01:48'),
+(11, 4, 250, 287, 1, 'so bad', '2024-10-14 00:01:56', '2024-10-14 00:01:56'),
+(12, 4, 249, 323, 5, 'ok', '2024-10-14 00:02:01', '2024-10-14 00:02:01'),
+(13, 4, 243, 414, 2, 'tam on', '2024-10-14 00:05:26', '2024-10-14 00:05:26');
 
 -- --------------------------------------------------------
 
@@ -4354,7 +4789,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('0U3TBTGRWiNbB2viE8xf8NdB221gqAK4hpGy5lRW', 7, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo5OntzOjY6Il90b2tlbiI7czo0MDoiblJ5emZGNVpmVGlqY1R5eVo1Q3l6UHFhUTdLdFpkU21ObEg3RXlWciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly9sb2NhbGhvc3Q6OTk5OS9jaGktdGlldC1zYW4tcGhhbS80NDEiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo3O3M6MTM6InByb2R1Y3RWaWV3ZWQiO2E6ODp7aTowO2k6MjUyO2k6MTtpOjI1NTtpOjI7aToyNTE7aTozO2k6Mjk2O2k6NDtpOjM3MTtpOjU7aTozNzM7aTo2O2k6MzY5O2k6NztpOjQ0MTt9czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6NDoiY2FydCI7YTowOnt9czo4OiJkaXNjb3VudCI7TjtzOjEwOiJmaW5hbF9jYXJ0IjthOjA6e319', 1728757262);
+('Bx7m8QXAvoSlKy1nCBZgQa9IgxF4Ar24984meYhL', 4, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo5OntzOjY6Il90b2tlbiI7czo0MDoiUzM0R1cxbFNVc09kM2IzVFdyR1RYd2EyRUtvR2xRQXNlNmd6UXRkdiI7czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjY0OiJodHRwOi8vbG9jYWxob3N0Ojk5OTkvZGF0LWhhbmctdGhhbmgtY29uZz9jdXJyZW50Q29kZT03UzZZU1MyWlZTIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxMzoicHJvZHVjdFZpZXdlZCI7YTo0OntpOjA7aToyNTU7aToxO2k6MjUxO2k6MjtpOjMyMztpOjM7aTo0MTQ7fXM6NDoiY2FydCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NDtzOjg6ImRpc2NvdW50IjtOO3M6MTA6ImZpbmFsX2NhcnQiO2E6MDp7fX0=', 1728840009);
 
 -- --------------------------------------------------------
 
@@ -4379,7 +4814,8 @@ CREATE TABLE `shipping_addresses` (
 --
 
 INSERT INTO `shipping_addresses` (`id`, `user_id`, `address`, `name`, `fullname`, `phone_number`, `is_default`, `created_at`, `updated_at`) VALUES
-(15, 7, 'Dong da, ha noi, vietnam', 'Nhà', 'ho quang anh', '0372238783', 1, '2024-10-12 16:23:26', '2024-10-12 16:23:30');
+(15, 7, 'Dong da, ha noi, vietnam', 'Nhà', 'ho quang anh', '0372238783', 1, '2024-10-12 16:23:26', '2024-10-12 16:23:30'),
+(16, 4, 'te', 'tew', 'Ho Quang Anh', '0372238783', 1, '2024-10-13 23:01:17', '2024-10-13 23:01:17');
 
 -- --------------------------------------------------------
 
@@ -4444,7 +4880,7 @@ INSERT INTO `users` (`id`, `fullname`, `date_of_birth`, `phone_number`, `email`,
 (4, 'Ho Quang Anh', NULL, NULL, 'user@admin.com', NULL, 1, 1, '$2y$12$KmxTomFAAtCBGZG8hU4SJOTFY82lGVjty.dKPGVtO/BpSaRctJhUC', NULL, NULL, 4, 0, 1, NULL, '2024-06-18 08:21:15', '2024-08-18 08:21:15'),
 (5, 'trinh xuan son', NULL, NULL, 'son123@gmail.com', NULL, 1, 1, '$2y$12$dCVHK9qUkW9tyL/MNnxioOAWtcWUlgm3Iytz32e9DED3Li4EY7zka', NULL, NULL, 4, 0, 1, NULL, '2024-08-28 09:09:45', '2024-08-28 09:09:45'),
 (6, 'Sơn Trịnh', NULL, NULL, 'sonit7122@gmail.com', NULL, 1, 1, '$2y$12$uToj/emWVTQP5Rxkzh5wjuxJMbXI6Du352LvbFWxbgKcBuXuVQwci', 'google', '101571965691342130603', 4, 0, 1, NULL, '2024-08-28 09:33:51', '2024-09-03 17:35:36'),
-(7, 'ho quang anh', '2002-07-01', '0372238783', 'acczints001@gmail.com', '2024-09-16 22:49:25', 1, 1, '$2y$12$wGRP4BtqmvrH6DY1uXeMGObckQT200zVMeCMeonUnD5MaNk6iwJP6', 'google', '115460625758742207518', 4, 0, 1, 'KU8cpefpoO4pz6eybexlkJ9cxL2tn585s3Bgwu4WovfG1ywEWK7602dKqTPb', '2024-09-03 13:58:47', '2024-09-19 10:19:57');
+(7, 'ho quang anh', '2002-07-01', '0372238783', 'acczints001@gmail.com', '2024-09-16 22:49:25', 1, 1, '$2y$12$wGRP4BtqmvrH6DY1uXeMGObckQT200zVMeCMeonUnD5MaNk6iwJP6', 'google', '115460625758742207518', 4, 0, 1, 'MKVtTOJqEZtCwb2z8IU1VC8mC9IlMalFCQ7F0WKCk2r277fmQfUhsDmxRTxy', '2024-09-03 13:58:47', '2024-09-19 10:19:57');
 
 -- --------------------------------------------------------
 
@@ -4646,7 +5082,104 @@ INSERT INTO `visitors` (`id`, `ip`, `user_agent`, `created_at`, `updated_at`) VA
 (179, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:07:10', '2024-10-13 01:07:10'),
 (180, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:07:23', '2024-10-13 01:07:23'),
 (181, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:07:28', '2024-10-13 01:07:28'),
-(182, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:21:02', '2024-10-13 01:21:02');
+(182, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 01:21:02', '2024-10-13 01:21:02'),
+(183, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:24:55', '2024-10-13 22:24:55'),
+(184, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:24:56', '2024-10-13 22:24:56'),
+(185, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:24:57', '2024-10-13 22:24:57'),
+(186, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:24:57', '2024-10-13 22:24:57'),
+(187, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:25:01', '2024-10-13 22:25:01'),
+(188, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:25:20', '2024-10-13 22:25:20'),
+(189, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:25:21', '2024-10-13 22:25:21'),
+(190, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:25:31', '2024-10-13 22:25:31'),
+(191, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:25:33', '2024-10-13 22:25:33'),
+(192, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:25:47', '2024-10-13 22:25:47'),
+(193, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:25:52', '2024-10-13 22:25:52'),
+(194, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:25:52', '2024-10-13 22:25:52'),
+(195, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:26:04', '2024-10-13 22:26:04'),
+(196, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:26:05', '2024-10-13 22:26:05'),
+(197, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:26:05', '2024-10-13 22:26:05'),
+(198, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:26:10', '2024-10-13 22:26:10'),
+(199, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:26:10', '2024-10-13 22:26:10'),
+(200, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:26:17', '2024-10-13 22:26:17'),
+(201, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:44:02', '2024-10-13 22:44:02'),
+(202, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:44:02', '2024-10-13 22:44:02'),
+(203, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:53:52', '2024-10-13 22:53:52'),
+(204, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:54:13', '2024-10-13 22:54:13'),
+(205, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 22:55:32', '2024-10-13 22:55:32'),
+(206, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:00:31', '2024-10-13 23:00:31'),
+(207, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:00:39', '2024-10-13 23:00:39'),
+(208, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:00:41', '2024-10-13 23:00:41'),
+(209, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:00:53', '2024-10-13 23:00:53'),
+(210, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:00:56', '2024-10-13 23:00:56'),
+(211, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:00:56', '2024-10-13 23:00:56'),
+(212, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:01:03', '2024-10-13 23:01:03'),
+(213, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:01:03', '2024-10-13 23:01:03'),
+(214, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:01:05', '2024-10-13 23:01:05'),
+(215, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:01:07', '2024-10-13 23:01:07'),
+(216, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:01:17', '2024-10-13 23:01:17'),
+(217, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:01:17', '2024-10-13 23:01:17'),
+(218, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:01:20', '2024-10-13 23:01:20'),
+(219, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:01:23', '2024-10-13 23:01:23'),
+(220, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:01:25', '2024-10-13 23:01:25'),
+(221, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:02:06', '2024-10-13 23:02:06'),
+(222, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:02:31', '2024-10-13 23:02:31'),
+(223, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:20:06', '2024-10-13 23:20:06'),
+(224, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:20:09', '2024-10-13 23:20:09'),
+(225, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:20:11', '2024-10-13 23:20:11'),
+(226, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:20:13', '2024-10-13 23:20:13'),
+(227, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:20:16', '2024-10-13 23:20:16'),
+(228, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:20:16', '2024-10-13 23:20:16'),
+(229, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:20:18', '2024-10-13 23:20:18'),
+(230, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-13 23:20:20', '2024-10-13 23:20:20'),
+(231, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:00:29', '2024-10-14 00:00:29'),
+(232, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:00:32', '2024-10-14 00:00:32'),
+(233, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:00:34', '2024-10-14 00:00:34'),
+(234, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:00:36', '2024-10-14 00:00:36'),
+(235, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:28', '2024-10-14 00:01:28'),
+(236, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:32', '2024-10-14 00:01:32'),
+(237, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:34', '2024-10-14 00:01:34'),
+(238, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:35', '2024-10-14 00:01:35'),
+(239, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:38', '2024-10-14 00:01:38'),
+(240, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:39', '2024-10-14 00:01:39'),
+(241, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:40', '2024-10-14 00:01:40'),
+(242, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:43', '2024-10-14 00:01:43'),
+(243, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:44', '2024-10-14 00:01:44'),
+(244, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:46', '2024-10-14 00:01:46'),
+(245, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:48', '2024-10-14 00:01:48'),
+(246, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:50', '2024-10-14 00:01:50'),
+(247, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:51', '2024-10-14 00:01:51'),
+(248, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:56', '2024-10-14 00:01:56'),
+(249, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:57', '2024-10-14 00:01:57'),
+(250, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:01:58', '2024-10-14 00:01:58'),
+(251, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:02:01', '2024-10-14 00:02:01'),
+(252, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:02:02', '2024-10-14 00:02:02'),
+(253, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:02:33', '2024-10-14 00:02:33'),
+(254, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:03:59', '2024-10-14 00:03:59'),
+(255, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:04:32', '2024-10-14 00:04:32'),
+(256, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:04:44', '2024-10-14 00:04:44'),
+(257, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:04:47', '2024-10-14 00:04:47'),
+(258, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:04:49', '2024-10-14 00:04:49'),
+(259, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:04:51', '2024-10-14 00:04:51'),
+(260, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:05:03', '2024-10-14 00:05:03'),
+(261, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:05:07', '2024-10-14 00:05:07'),
+(262, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:05:09', '2024-10-14 00:05:09'),
+(263, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:05:11', '2024-10-14 00:05:11'),
+(264, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:05:13', '2024-10-14 00:05:13'),
+(265, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:05:17', '2024-10-14 00:05:17'),
+(266, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:05:26', '2024-10-14 00:05:26'),
+(267, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:05:27', '2024-10-14 00:05:27'),
+(268, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:05:28', '2024-10-14 00:05:28'),
+(269, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:05:35', '2024-10-14 00:05:35'),
+(270, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:06:29', '2024-10-14 00:06:29'),
+(271, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:06:30', '2024-10-14 00:06:30'),
+(272, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:06:54', '2024-10-14 00:06:54'),
+(273, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:07:46', '2024-10-14 00:07:46'),
+(274, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:07:57', '2024-10-14 00:07:57'),
+(275, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:20:01', '2024-10-14 00:20:01'),
+(276, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:20:04', '2024-10-14 00:20:04'),
+(277, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:20:06', '2024-10-14 00:20:06'),
+(278, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:20:09', '2024-10-14 00:20:09'),
+(279, '172.18.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', '2024-10-14 00:20:09', '2024-10-14 00:20:09');
 
 -- --------------------------------------------------------
 
@@ -4874,7 +5407,7 @@ ALTER TABLE `wishlists`
 -- AUTO_INCREMENT for table `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -4910,7 +5443,7 @@ ALTER TABLE `features`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `kinds`
@@ -4928,13 +5461,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=255;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -4952,31 +5485,31 @@ ALTER TABLE `permission_details`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=465;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=466;
 
 --
 -- AUTO_INCREMENT for table `product_colors`
 --
 ALTER TABLE `product_colors`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3749;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3789;
 
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1201;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1206;
 
 --
 -- AUTO_INCREMENT for table `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2796;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2826;
 
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -4988,7 +5521,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `shipping_addresses`
 --
 ALTER TABLE `shipping_addresses`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `sizes`
@@ -5006,7 +5539,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=280;
 
 --
 -- AUTO_INCREMENT for table `wishlists`
