@@ -219,7 +219,7 @@ class ClientController extends Controller
         }
 
         if ($order->payment_method === PaymentMethod::Online->value) {
-            $check = (new PayOS())->getPaymentStatus($order->id);
+            $check = (new PayOS())->getPaymentStatus(request()->input(key: 'orderCode'));
 
             if ($check['code'] == '00' && $check['data']['status'] == 'PAID') {
                 $order->is_paid = true;
